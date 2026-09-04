@@ -22,4 +22,4 @@ An open, cinematic sports editorial: charcoal forest shadows, warm light, sharp 
 - Native page scroll. Panels use view-timeline image drift around -3% to +3% and text rise/fade.
 - Hero image enters from 1.05 scale to 1.025 and copy rises 28px.
 - All decorative movement switches off under `prefers-reduced-motion`.
-- The event rail works on every device through native touch swipe, direct pointer drag, visible previous/next controls, keyboard left/right arrows and an available scrollbar. Desktop exposes neighboring artwork; mobile retains a dominant 84vw event frame.
+- The event rail works on every device through native touch swipe, direct pointer drag, keyboard left/right arrows and an available scrollbar. Previous/next buttons sit at the left and right screen edges over the artwork; a central circular `DRAG ↔` handle can be held and pulled horizontally. Desktop exposes neighboring artwork; mobile retains a dominant 84vw event frame.
