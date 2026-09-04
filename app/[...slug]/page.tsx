@@ -1,0 +1,18 @@
+import Link from "next/link";
+import { navigation } from "@/data/navigation";
+
+const copy:Record<string,{title:string;eyebrow:string;body:string}>={
+  "our-mission":{title:"OUR MISSION",eyebrow:"THAILAND AIRSOFT ASSOCIATION",body:"Building the future of airsoft and paintball in Thailand through responsible standards, fair play and strong community connections."},
+  "association/about":{title:"ABOUT THE ASSOCIATION",eyebrow:"ASSOCIATION",body:"The Thailand Airsoft Association brings players, teams, fields and organisers together around a shared commitment to safe, fair and sustainable sport."},
+  "association/why-created":{title:"WHY WE WERE CREATED",eyebrow:"ASSOCIATION",body:"A clear national voice helps build trust, improve safety and support the people who make this sport thrive."},
+  "association/background":{title:"ASSOCIATION BACKGROUND",eyebrow:"ASSOCIATION",body:"Our background is rooted in the Thai airsoft and paintball community and its ambition to develop confidently alongside international sport."},
+  "association/leadership":{title:"LEADERSHIP & BOARD",eyebrow:"ASSOCIATION",body:"The Association’s leadership provides direction, accountability and a platform for collaboration across the community."},
+  "what-we-do":{title:"WHAT WE DO",eyebrow:"ASSOCIATION PROGRAMME",body:"The Association supports a clear, practical pathway for safety, education, field development, competition and community participation."},
+  "sport-tourism":{title:"SPORT TOURISM",eyebrow:"THAILAND, IN PLAY",body:"We promote Thailand as a welcoming destination for responsible airsoft and paintball events, helping sport connect to local economies and international visitors."},
+  "rules-safety":{title:"RULES & SAFETY",eyebrow:"OFFICIAL GUIDANCE",body:"Useful, understandable safety guidance is the foundation of confident and fair play. Detailed standards are organised below for players, fields and organisers."},
+  "contact":{title:"CONTACT",eyebrow:"GET IN TOUCH",body:"Association contact channels and official announcements will be published here. For now, please use verified Association channels only."},
+  "privacy-policy":{title:"PRIVACY POLICY",eyebrow:"INFORMATION",body:"This page will contain the Association’s published privacy policy as the official communications and data practices are finalised."},
+  "terms-of-use":{title:"TERMS OF USE",eyebrow:"INFORMATION",body:"This page will contain the Association’s published website terms when they are formally adopted."}
+};
+function startCase(value:string){return value.replaceAll("-"," ").toUpperCase();}
+export default async function ContentPage({params}:{params:Promise<{slug:string[]}>}){const {slug}=await params;const path=slug.join("/");const page=copy[path]??{title:startCase(slug.at(-1)??"Association"),eyebrow:path.startsWith("rules-safety")?"RULES & SAFETY":path.startsWith("sport-tourism")?"SPORT TOURISM":"WHAT WE DO",body:"This official Association page is being prepared with detailed guidance and resources for the Thailand airsoft and paintball community."};const related=navigation.flatMap((group)=>group.children??[]).filter((item)=>item.href!==`/${path}`&&item.href.startsWith(`/${slug[0]}`));return <><section className="page-intro"><p className="eyebrow">{page.eyebrow}</p><h1>{page.title}</h1><p>{page.body}</p></section>{related.length>0&&<section className="content-list" aria-label="Related pages">{related.map((item)=><Link key={item.href} href={item.href}>{item.label} ↗</Link>)}</section>}</>}

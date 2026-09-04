@@ -1,0 +1,46 @@
+# Thailand Airsoft Association project memory
+
+## Purpose
+Official local-first website for the Thailand Airsoft Association: standards, safety, events, association information and sport tourism.
+
+## Working system
+- GitHub repository: `https://github.com/Cynicalfocus123/airsoft-assocation-site`
+- Branch: `main`
+- Canonical Git folder: `D:\mstar companies\Mstar Airsoft Association\airsoft-assocation-site-git`
+- Local live mirror: `D:\mstar companies\Mstar Airsoft Association\airsoft-assocation-site-live`
+- “Live” means latest usable local source, **not** a hosted or publicly deployed site. Public deployment is prohibited until explicitly requested.
+- Synchronise after validated changes with `powershell -ExecutionPolicy Bypass -File scripts\sync-live.ps1` from the Git folder. It mirrors source and excludes `.git`, `node_modules`, `.next`, caches and coverage.
+
+## Stack and validation
+- Next.js 16, React 19, TypeScript, App Router, CSS Modules and modern CSS.
+- `pnpm lint`, `pnpm exec tsc --noEmit`, `pnpm build`.
+- Do not use or report localhost as the user workflow. Use static validation and production builds unless an approved preview workflow is later configured.
+
+## Permanent implementation rules
+- Internal navigation uses real Next.js routes; never use `#`, hash navigation, fake URLs or unfinished links.
+- Use open editorial composition: full-bleed imagery, oversized condensed-feeling uppercase type, whitespace, dividers and asymmetric layouts. Do not default to rounded cards, shadows or generic feature grids.
+- Event artwork is the card; details overlay the artwork.
+- Native scroll only. Motion is restrained transform/opacity and disabled for `prefers-reduced-motion`.
+- Keep client code limited to navigation and carousel state. No unnecessary animation or UI packages.
+- Prefer compact repository inspection (`git status --short`, `git diff --stat`, targeted `rg`) and capped command output.
+
+## Architecture
+- `app/`: homepage, event index/detail routes, catch-all editorial route shells.
+- `components/layout/`: sticky desktop/mega/mobile navigation and footer.
+- `components/events/`: data-driven feature hero and native-scroll event rail.
+- `components/sections/`: reusable cinematic `ScrollPanel` foundation.
+- `data/events.ts`: event data model and published list.
+- `data/navigation.ts`: authoritative internal navigation links.
+- `public/images/`: supplied association marks plus generated tournament artwork.
+
+## Current implementation
+- Responsive sticky header, desktop mega menus and mobile off-canvas accordion navigation.
+- Featured event hero, responsive event carousel, real event detail routes and editorial content routes.
+- Footer with functioning internal links, accessible controls and reduced-motion behavior.
+
+## Pending / limitations
+- Official event registrations, formal policy content, verified contact channels and full long-form association material need approved source content.
+- GitHub’s remote currently returned no `main` branch during initial clone; local `main` is ready to commit and requires authenticated push once access is available.
+
+## Latest task summary
+Initial site scaffold and responsive public-facing foundation created; source still needs its first authenticated GitHub push.
