@@ -9,10 +9,12 @@ Local source website for the Thailand Airsoft Association.
 - `pnpm build`
 - `powershell -ExecutionPolicy Bypass -File scripts\sync-live.ps1`
 
-This project is intentionally **not publicly deployed**. The `airsoft-assocation-site-live` folder is a synchronized local source mirror, not a server deployment.
+The `airsoft-assocation-site-live` folder is a synchronized local source mirror. A GitHub Actions workflow deploys the current static build to GitHub Pages after each push to `main`.
 
 ## Deployment / Git demo
 
-[Thailand Airsoft Association Git demo](https://github.com/Cynicalfocus123/airsoft-assocation-site)
+[GitHub source](https://github.com/Cynicalfocus123/airsoft-assocation-site)
 
-This link points to the project source. It is not a public website deployment.
+[Published GitHub Pages site](https://cynicalfocus123.github.io/airsoft-assocation-site/)
+
+The published site is deployed automatically from `main` through GitHub Actions.

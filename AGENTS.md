@@ -8,14 +8,15 @@ Official local-first website for the Thailand Airsoft Association: standards, sa
 - Branch: `main`
 - Canonical Git folder: `D:\mstar companies\Mstar Airsoft Association\airsoft-assocation-site-git`
 - Local live mirror: `D:\mstar companies\Mstar Airsoft Association\airsoft-assocation-site-live`
-- “Live” means latest usable local source, **not** a hosted or publicly deployed site. Public deployment is prohibited until explicitly requested.
+- “Live” means the latest synchronized local source mirror. The public GitHub Pages deployment is a separate published build and must also be current.
 - Synchronise after validated changes with `powershell -ExecutionPolicy Bypass -File scripts\sync-live.ps1` from the Git folder. It mirrors source and excludes `.git`, `node_modules`, `.next`, caches and coverage.
-- Every future Git-push completion report must include a **Deployment / Git demo** section linking to `https://github.com/Cynicalfocus123/airsoft-assocation-site`. This is the source/demo link only; do not describe it as a public site deployment.
+- Every completed change must: validate; sync the local live mirror; update documentation; commit; push to `main`; wait for the GitHub Pages deployment workflow; verify its result; and report both source and deployed site links.
+- Every future Git-push completion report must include a **Deployment / Git demo** section linking to the source and deployed site. GitHub source: `https://github.com/Cynicalfocus123/airsoft-assocation-site`; GitHub Pages: `https://cynicalfocus123.github.io/airsoft-assocation-site/`.
 
 ## Stack and validation
 - Next.js 16, React 19, TypeScript, App Router, CSS Modules and modern CSS.
 - `pnpm lint`, `pnpm exec tsc --noEmit`, `pnpm build`.
-- Do not use or report localhost as the user workflow. Use static validation and production builds unless an approved preview workflow is later configured.
+- Do not use or report localhost as the user workflow. Use static validation, production builds and the GitHub Pages deployment.
 
 ## Permanent implementation rules
 - Internal navigation uses real Next.js routes; never use `#`, hash navigation, fake URLs or unfinished links.
@@ -41,7 +42,7 @@ Official local-first website for the Thailand Airsoft Association: standards, sa
 
 ## Pending / limitations
 - Official event registrations, formal policy content, verified contact channels and full long-form association material need approved source content.
-- GitHub began as an empty remote with no `main` ref; the local `main` branch has now been established and pushed.
+- GitHub Pages must remain configured to use GitHub Actions. The workflow publishes `out/` after each push to `main`.
 
 ## Latest task summary
-Initial site scaffold and responsive public-facing foundation created, synchronized to the local live mirror, and pushed to GitHub `main`.
+GitHub Pages deployment workflow added; static export and Pages deployment are now required after each push.
