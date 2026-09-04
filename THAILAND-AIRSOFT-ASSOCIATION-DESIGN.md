@@ -16,6 +16,7 @@ An open, cinematic sports editorial: charcoal forest shadows, warm light, sharp 
 
 ## Navigation
 - Light sticky header with association mark, desktop hover/click mega menus and a right-side mobile drawer.
+- The supplied association mark appears in the global header and footer, which wrap every site route.
 - Real routes only. Header and footer contain no hash links.
 
 ## Motion and responsive behaviour
