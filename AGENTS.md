@@ -45,4 +45,4 @@ Official local-first website for the Thailand Airsoft Association: standards, sa
 - GitHub Pages must remain configured to use GitHub Actions. The workflow publishes `out/` after each push to `main`.
 
 ## Latest task summary
-GitHub Pages deployment workflow added; static export and Pages deployment are now required after each push.
+GitHub Pages workflow deployed successfully. The published site returned HTTP 200 at `https://cynicalfocus123.github.io/airsoft-assocation-site/`; static export and Pages deployment are now required after each push.
