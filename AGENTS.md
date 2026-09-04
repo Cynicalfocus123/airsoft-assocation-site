@@ -40,6 +40,7 @@ Official local-first website for the Thailand Airsoft Association: standards, sa
 - Featured event hero, responsive event carousel, real event detail routes and editorial content routes.
 - Footer with functioning internal links, accessible controls and reduced-motion behavior.
 - Supplied association logo is used in the global header and footer across every route.
+- Typography uses oversized Mission/What We Do editorial headlines, with reduced body, metadata, card and page-intro scales.
 - Event rail uses reusable `components/hooks/useDragScroll.ts`: desktop mouse drag with grab/grabbing cursor states, six-pixel click protection and pointer capture; native mobile swipe; compact mobile `SWIPE` prompts; edge arrows; keyboard arrows; and a scrollbar.
 
 ## Pending / limitations
@@ -47,4 +48,4 @@ Official local-first website for the Thailand Airsoft Association: standards, sa
 - GitHub Pages must remain configured to use GitHub Actions. The workflow publishes `out/` after each push to `main`.
 
 ## Latest task summary
-Supplied association logo confirmed in the global header and added to the global footer across every route; GitHub Pages deploy/verification is required for this completed change.
+Corrected GitHub Pages image paths, removed visible association-name branding from the header/footer, and rebalanced typography around oversized editorial section headlines; GitHub Pages deploy/verification is required for this completed change.

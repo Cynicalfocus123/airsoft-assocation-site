@@ -11,6 +11,7 @@ An open, cinematic sports editorial: charcoal forest shadows, warm light, sharp 
 
 ## Type and colour
 - Uppercase, heavy, tightly tracked display type; neutral readable body type.
+- Mission and cinematic programme headlines intentionally use the largest type scale; labels, metadata, body copy and event-card titles stay markedly smaller to preserve a clear editorial hierarchy.
 - `--ink: #101714`, `--paper: #f4f2ec`, `--lime: #d6f046`, dark panels `#111a16`.
 - Body text stays at 16px or larger; labels are 12px or larger.
 
