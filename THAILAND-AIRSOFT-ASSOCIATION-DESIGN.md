@@ -23,7 +23,7 @@ An open, cinematic sports editorial: charcoal forest shadows, warm light, sharp 
 - Real routes only. Header and footer contain no hash links.
 
 ## Motion and responsive behaviour
-- Native page scroll. Panels use view-timeline image drift around -3% to +3% and text rise/fade.
+- Native page scroll. Homepage cinematic sections use three independent layers—media, dark readability overlay and text—with CSS `animation-timeline: view()` scrubbed from the section entering to leaving the viewport. Media drifts around -4% to +4% while foreground text floats from +40px to -30px, and both directions reverse naturally when the user scrolls back. The footer identity follows the same scroll-linked editorial language.
 - Hero image enters from 1.05 scale to 1.025 and copy rises 28px.
 - All decorative movement switches off under `prefers-reduced-motion`.
 - The event rail uses native horizontal scrolling with `scroll-snap-type: proximity`. On desktop, the artwork row is directly mouse-draggable: `grab` becomes `grabbing` while held, a 6px threshold protects normal event links, and pointer capture keeps a drag stable outside the rail. On mobile/tablet, `touch-action: auto` preserves browser-native horizontal swipe, momentum and vertical page scrolling. Edge arrows remain as supplementary controls, and mobile retains compact swipe prompts.

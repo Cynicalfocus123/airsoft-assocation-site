@@ -18,3 +18,7 @@ The `airsoft-assocation-site-live` folder is a synchronized local source mirror.
 [Published GitHub Pages site](https://cynicalfocus123.github.io/airsoft-assocation-site/)
 
 The published site is deployed automatically from `main` through GitHub Actions.
+
+## Homepage motion
+
+The reusable `CinematicSection` component provides scroll-scrubbed parallax storytelling for major homepage sections. It uses native CSS view timelines, without animation packages or full-page scroll snapping.

@@ -30,7 +30,7 @@ Official local-first website for the Thailand Airsoft Association: standards, sa
 - `app/`: homepage, event index/detail routes, catch-all editorial route shells.
 - `components/layout/`: sticky desktop/mega/mobile navigation and footer-only association mark.
 - `components/events/`: data-driven feature hero and native-scroll event rail.
-- `components/sections/`: reusable cinematic `ScrollPanel` foundation.
+- `components/sections/`: reusable `CinematicSection` foundation for scroll-scrubbed homepage storytelling.
 - `data/events.ts`: event data model and published list.
 - `data/navigation.ts`: authoritative internal navigation links.
 - `public/images/`: supplied association marks plus generated tournament artwork.
@@ -43,6 +43,7 @@ Official local-first website for the Thailand Airsoft Association: standards, sa
 - Association logo scale is prominent in the shared footer (192px desktop and 136px mobile).
 - Responsive navigation has a reliable accessible toggle, dimmed click-to-close backdrop, smooth 320ms right-side drawer and nested mobile menu accordions.
 - Mission is the only large editorial statement. Event, programme, tourism and footer headings use medium display type, while copy, metadata, cards and page intros remain compact and readable.
+- Homepage Mission, Standards and Sport Tourism use the shared three-layer `CinematicSection`: media, readability overlay and foreground content move at different CSS view-timeline rates and reverse naturally on upward scroll. Footer identity uses the same scrubbed floating layer treatment.
 - Event rail uses reusable `components/hooks/useDragScroll.ts`: desktop mouse drag with grab/grabbing cursor states, six-pixel click protection and pointer capture; `touch-action: auto` for browser-native mobile/tablet swipe; compact mobile `SWIPE` prompts; edge arrows; keyboard arrows; and a scrollbar.
 
 ## Pending / limitations
@@ -50,4 +51,4 @@ Official local-first website for the Thailand Airsoft Association: standards, sa
 - GitHub Pages must remain configured to use GitHub Actions. The workflow publishes `out/` after each push to `main`.
 
 ## Latest task summary
-Moved the association mark to the footer only and enlarged it, while restoring a restrained editorial hierarchy: Mission is the largest statement and event, programme, tourism and footer headings are medium scale. The responsive navigation drawer and browser-native carousel swipe remain in place; GitHub Pages deploy/verification is required for this completed change.
+Implemented native scroll-linked parallax storytelling through the reusable `CinematicSection`: Mission, Standards and Sport Tourism now scrub media and foreground typography at different scroll rates, reversing naturally on upward scroll. Footer identity carries the same floating scroll language; GitHub Pages deploy/verification is required for this completed change.
