@@ -39,11 +39,11 @@ Official local-first website for the Thailand Airsoft Association: standards, sa
 - Responsive sticky header, desktop mega menus and mobile off-canvas accordion navigation.
 - Featured event hero, responsive event carousel, real event detail routes and editorial content routes.
 - Footer with functioning internal links, accessible controls and reduced-motion behavior.
-- Event rail supports touch swipe, pointer drag, a central hold-and-pull `DRAG ↔` handle, left/right edge arrow controls, keyboard arrows and a scrollbar on all screen sizes.
+- Event rail supports desktop hover-to-reveal edge arrows and a central `DRAG ↔` handle, direct mouse dragging, plus compact mobile `SWIPE` prompts, touch swipe, keyboard arrows and a scrollbar.
 
 ## Pending / limitations
 - Official event registrations, formal policy content, verified contact channels and full long-form association material need approved source content.
 - GitHub Pages must remain configured to use GitHub Actions. The workflow publishes `out/` after each push to `main`.
 
 ## Latest task summary
-Event rail controls moved to the screen edges and a central hold-and-drag control added; GitHub Pages deploy/verification is required for this completed change.
+Event rail interaction is now device-specific: desktop controls reveal on hover and mobile shows small swipe prompts; GitHub Pages deploy/verification is required for this completed change.
