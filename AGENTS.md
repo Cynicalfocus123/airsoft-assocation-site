@@ -40,12 +40,14 @@ Official local-first website for the Thailand Airsoft Association: standards, sa
 - Featured event hero, responsive event carousel, real event detail routes and editorial content routes.
 - Footer with functioning internal links, accessible controls and reduced-motion behavior.
 - Supplied association logo is used in the global header and footer across every route.
+- Association logo scale is 50% larger in both shared placements (66px desktop header, 63px mobile header, 144px footer).
+- Responsive navigation has a reliable accessible toggle, dimmed click-to-close backdrop, smooth 320ms right-side drawer and nested mobile menu accordions.
 - Typography uses oversized Mission/What We Do editorial headlines, with reduced body, metadata, card and page-intro scales.
-- Event rail uses reusable `components/hooks/useDragScroll.ts`: desktop mouse drag with grab/grabbing cursor states, six-pixel click protection and pointer capture; native mobile swipe; compact mobile `SWIPE` prompts; edge arrows; keyboard arrows; and a scrollbar.
+- Event rail uses reusable `components/hooks/useDragScroll.ts`: desktop mouse drag with grab/grabbing cursor states, six-pixel click protection and pointer capture; `touch-action: auto` for browser-native mobile/tablet swipe; compact mobile `SWIPE` prompts; edge arrows; keyboard arrows; and a scrollbar.
 
 ## Pending / limitations
 - Official event registrations, formal policy content, verified contact channels and full long-form association material need approved source content.
 - GitHub Pages must remain configured to use GitHub Actions. The workflow publishes `out/` after each push to `main`.
 
 ## Latest task summary
-Corrected GitHub Pages image paths, removed visible association-name branding from the header/footer, and rebalanced typography around oversized editorial section headlines; GitHub Pages deploy/verification is required for this completed change.
+Restored browser-native phone/tablet carousel swipe, increased the shared association logo by 50%, and rebuilt the mobile/tablet navigation drawer; GitHub Pages deploy/verification is required for this completed change.

@@ -18,10 +18,12 @@ An open, cinematic sports editorial: charcoal forest shadows, warm light, sharp 
 ## Navigation
 - Light sticky header with association mark, desktop hover/click mega menus and a right-side mobile drawer.
 - The supplied association mark appears in the global header and footer, which wrap every site route.
+- The association mark is scaled 50% larger than the initial implementation: 66px in the desktop header, 63px on mobile, and 144px in the footer.
+- Tablet and mobile navigation opens as a dark right-side drawer with a dimmed backdrop, a 320ms ease-out transition, a clear close action and nested route accordions.
 - Real routes only. Header and footer contain no hash links.
 
 ## Motion and responsive behaviour
 - Native page scroll. Panels use view-timeline image drift around -3% to +3% and text rise/fade.
 - Hero image enters from 1.05 scale to 1.025 and copy rises 28px.
 - All decorative movement switches off under `prefers-reduced-motion`.
-- The event rail uses native horizontal scrolling with `scroll-snap-type: proximity`. On desktop, the artwork row is directly mouse-draggable: `grab` becomes `grabbing` while held, a 6px threshold protects normal event links, and pointer capture keeps a drag stable outside the rail. On mobile/tablet, native swipe and momentum remain available while vertical page scrolling is preserved. Edge arrows remain as supplementary controls, and mobile retains compact swipe prompts.
+- The event rail uses native horizontal scrolling with `scroll-snap-type: proximity`. On desktop, the artwork row is directly mouse-draggable: `grab` becomes `grabbing` while held, a 6px threshold protects normal event links, and pointer capture keeps a drag stable outside the rail. On mobile/tablet, `touch-action: auto` preserves browser-native horizontal swipe, momentum and vertical page scrolling. Edge arrows remain as supplementary controls, and mobile retains compact swipe prompts.
