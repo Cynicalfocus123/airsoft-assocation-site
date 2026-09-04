@@ -11,14 +11,14 @@ An open, cinematic sports editorial: charcoal forest shadows, warm light, sharp 
 
 ## Type and colour
 - Uppercase, heavy, tightly tracked display type; neutral readable body type.
-- Mission and cinematic programme headlines intentionally use the largest type scale; labels, metadata, body copy and event-card titles stay markedly smaller to preserve a clear editorial hierarchy.
+- Mission is the single largest editorial statement. Event, programme, tourism and footer headings use a restrained medium display scale; labels, metadata, body copy and event-card titles stay markedly smaller to preserve a clear editorial hierarchy.
 - `--ink: #101714`, `--paper: #f4f2ec`, `--lime: #d6f046`, dark panels `#111a16`.
 - Body text stays at 16px or larger; labels are 12px or larger.
 
 ## Navigation
-- Light sticky header with association mark, desktop hover/click mega menus and a right-side mobile drawer.
-- The supplied association mark appears in the global header and footer, which wrap every site route.
-- The association mark is scaled 50% larger than the initial implementation: 66px in the desktop header, 63px on mobile, and 144px in the footer.
+- Light sticky header without an association mark or association-name text, desktop hover/click mega menus and a right-side mobile drawer.
+- The supplied association mark appears only in the global footer, which wraps every site route.
+- The association mark is prominent at 192px desktop and 136px mobile in the footer.
 - Tablet and mobile navigation opens as a dark right-side drawer with a dimmed backdrop, a 320ms ease-out transition, a clear close action and nested route accordions.
 - Real routes only. Header and footer contain no hash links.
 

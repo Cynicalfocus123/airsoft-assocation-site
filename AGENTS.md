@@ -28,7 +28,7 @@ Official local-first website for the Thailand Airsoft Association: standards, sa
 
 ## Architecture
 - `app/`: homepage, event index/detail routes, catch-all editorial route shells.
-- `components/layout/`: sticky desktop/mega/mobile navigation and footer.
+- `components/layout/`: sticky desktop/mega/mobile navigation and footer-only association mark.
 - `components/events/`: data-driven feature hero and native-scroll event rail.
 - `components/sections/`: reusable cinematic `ScrollPanel` foundation.
 - `data/events.ts`: event data model and published list.
@@ -39,10 +39,10 @@ Official local-first website for the Thailand Airsoft Association: standards, sa
 - Responsive sticky header, desktop mega menus and mobile off-canvas accordion navigation.
 - Featured event hero, responsive event carousel, real event detail routes and editorial content routes.
 - Footer with functioning internal links, accessible controls and reduced-motion behavior.
-- Supplied association logo is used in the global header and footer across every route.
-- Association logo scale is 50% larger in both shared placements (66px desktop header, 63px mobile header, 144px footer).
+- Supplied association logo is used only in the global footer across every route; header association-name text and logo are intentionally absent.
+- Association logo scale is prominent in the shared footer (192px desktop and 136px mobile).
 - Responsive navigation has a reliable accessible toggle, dimmed click-to-close backdrop, smooth 320ms right-side drawer and nested mobile menu accordions.
-- Typography uses oversized Mission/What We Do editorial headlines, with reduced body, metadata, card and page-intro scales.
+- Mission is the only large editorial statement. Event, programme, tourism and footer headings use medium display type, while copy, metadata, cards and page intros remain compact and readable.
 - Event rail uses reusable `components/hooks/useDragScroll.ts`: desktop mouse drag with grab/grabbing cursor states, six-pixel click protection and pointer capture; `touch-action: auto` for browser-native mobile/tablet swipe; compact mobile `SWIPE` prompts; edge arrows; keyboard arrows; and a scrollbar.
 
 ## Pending / limitations
@@ -50,4 +50,4 @@ Official local-first website for the Thailand Airsoft Association: standards, sa
 - GitHub Pages must remain configured to use GitHub Actions. The workflow publishes `out/` after each push to `main`.
 
 ## Latest task summary
-Restored browser-native phone/tablet carousel swipe, increased the shared association logo by 50%, and rebuilt the mobile/tablet navigation drawer; GitHub Pages deploy/verification is required for this completed change.
+Moved the association mark to the footer only and enlarged it, while restoring a restrained editorial hierarchy: Mission is the largest statement and event, programme, tourism and footer headings are medium scale. The responsive navigation drawer and browser-native carousel swipe remain in place; GitHub Pages deploy/verification is required for this completed change.
