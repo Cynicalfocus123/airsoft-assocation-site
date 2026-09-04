@@ -40,7 +40,7 @@ Official local-first website for the Thailand Airsoft Association: standards, sa
 
 ## Pending / limitations
 - Official event registrations, formal policy content, verified contact channels and full long-form association material need approved source content.
-- GitHub’s remote currently returned no `main` branch during initial clone; local `main` is ready to commit and requires authenticated push once access is available.
+- GitHub began as an empty remote with no `main` ref; the local `main` branch has now been established and pushed.
 
 ## Latest task summary
-Initial site scaffold and responsive public-facing foundation created; source still needs its first authenticated GitHub push.
+Initial site scaffold and responsive public-facing foundation created, synchronized to the local live mirror, and pushed to GitHub `main`.
