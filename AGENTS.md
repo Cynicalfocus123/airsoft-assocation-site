@@ -10,6 +10,7 @@ Official local-first website for the Thailand Airsoft Association: standards, sa
 - Local live mirror: `D:\mstar companies\Mstar Airsoft Association\airsoft-assocation-site-live`
 - “Live” means latest usable local source, **not** a hosted or publicly deployed site. Public deployment is prohibited until explicitly requested.
 - Synchronise after validated changes with `powershell -ExecutionPolicy Bypass -File scripts\sync-live.ps1` from the Git folder. It mirrors source and excludes `.git`, `node_modules`, `.next`, caches and coverage.
+- Every future Git-push completion report must include a **Deployment / Git demo** section linking to `https://github.com/Cynicalfocus123/airsoft-assocation-site`. This is the source/demo link only; do not describe it as a public site deployment.
 
 ## Stack and validation
 - Next.js 16, React 19, TypeScript, App Router, CSS Modules and modern CSS.
