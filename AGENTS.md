@@ -39,10 +39,11 @@ Official local-first website for the Thailand Airsoft Association: standards, sa
 - Responsive sticky header, desktop mega menus and mobile off-canvas accordion navigation.
 - Featured event hero, responsive event carousel, real event detail routes and editorial content routes.
 - Footer with functioning internal links, accessible controls and reduced-motion behavior.
+- Event rail supports touch swipe, pointer drag, visible arrow controls, keyboard arrows and a scrollbar on all screen sizes.
 
 ## Pending / limitations
 - Official event registrations, formal policy content, verified contact channels and full long-form association material need approved source content.
 - GitHub Pages must remain configured to use GitHub Actions. The workflow publishes `out/` after each push to `main`.
 
 ## Latest task summary
-GitHub Pages workflow deployed successfully. The published site returned HTTP 200 at `https://cynicalfocus123.github.io/airsoft-assocation-site/`; static export and Pages deployment are now required after each push.
+Event rail navigation improved for all device formats; GitHub Pages deploy/verification is required for this completed change.
