@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { imageSrc } from "@/data/assets";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { navigation } from "@/data/navigation";
 import styles from "./SiteHeader.module.css";
 
@@ -11,6 +11,23 @@ export function SiteHeader() {
   const [open, setOpen] = useState<string | null>(null);
   const [mobile, setMobile] = useState(false);
   const closeMobile = () => setMobile(false);
+  useEffect(() => {
+    if (!mobile) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setMobile(false);
+    };
+    const desktop = window.matchMedia("(min-width: 1161px)");
+    const onDesktop = () => { if (desktop.matches) setMobile(false); };
+    window.addEventListener("keydown", onKeyDown);
+    desktop.addEventListener("change", onDesktop);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", onKeyDown);
+      desktop.removeEventListener("change", onDesktop);
+    };
+  }, [mobile]);
 
   return <header className={styles.header}>
     <div className={styles.bar}>

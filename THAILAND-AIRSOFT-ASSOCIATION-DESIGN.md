@@ -17,10 +17,10 @@ An open, cinematic sports editorial: charcoal forest shadows, warm light, sharp 
 
 ## Navigation
 - Light sticky header with the association mark, desktop hover/click mega menus and a right-side mobile drawer; no association-name text.
-- Header and actual footer use identical association mark sizes: 192px above 480px viewport width, 136px at or below 480px.
+- Header mark is 40% smaller than the footer: 7.2rem desktop/tablet and 5.1rem at or below 480px; footer remains 12rem / 8.5rem.
 - The “PLAY WITH PURPOSE” banner is a separate section above the footer and has no logo. Place the static logo below the divider alongside footer navigation, outside the animated banner content.
 - The association mark is prominent at 192px desktop and 136px mobile in the footer.
-- Tablet and mobile navigation opens as a dark right-side drawer with a dimmed backdrop, a 320ms ease-out transition, a clear close action and nested route accordions.
+- Tablet and mobile navigation drops downward below the header into a dark, full-width viewport panel with its own vertical scrolling, a clear close action and nested route accordions. Keep fixed-position ancestors free of backdrop-filter and transforms.
 - Real routes only. Header and footer contain no hash links.
 
 ## Motion and responsive behaviour
