@@ -7,6 +7,7 @@ import styles from "./CinematicSection.module.css";
 type CinematicSectionProps = {
   eyebrow?: string;
   title: ReactNode;
+  lead?: string;
   description?: string;
   desktopImage?: string;
   mobileImage?: string;
@@ -33,6 +34,7 @@ type CinematicStyle = CSSProperties & {
 export function CinematicSection({
   eyebrow,
   title,
+  lead,
   description,
   desktopImage,
   mobileImage,
@@ -65,6 +67,7 @@ export function CinematicSection({
     <div className={styles.content}>
       {eyebrow && <p className={styles.eyebrow}>{eyebrow}</p>}
       <h2>{title}</h2>
+      {lead && <p className={styles.lead}>{lead}</p>}
       {description && <p className={styles.description}>{description}</p>}
       {ctaLabel && ctaHref && <Link className={styles.cta} href={ctaHref}>{ctaLabel} <span>↗</span></Link>}
     </div>

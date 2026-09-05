@@ -11,13 +11,14 @@ An open, cinematic sports editorial: charcoal forest shadows, warm light, sharp 
 
 ## Type and colour
 - Uppercase, heavy, tightly tracked display type; neutral readable body type.
-- Mission is the single largest editorial statement. Event, programme, tourism and footer headings use a restrained medium display scale; labels, metadata, body copy and event-card titles stay markedly smaller to preserve a clear editorial hierarchy.
+- Mission hierarchy: the literal heading “OUR MISSION” is large (40–64px); the sentence “Building the future of airsoft & paintball in Thailand.” beneath it is medium (20–28px), sentence case, normal tracking and natural wrapping. Body copy stays at 16px. Do not use the supporting sentence as a giant display heading. This rule also applies when adding cinematic motion.
 - `--ink: #101714`, `--paper: #f4f2ec`, `--lime: #d6f046`, dark panels `#111a16`.
 - Body text stays at 16px or larger; labels are 12px or larger.
 
 ## Navigation
 - Light sticky header without an association mark or association-name text, desktop hover/click mega menus and a right-side mobile drawer.
 - The supplied association mark appears only in the global footer, which wraps every site route.
+- The “PLAY WITH PURPOSE” banner is a separate section above the footer and has no logo. Place the static logo below the divider alongside footer navigation, outside the animated banner content.
 - The association mark is prominent at 192px desktop and 136px mobile in the footer.
 - Tablet and mobile navigation opens as a dark right-side drawer with a dimmed backdrop, a 320ms ease-out transition, a clear close action and nested route accordions.
 - Real routes only. Header and footer contain no hash links.

@@ -40,9 +40,10 @@ Official local-first website for the Thailand Airsoft Association: standards, sa
 - Featured event hero, responsive event carousel, real event detail routes and editorial content routes.
 - Footer with functioning internal links, accessible controls and reduced-motion behavior.
 - Supplied association logo is used only in the global footer across every route; header association-name text and logo are intentionally absent.
+- “PLAY WITH PURPOSE” is a separate banner above the footer and must contain no logo. The logo belongs below the divider in the actual footer with navigation links; it is static and must not share the banner animation.
 - Association logo scale is prominent in the shared footer (192px desktop and 136px mobile).
 - Responsive navigation has a reliable accessible toggle, dimmed click-to-close backdrop, smooth 320ms right-side drawer and nested mobile menu accordions.
-- Mission is the only large editorial statement. Event, programme, tourism and footer headings use medium display type, while copy, metadata, cards and page intros remain compact and readable.
+- In the homepage mission section, the literal words “OUR MISSION” are the large h2 (40–64px). “Building the future of airsoft & paintball in Thailand.” is a medium supporting paragraph (20–28px), with normal tracking and natural wrapping; it must never become the oversized heading again. Supporting body copy is 16px. Preserve this hierarchy when changing motion or reusing the component.
 - Homepage Mission, Standards and Sport Tourism use the shared three-layer `CinematicSection`: media, readability overlay and foreground content move at different CSS view-timeline rates and reverse naturally on upward scroll. Footer identity uses the same scrubbed floating layer treatment.
 - Event rail uses reusable `components/hooks/useDragScroll.ts`: desktop mouse drag with grab/grabbing cursor states, six-pixel click protection and pointer capture; `touch-action: auto` for browser-native mobile/tablet swipe; compact mobile `SWIPE` prompts; edge arrows; keyboard arrows; and a scrollbar.
 
@@ -51,4 +52,4 @@ Official local-first website for the Thailand Airsoft Association: standards, sa
 - GitHub Pages must remain configured to use GitHub Actions. The workflow publishes `out/` after each push to `main`.
 
 ## Latest task summary
-Implemented native scroll-linked parallax storytelling through the reusable `CinematicSection`: Mission, Standards and Sport Tourism now scrub media and foreground typography at different scroll rates, reversing naturally on upward scroll. Footer identity carries the same floating scroll language; GitHub Pages deploy/verification is required for this completed change.
+Corrected the mission hierarchy: “OUR MISSION” is the large heading and the sentence below is a medium paragraph. Moved the logo out of the “PLAY WITH PURPOSE” banner into the actual footer beside its navigation links. Validate, sync the live mirror, commit, push and verify GitHub Pages.
