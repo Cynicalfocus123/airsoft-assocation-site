@@ -53,10 +53,11 @@ Official local-first website for the Thailand Airsoft Association: standards, sa
 - Keep the homepage main slider on the original Thailand National Airsoft 2026 content and forest artwork. Force of Conquest is the first card in the separate Upcoming Events rail only; its supplied artwork, open-registration label, location, EUR 120 presale entry fee and 2,000-player attendance are data-driven across the card and event detail route. Its card alone uses the stronger dark overlay for text legibility.
 - The homepage featured-event slider uses the same native horizontal scroll-snap, touch swipe, mouse drag and keyboard-arrow pattern as the event rail. Keep the current Thailand National Airsoft 2026 content as its sole slide until additional events are explicitly marked featured. Its registration and details affordances are clean inline text, without bordered button treatments.
 - Our Mission uses the supplied `our-mission-airsoft.avif` background with the same shared responsive cinematic motion as the other homepage image sections. Establish National Standards uses the supplied `national-standards-training.jpg` background.
+- `LanguageProvider` is a root-level service for the entire site: its English-default TH/EN choice persists in `taa-language`, restores after refresh and route navigation, updates `html[lang]`, and is available to every current and future page through `useLanguage`. Header, mobile navigation and the actual footer currently use the shared bilingual navigation source; body and banner copy remain English until approved Thai page content is supplied. The language setting never changes routes. Thai navigation uses Noto Sans Thai with real UTF-8 Thai labels; the footer banner and copyright remain English until translation is approved.
 
 ## Pending / limitations
 - Official event registrations, formal policy content, verified contact channels and full long-form association material need approved source content.
 - GitHub Pages must remain configured to use GitHub Actions. The workflow publishes `out/` after each push to `main`.
 
 ## Latest task summary
-Converted the homepage featured event into a native scroll-snap slider and changed its registration/details controls to clean inline text while preserving the original featured event.
+Added an English-default, persistent TH/EN switcher for the header, mobile menu and footer navigation only, with shared localized data and no locale routes.

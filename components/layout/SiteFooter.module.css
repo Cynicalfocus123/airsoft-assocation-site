@@ -17,3 +17,4 @@
 @media(max-width:1000px){.footerContent{grid-template-columns:1fr}.links{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:480px){.footerBrand img{width:8.5rem;height:8.5rem}.links{grid-template-columns:1fr}.bottom{gap:1rem;flex-direction:column}}
 @media(prefers-reduced-motion:reduce){.identity{transform:none;opacity:1;will-change:auto}}
+:global(html[lang="th"]) .footer{font-family:var(--font-thai),Tahoma,sans-serif}:global(html[lang="th"]) .links h3,:global(html[lang="th"]) .links a{letter-spacing:0;overflow-wrap:anywhere}

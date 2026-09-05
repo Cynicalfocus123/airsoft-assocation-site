@@ -23,6 +23,7 @@ An open, cinematic sports editorial: charcoal forest shadows, warm light, sharp 
 - Preserve Thailand National Airsoft 2026 as the homepage main slider. Force of Conquest belongs only as the first Upcoming Events card, with a strong dark overlay behind its text. Our Mission uses `our-mission-airsoft.avif` with the shared responsive cinematic motion; Establish National Standards uses `national-standards-training.jpg`.
 - The association mark is prominent at 192px desktop and 136px mobile in the footer.
 - Tablet and mobile navigation opens from the top of the viewport as a dark right-side drawer, `min(76vw, 460px)` wide and never closer than 72px to the left edge. It leaves the dimmed page and logo area visible, has its own vertical scrolling, a horizontal slide transition, a clear close action and nested route accordions. Keep fixed-position ancestors free of backdrop-filter and transforms.
+- The root-level TH / EN language service is available across every current and future page. English is the default, a deliberate choice persists locally through route navigation and refresh, and switching changes no route or body/banner copy until approved Thai page content is added. Navigation and the actual footer already consume the shared bilingual data. Thai uses Noto Sans Thai, natural wrapping and real UTF-8 text; retain the English visual system and do not use locale-prefixed routes.
 - Real routes only. Header and footer contain no hash links.
 
 ## Motion and responsive behaviour

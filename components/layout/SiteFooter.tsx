@@ -4,11 +4,14 @@ import { useRef } from "react";
 import { useCinematicScroll } from "@/components/hooks/useCinematicScroll";
 import Image from "next/image";
 import Link from "next/link";
-import { navigation } from "@/data/navigation";
+import { getLabel, navigation } from "@/data/navigation";
+import { informationLinks } from "@/data/footer";
+import { useLanguage } from "@/components/i18n/LanguageProvider";
 import { imageSrc } from "@/data/assets";
 import styles from "./SiteFooter.module.css";
 
 export function SiteFooter() {
+  const { language } = useLanguage();
   const bannerRef = useRef<HTMLElement>(null);
   useCinematicScroll(bannerRef);
   const grouped = navigation.filter((item) => item.children);
@@ -29,8 +32,8 @@ export function SiteFooter() {
           <Image src={imageSrc("/images/association-logo.png")} alt="Thailand Airsoft Association" width={192} height={192} />
         </Link>
         <div className={styles.links}>
-          {grouped.map((group) => <section key={group.label}><h3>{group.label}</h3>{group.children?.map((link) => <Link key={link.href} href={link.href}>{link.label}</Link>)}</section>)}
-          <section><h3>INFORMATION</h3><Link href="/events">Upcoming Events</Link><Link href="/contact">Contact</Link><Link href="/privacy-policy">Privacy Policy</Link><Link href="/terms-of-use">Terms of Use</Link></section>
+          {grouped.map((group) => <section key={group.label.en}><h3>{getLabel(group.label, language)}</h3>{group.children?.map((link) => <Link key={link.href} href={link.href}>{getLabel(link.label, language)}</Link>)}</section>)}
+          <section><h3>{language === "th" ? "ข้อมูล" : "INFORMATION"}</h3>{informationLinks.map((link) => <Link key={link.href} href={link.href}>{getLabel(link.label, language)}</Link>)}</section>
         </div>
       </div>
       <div className={styles.bottom}><span>© 2026 Thailand Airsoft and Paintball Association</span></div>
