@@ -20,7 +20,7 @@ An open, cinematic sports editorial: charcoal forest shadows, warm light, sharp 
 - Header mark is 40% smaller than the footer: 7.2rem desktop/tablet and 5.1rem at or below 480px; footer remains 12rem / 8.5rem.
 - The “PLAY WITH PURPOSE” banner is a separate section above the footer and has no logo. Place the static logo below the divider alongside footer navigation, outside the animated banner content.
 - Sport Tourism displays the title without the “THAILAND, IN PLAY” eyebrow; preserve the rest of that banner unchanged.
-- Preserve Thailand National Airsoft 2026 as the homepage main slider. Force of Conquest belongs only as the first Upcoming Events card, with a strong dark overlay behind its text. Keep the text-only Our Mission section vertically compact between adjacent sections.
+- Preserve Thailand National Airsoft 2026 as the homepage main slider. Force of Conquest belongs only as the first Upcoming Events card, with a strong dark overlay behind its text. Our Mission uses `our-mission-airsoft.avif` with the shared responsive cinematic motion; Establish National Standards uses `national-standards-training.jpg`.
 - The association mark is prominent at 192px desktop and 136px mobile in the footer.
 - Tablet and mobile navigation opens from the top of the viewport as a dark right-side drawer, `min(76vw, 460px)` wide and never closer than 72px to the left edge. It leaves the dimmed page and logo area visible, has its own vertical scrolling, a horizontal slide transition, a clear close action and nested route accordions. Keep fixed-position ancestors free of backdrop-filter and transforms.
 - Real routes only. Header and footer contain no hash links.
