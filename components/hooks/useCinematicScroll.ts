@@ -4,8 +4,10 @@ import { useEffect, type RefObject } from "react";
 
 type CinematicScrollOptions = {
   desktopMediaTravel?: number;
+  tabletMediaTravel?: number;
   mobileMediaTravel?: number;
   desktopTextTravel?: number;
+  tabletTextTravel?: number;
   mobileTextTravel?: number;
 };
 
@@ -13,9 +15,11 @@ export function useCinematicScroll(
   ref: RefObject<HTMLElement | null>,
   {
     desktopMediaTravel = 56,
-    mobileMediaTravel = 28,
+    tabletMediaTravel = 64,
+    mobileMediaTravel = 48,
     desktopTextTravel = 34,
-    mobileTextTravel = 18,
+    tabletTextTravel = 38,
+    mobileTextTravel = 28,
   }: CinematicScrollOptions = {},
 ) {
   useEffect(() => {
@@ -23,7 +27,8 @@ export function useCinematicScroll(
     if (!section) return;
 
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const mobile = window.matchMedia("(max-width: 700px)");
+    const mobile = window.matchMedia("(max-width: 767px)");
+    const tablet = window.matchMedia("(min-width: 768px) and (max-width: 1199px)");
     let active = false;
     let frame: number | null = null;
     const reset = () => {
@@ -43,11 +48,20 @@ export function useCinematicScroll(
       const height = window.innerHeight;
       const progress = Math.min(1, Math.max(0, (height - rect.top) / (height + rect.height)));
       const centered = (progress - 0.5) * 2;
-      const mediaTravel = mobile.matches ? mobileMediaTravel : desktopMediaTravel;
-      const textTravel = mobile.matches ? mobileTextTravel : desktopTextTravel;
+      const mediaTravel = mobile.matches
+        ? mobileMediaTravel
+        : tablet.matches
+          ? tabletMediaTravel
+          : desktopMediaTravel;
+      const textTravel = mobile.matches
+        ? mobileTextTravel
+        : tablet.matches
+          ? tabletTextTravel
+          : desktopTextTravel;
+      const opacityTravel = mobile.matches || tablet.matches ? 0.055 : 0.08;
       section.style.setProperty("--cinematic-media-y", `${centered * mediaTravel}px`);
       section.style.setProperty("--cinematic-text-y", `${-centered * textTravel}px`);
-      section.style.setProperty("--cinematic-text-opacity", `${1 - Math.abs(centered) * 0.08}`);
+      section.style.setProperty("--cinematic-text-opacity", `${1 - Math.abs(centered) * opacityTravel}`);
     };
     const requestUpdate = () => {
       if (active && !reduced.matches && frame === null) {
@@ -73,6 +87,7 @@ export function useCinematicScroll(
     window.visualViewport?.addEventListener("resize", requestUpdate);
     reduced.addEventListener("change", motionChanged);
     mobile.addEventListener("change", requestUpdate);
+    tablet.addEventListener("change", requestUpdate);
     if (reduced.matches) reset();
 
     return () => {
@@ -84,7 +99,8 @@ export function useCinematicScroll(
       window.visualViewport?.removeEventListener("resize", requestUpdate);
       reduced.removeEventListener("change", motionChanged);
       mobile.removeEventListener("change", requestUpdate);
+      tablet.removeEventListener("change", requestUpdate);
       reset();
     };
-  }, [ref, desktopMediaTravel, mobileMediaTravel, desktopTextTravel, mobileTextTravel]);
+  }, [ref, desktopMediaTravel, tabletMediaTravel, mobileMediaTravel, desktopTextTravel, tabletTextTravel, mobileTextTravel]);
 }

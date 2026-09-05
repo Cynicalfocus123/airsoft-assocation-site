@@ -52,7 +52,8 @@ export function CinematicSection({
   const sectionRef = useRef<HTMLElement>(null);
   useCinematicScroll(sectionRef, {
     desktopMediaTravel: 56 * parallaxStrength / 4,
-    mobileMediaTravel: 28 * parallaxStrength / 4,
+    tabletMediaTravel: 64 * parallaxStrength / 4,
+    mobileMediaTravel: 48 * parallaxStrength / 4,
   });
   const hasImage = Boolean(desktopImage);
   const style: CinematicStyle = {

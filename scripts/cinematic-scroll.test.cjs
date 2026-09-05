@@ -9,6 +9,7 @@ const ts = require("typescript");
 const code = ts.transpileModule(readFileSync(resolve(__dirname, "../components/hooks/useCinematicScroll.ts"), "utf8"), {
   compilerOptions: { module: ts.ModuleKind.CommonJS },
 }).outputText;
+const css = readFileSync(resolve(__dirname, "../components/sections/CinematicSection.module.css"), "utf8");
 
 function setup(width, reducedAtStart = false) {
   const callbacks = new Map();
@@ -21,14 +22,19 @@ function setup(width, reducedAtStart = false) {
     removeEventListener() { this.listener = null; },
   });
   const reduced = media(reducedAtStart);
-  const mobile = media(width <= 700);
+  const mobile = media(width <= 767);
+  const tablet = media(width >= 768 && width <= 1199);
   const section = {
     style: { setProperty: (key, value) => values.set(key, value) },
     getBoundingClientRect() { reads++; return { top: rectTop, height: 600 }; },
   };
   const win = {
     innerHeight: 800,
-    matchMedia: (query) => query.includes("reduced-motion") ? reduced : mobile,
+    matchMedia: (query) => query.includes("reduced-motion")
+      ? reduced
+      : query.includes("min-width: 768px")
+        ? tablet
+        : mobile,
     addEventListener: (name, fn) => callbacks.set(name, fn),
     removeEventListener: (name) => callbacks.delete(name),
     visualViewport: { addEventListener() {}, removeEventListener() {} },
@@ -54,7 +60,7 @@ function setup(width, reducedAtStart = false) {
   exports.useCinematicScroll({ current: section });
   const flush = () => { for (const [id, fn] of [...frames]) { frames.delete(id); fn(); } };
   return {
-    values, frames, callbacks, reduced, mobile, win, flush,
+    values, frames, callbacks, reduced, mobile, tablet, win, flush,
     active: (on) => intersect([{ isIntersecting: on }]),
     progress(p) { rectTop = 800 - p * 1400; callbacks.get("scroll")(); flush(); },
     resize: () => { resize(); flush(); },
@@ -64,7 +70,7 @@ function setup(width, reducedAtStart = false) {
   };
 }
 
-for (const width of [390, 700, 820, 1440]) {
+for (const width of [375, 390, 412, 768, 820, 1024, 1280, 1440]) {
   test(`scroll reverses, coalesces and cleans up at width ${width}`, () => {
     const h = setup(width);
     h.callbacks.get("scroll")();
@@ -74,12 +80,16 @@ for (const width of [390, 700, 820, 1440]) {
     h.callbacks.get("scroll")();
     assert.equal(h.frames.size, 1, "multiple events share one frame");
     h.flush();
-    const travel = width <= 700 ? 28 : 56;
+    const profile = width <= 767
+      ? { media: 48, text: 28, minimumOpacity: 0.945 }
+      : width <= 1199
+        ? { media: 64, text: 38, minimumOpacity: 0.945 }
+        : { media: 56, text: 34, minimumOpacity: 0.92 };
     for (const p of [0, .2, .5, .8, 1, .8, .5, .2, 0]) {
       h.progress(p);
-      assert.equal(parseFloat(h.values.get("--cinematic-media-y")), (p - .5) * 2 * travel);
-      assert.ok(Math.abs(parseFloat(h.values.get("--cinematic-text-y")) + (p - .5) * 2 * (width <= 700 ? 18 : 34)) < 1e-9);
-      assert.ok(parseFloat(h.values.get("--cinematic-text-opacity")) >= .92);
+      assert.equal(parseFloat(h.values.get("--cinematic-media-y")), (p - .5) * 2 * profile.media);
+      assert.ok(Math.abs(parseFloat(h.values.get("--cinematic-text-y")) + (p - .5) * 2 * profile.text) < 1e-9);
+      assert.ok(parseFloat(h.values.get("--cinematic-text-opacity")) >= profile.minimumOpacity);
     }
     h.reduced.matches = true;
     h.reduced.listener();
@@ -94,6 +104,9 @@ for (const width of [390, 700, 820, 1440]) {
     assert.ok(parseFloat(h.values.get("--cinematic-media-y")) > 0);
     h.mobile.matches = !h.mobile.matches;
     h.mobile.listener();
+    h.flush();
+    h.tablet.matches = !h.tablet.matches;
+    h.tablet.listener();
     h.flush();
     h.resize();
     h.active(false);
@@ -111,4 +124,12 @@ test("reduced motion is static from mount", () => {
   assert.equal(h.frames.size, 0);
   assert.equal(h.values.get("--cinematic-text-y"), "0px");
   h.cleanup();
+});
+
+test("media translation and protective scale use separate layers", () => {
+  assert.match(css, /\.media\{[^}]*transform:translate3d\(0,var\(--cinematic-media-y,0px\),0\)/);
+  assert.match(css, /\.media img\{[^}]*transform:scale\(1\.1\)/);
+  assert.doesNotMatch(css, /\.media img\{[^}]*cinematic-media-y/);
+  assert.match(css, /@media\(min-width:768px\) and \(max-width:1199px\)\{\.media\{inset:-13% -7%\}\}/);
+  assert.match(css, /@media\(max-width:767px\)\{\.media\{inset:-14% -7%\}\.media img\{transform:scale\(1\.12\)\}\}/);
 });
