@@ -10,7 +10,9 @@ Official local-first website for the Thailand Airsoft Association: standards, sa
 - Local live mirror: `D:\mstar companies\Mstar Airsoft Association\airsoft-assocation-site-live`
 - “Live” means the latest synchronized local source mirror. The public GitHub Pages deployment is a separate published build and must also be current.
 - Synchronise after validated changes with `powershell -ExecutionPolicy Bypass -File scripts\sync-live.ps1` from the Git folder. It mirrors source and excludes `.git`, `node_modules`, `.next`, caches and coverage.
-- Every completed change must: validate; sync the local live mirror; update documentation; commit; push to `main`; wait for the GitHub Pages deployment workflow; verify its result; and report both source and deployed site links.
+- **Hard completion rule:** every local build, source edit, asset addition, documentation edit, configuration change or other workspace change must be followed in the same task by validation, synchronization to the local live mirror, a Git commit, a push to `main`, completion of the matching GitHub Pages workflow, and verification of the published site. A change is not complete while it exists only locally, only in the live mirror, only in Git history, or only in an unfinished deployment.
+- Do not end a change task after a successful local build. Continue through `scripts/sync-live.ps1`, `git commit`, `git push`, GitHub Pages success and published-site verification unless the user explicitly tells you to stop before publication.
+- Before reporting completion, confirm the canonical Git working tree is clean and the deployed workflow head SHA matches the commit just pushed.
 - Every future Git-push completion report must include a **Deployment / Git demo** section linking to the source and deployed site. GitHub source: `https://github.com/Cynicalfocus123/airsoft-assocation-site`; GitHub Pages: `https://cynicalfocus123.github.io/airsoft-assocation-site/`.
 
 ## Stack and validation

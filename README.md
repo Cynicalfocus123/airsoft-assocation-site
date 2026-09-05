@@ -11,6 +11,8 @@ Local source website for the Thailand Airsoft Association.
 
 The `airsoft-assocation-site-live` folder is a synchronized local source mirror. A GitHub Actions workflow deploys the current static build to GitHub Pages after each push to `main`.
 
+Every build or change must complete the full delivery cycle in the same task: validate, synchronize the live mirror, commit, push to `main`, wait for the matching Pages workflow, and verify the published site. Local-only work is unfinished unless the user explicitly stops publication.
+
 ## Deployment / Git demo
 
 [GitHub source](https://github.com/Cynicalfocus123/airsoft-assocation-site)
