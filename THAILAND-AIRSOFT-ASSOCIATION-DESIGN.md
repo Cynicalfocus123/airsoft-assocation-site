@@ -19,8 +19,9 @@ An open, cinematic sports editorial: charcoal forest shadows, warm light, sharp 
 - Light sticky header with the association mark, desktop hover/click mega menus and a right-side mobile drawer; no association-name text.
 - Header mark is 40% smaller than the footer: 7.2rem desktop/tablet and 5.1rem at or below 480px; footer remains 12rem / 8.5rem.
 - The “PLAY WITH PURPOSE” banner is a separate section above the footer and has no logo. Place the static logo below the divider alongside footer navigation, outside the animated banner content.
+- Sport Tourism displays the title without the “THAILAND, IN PLAY” eyebrow; preserve the rest of that banner unchanged.
 - The association mark is prominent at 192px desktop and 136px mobile in the footer.
-- Tablet and mobile navigation drops downward below the header into a dark, full-width viewport panel with its own vertical scrolling, a clear close action and nested route accordions. Keep fixed-position ancestors free of backdrop-filter and transforms.
+- Tablet and mobile navigation opens below the header as a dark right-side drawer, `min(78vw, 460px)` wide, leaving the dimmed page visible at the left. It has its own vertical scrolling, a horizontal slide transition, a clear close action and nested route accordions. Keep fixed-position ancestors free of backdrop-filter and transforms.
 - Real routes only. Header and footer contain no hash links.
 
 ## Motion and responsive behaviour

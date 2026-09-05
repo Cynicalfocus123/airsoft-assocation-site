@@ -45,15 +45,16 @@ Official local-first website for the Thailand Airsoft Association: standards, sa
 - “PLAY WITH PURPOSE” is a separate banner above the footer and must contain no logo. The logo belongs below the divider in the actual footer with navigation links; it is static and must not share the banner animation.
 - Association logo scale is prominent in the shared footer (192px desktop and 136px mobile).
 - Footer copyright reads “© 2026 Thailand Airsoft and Paintball Association”; omit the footer Thai/English text.
-- Mobile/tablet navigation drops down below the header into a viewport-fixed, independently scrollable full-width panel. No backdrop-filter/transform on its header ancestor: those trap fixed positioning. Escape, close button and links close it; desktop resize releases the page scroll lock.
+- Mobile/tablet navigation opens below the header as a viewport-fixed right-side drawer, `min(78vw, 460px)` wide, leaving the dimmed page visible on the left. The drawer scrolls independently and slides horizontally. No backdrop-filter/transform on its header ancestor: those trap fixed positioning. Escape, backdrop, close button and links close it; desktop resize releases the page scroll lock.
 - Sport Tourism uses photo-1730233024781-27672ab1674e.avif on all devices; Play with Purpose uses michal-franczak-1ZElf0bUFWc-unsplash.jpg as a clipped background layer. Preserve section dimensions, bleed, spacing and typography.
 - In the homepage mission section, the literal words “OUR MISSION” are the large h2 (40–64px). “Building the future of airsoft & paintball in Thailand.” is a medium supporting paragraph (20–28px), with normal tracking and natural wrapping; it must never become the oversized heading again. Supporting body copy is 16px. Preserve this hierarchy when changing motion or reusing the component.
 - Homepage cinematic layers use `useCinematicScroll`: IntersectionObserver activates nearby sections, passive scroll events schedule at most one requestAnimationFrame, and the untransformed section rectangle determines CSS variables. Media and text move independently and reverse on the next frame when scrolling upward. Respect live reduced-motion changes; clean up listeners, observers and pending frames. The Play with Purpose banner shares this hook. Never alter text, sizes, spacing, banner heights, colors, focal points or alignment as part of a motion fix.
 - Event rail uses reusable `components/hooks/useDragScroll.ts`: desktop mouse drag with grab/grabbing cursor states, six-pixel click protection and pointer capture; `touch-action: auto` for browser-native mobile/tablet swipe; compact mobile `SWIPE` prompts; edge arrows; keyboard arrows; and a scrollbar.
+- The first featured/published event is Force of Conquest, January 8–10, 2027 in Saraburi. Its supplied artwork, open-registration label, EUR 120 presale entry fee and 2,000-player attendance are data-driven across the homepage and event detail route.
 
 ## Pending / limitations
 - Official event registrations, formal policy content, verified contact channels and full long-form association material need approved source content.
 - GitHub Pages must remain configured to use GitHub Actions. The workflow publishes `out/` after each push to `main`.
 
 ## Latest task summary
-Replaced banner view timelines with a lightweight section-based scroll controller and restored the header logo at exactly the footer logo's responsive sizes. Banner wording, hierarchy, typography, dimensions, spacing and focal points are unchanged. Validate, sync, commit, push and verify Pages.
+Changed the mobile/tablet navigation to a right-side drawer and replaced the first featured event with Force of Conquest using supplied artwork and event details. Validate, sync, commit, push and verify Pages.
