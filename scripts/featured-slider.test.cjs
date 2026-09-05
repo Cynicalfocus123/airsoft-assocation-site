@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 const { test } = require("node:test");
 const assert = require("node:assert/strict");
 const { readFileSync } = require("node:fs");
@@ -21,4 +22,10 @@ test("featured event actions are clean inline text rather than bordered buttons"
   assert.doesNotMatch(hero, /styles\.primaryAction|styles\.secondaryAction|styles\.comingSoon|styles\.heroControls/);
   assert.match(css, /\.heroActionText\{[^}]*font-size:\.75rem[^}]*color:#d0d7d1/);
   assert.doesNotMatch(css, /\.primaryAction|\.secondaryAction|\.comingSoon|\.heroControls/);
+});
+
+test("event rail hides its scrollbar without disabling native scrolling", () => {
+  assert.match(css, /\.eventRail\{[^}]*overflow-x:auto[^}]*scrollbar-width:none[^}]*touch-action:auto/);
+  assert.match(css, /\.eventRail::-webkit-scrollbar\{display:none\}/);
+  assert.match(css, /\.eventRail\{[^}]*scroll-snap-type:x proximity/);
 });
