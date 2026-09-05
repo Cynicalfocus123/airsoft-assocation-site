@@ -1,7 +1,10 @@
-import type { CSSProperties, ReactNode } from "react";
+"use client";
+
+import { useRef, type CSSProperties, type ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { imageSrc } from "@/data/assets";
+import { useCinematicScroll } from "@/components/hooks/useCinematicScroll";
 import styles from "./CinematicSection.module.css";
 
 type CinematicSectionProps = {
@@ -27,8 +30,6 @@ type CinematicStyle = CSSProperties & {
   "--focal-mobile": string;
   "--overlay-strength": number;
   "--overlay-mid": number;
-  "--media-start": string;
-  "--media-end": string;
 };
 
 export function CinematicSection({
@@ -48,17 +49,20 @@ export function CinematicSection({
   parallaxStrength = 4,
   className,
 }: CinematicSectionProps) {
+  const sectionRef = useRef<HTMLElement>(null);
+  useCinematicScroll(sectionRef, {
+    desktopMediaTravel: 56 * parallaxStrength / 4,
+    mobileMediaTravel: 28 * parallaxStrength / 4,
+  });
   const hasImage = Boolean(desktopImage);
   const style: CinematicStyle = {
     "--focal-desktop": focalPointDesktop,
     "--focal-mobile": focalPointMobile,
     "--overlay-strength": overlayStrength,
     "--overlay-mid": overlayStrength * 0.46,
-    "--media-start": `-${parallaxStrength}%`,
-    "--media-end": `${parallaxStrength}%`,
   };
 
-  return <section className={`${styles.section} ${align === "right" ? styles.right : styles.left} ${hasImage ? styles.withImage : styles.textOnly} ${className ?? ""}`} style={style}>
+  return <section ref={sectionRef} className={`${styles.section} ${align === "right" ? styles.right : styles.left} ${hasImage ? styles.withImage : styles.textOnly} ${className ?? ""}`} style={style}>
     {hasImage && <div className={styles.media} aria-hidden={imageAlt === ""}>
       <Image className={styles.desktopImage} src={imageSrc(desktopImage!)} alt={imageAlt} fill sizes="100vw" />
       {mobileImage && <Image className={styles.mobileImage} src={imageSrc(mobileImage)} alt="" fill sizes="100vw" />}

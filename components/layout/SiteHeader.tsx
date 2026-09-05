@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
+import { imageSrc } from "@/data/assets";
 import { useState } from "react";
 import { navigation } from "@/data/navigation";
 import styles from "./SiteHeader.module.css";
@@ -12,6 +14,9 @@ export function SiteHeader() {
 
   return <header className={styles.header}>
     <div className={styles.bar}>
+      <Link className={styles.brand} href="/" aria-label="Thailand Airsoft Association home">
+        <Image src={imageSrc("/images/association-logo.png")} alt="Thailand Airsoft Association" width={192} height={192} priority />
+      </Link>
       <nav className={styles.desktopNav} aria-label="Main navigation">
         {navigation.map((item) => item.href ? <Link key={item.label} href={item.href}>{item.label}</Link> : <div key={item.label} onMouseEnter={() => setOpen(item.label)} onMouseLeave={() => setOpen(null)}><button type="button" aria-expanded={open === item.label} onClick={() => setOpen(open === item.label ? null : item.label)}>{item.label} <i>↓</i></button>{open === item.label && <div className={styles.mega}>{item.children?.map((child) => <Link key={child.href} href={child.href} onClick={() => setOpen(null)}>{child.label}</Link>)}</div>}</div>)}
       </nav>

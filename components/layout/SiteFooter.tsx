@@ -1,3 +1,7 @@
+"use client";
+
+import { useRef } from "react";
+import { useCinematicScroll } from "@/components/hooks/useCinematicScroll";
 import Image from "next/image";
 import Link from "next/link";
 import { navigation } from "@/data/navigation";
@@ -5,9 +9,11 @@ import { imageSrc } from "@/data/assets";
 import styles from "./SiteFooter.module.css";
 
 export function SiteFooter() {
+  const bannerRef = useRef<HTMLElement>(null);
+  useCinematicScroll(bannerRef);
   const grouped = navigation.filter((item) => item.children);
   return <>
-    <section className={styles.banner} aria-label="Play with purpose">
+    <section ref={bannerRef} className={styles.banner} aria-label="Play with purpose">
       <div className={styles.identity}>
         <h2>PLAY WITH<br />PURPOSE.</h2>
         <p>Building a safe, fair and internationally connected sport community.</p>
@@ -23,7 +29,7 @@ export function SiteFooter() {
           <section><h3>INFORMATION</h3><Link href="/events">Upcoming Events</Link><Link href="/contact">Contact</Link><Link href="/privacy-policy">Privacy Policy</Link><Link href="/terms-of-use">Terms of Use</Link></section>
         </div>
       </div>
-      <div className={styles.bottom}><span>© 2026</span><span>ไทย / English</span></div>
+      <div className={styles.bottom}><span>© 2026 Thailand Airsoft and Paintball Association</span></div>
     </footer>
   </>;
 }

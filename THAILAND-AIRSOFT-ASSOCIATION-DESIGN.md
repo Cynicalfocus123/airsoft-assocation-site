@@ -16,15 +16,15 @@ An open, cinematic sports editorial: charcoal forest shadows, warm light, sharp 
 - Body text stays at 16px or larger; labels are 12px or larger.
 
 ## Navigation
-- Light sticky header without an association mark or association-name text, desktop hover/click mega menus and a right-side mobile drawer.
-- The supplied association mark appears only in the global footer, which wraps every site route.
+- Light sticky header with the association mark, desktop hover/click mega menus and a right-side mobile drawer; no association-name text.
+- Header and actual footer use identical association mark sizes: 192px above 480px viewport width, 136px at or below 480px.
 - The “PLAY WITH PURPOSE” banner is a separate section above the footer and has no logo. Place the static logo below the divider alongside footer navigation, outside the animated banner content.
 - The association mark is prominent at 192px desktop and 136px mobile in the footer.
 - Tablet and mobile navigation opens as a dark right-side drawer with a dimmed backdrop, a 320ms ease-out transition, a clear close action and nested route accordions.
 - Real routes only. Header and footer contain no hash links.
 
 ## Motion and responsive behaviour
-- Native page scroll. Homepage cinematic sections use three independent layers—media, dark readability overlay and text—with CSS `animation-timeline: view()` scrubbed from the section entering to leaving the viewport. Media drifts around -4% to +4% while foreground text floats from +40px to -30px, and both directions reverse naturally when the user scrolls back. The footer identity follows the same scroll-linked editorial language.
+- Native page scroll. The section-based `useCinematicScroll` controller drives media and foreground CSS transforms with IntersectionObserver and requestAnimationFrame. At default strength, media travels -56px to +56px and text +34px to -34px on desktop/tablet; up to 700px wide, media travels -28px to +28px and text +18px to -18px. The overlay stays stationary. Text opacity stays between .92 and 1. Motion reverses with viewport progress; no one-time states, animation packages or per-frame React rerenders. Existing overscan clips the image edges. Keep all existing banner typography, dimensions, spacing, colors, focal points and content unchanged during motion fixes.
 - Hero image enters from 1.05 scale to 1.025 and copy rises 28px.
 - All decorative movement switches off under `prefers-reduced-motion`.
 - The event rail uses native horizontal scrolling with `scroll-snap-type: proximity`. On desktop, the artwork row is directly mouse-draggable: `grab` becomes `grabbing` while held, a 6px threshold protects normal event links, and pointer capture keeps a drag stable outside the rail. On mobile/tablet, `touch-action: auto` preserves browser-native horizontal swipe, momentum and vertical page scrolling. Edge arrows remain as supplementary controls, and mobile retains compact swipe prompts.
