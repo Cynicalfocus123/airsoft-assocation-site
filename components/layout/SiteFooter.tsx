@@ -6,12 +6,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { getLabel, navigation } from "@/data/navigation";
 import { informationLinks } from "@/data/footer";
+import { missionCopy } from "@/data/mission";
 import { useLanguage } from "@/components/i18n/LanguageProvider";
 import { imageSrc } from "@/data/assets";
 import styles from "./SiteFooter.module.css";
 
 export function SiteFooter() {
   const { language } = useLanguage();
+  const copy = missionCopy[language];
   const bannerRef = useRef<HTMLElement>(null);
   useCinematicScroll(bannerRef);
   const grouped = navigation.filter((item) => item.children);
@@ -22,8 +24,8 @@ export function SiteFooter() {
       </div>
       <div aria-hidden="true" style={{ position: "absolute", inset: 0, zIndex: -1, background: "linear-gradient(90deg,rgba(17,26,22,.8),rgba(17,26,22,.3))" }} />
       <div className={styles.identity}>
-        <h2>PLAY WITH<br />PURPOSE.</h2>
-        <p>Building a safe, fair and internationally connected sport community.</p>
+        <h2>{copy.pageTitle}</h2>
+        <p>{copy.pageLead}</p>
       </div>
     </section>
     <footer className={styles.footer}>

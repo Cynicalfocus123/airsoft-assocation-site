@@ -139,11 +139,13 @@ test("new information routes are real page shells", () => {
 
 test("mission copy switches through the global language layer", () => {
   assert.match(mission, /Building the Future of Airsoft & Paintball in Thailand/);
-  assert.match(mission, /Airsoft and Paintball Hub of Asia/);
+  assert.match(mission, /We are building a safe, fair, professional, and internationally connected Airsoft and Paintball community/);
+  assert.match(mission, /Play with Purpose\. Compete with Passion\. Create Memories That Last\./);
   assert.match(mission, /สร้างอนาคตของกีฬาแอร์ซอฟต์และเพ้นท์บอลในประเทศไทย/);
-  assert.match(mission, /หนึ่งมาตรฐาน • หนึ่งชุมชน • หนึ่งอนาคตระดับโลก/);
+  assert.match(mission, /เล่นอย่างมีเป้าหมาย • แข่งขันด้วยพลัง • สร้างความทรงจำที่ไม่มีวันลืม/);
   assert.match(read("components/sections/OurMissionSection.tsx"), /useLanguage/);
   assert.match(read("components/mission/MissionPageContent.tsx"), /useLanguage/);
+  assert.match(read("components/layout/SiteFooter.tsx"), /missionCopy\[language\]/);
 });
 
 test("mission typography preserves the shared editorial hierarchy without divider rules", () => {
@@ -153,8 +155,8 @@ test("mission typography preserves the shared editorial hierarchy without divide
   const missionSection = read("components/sections/OurMissionSection.tsx");
   assert.match(globalStyles, /--editorial-title-size:clamp\(2\.5rem,5vw,4rem\)/);
   assert.match(globalStyles, /--editorial-lead-size:clamp\(1\.25rem,2\.2vw,1\.75rem\)/);
-  assert.match(missionPage, /<h1 id="mission-title">\{copy\.eyebrow\}<\/h1>/);
-  assert.match(missionPage, /className=\{styles\.lead\}>\{copy\.title\}/);
+  assert.match(missionPage, /<h1 id="mission-title">\{copy\.pageTitle\}<\/h1>/);
+  assert.match(missionPage, /className=\{styles\.lead\}>\{copy\.pageLead\}/);
   assert.doesNotMatch(missionStyles, /border-top/);
   assert.match(missionSection, /align="right"/);
 });
