@@ -32,7 +32,7 @@ export const navigation: NavItem[] = [
       { label: label("Regional Events", "อีเวนต์ระดับภูมิภาค"), href: "/sport-tourism/regional-events" },
       { label: label("International Representation", "การเป็นตัวแทนในระดับนานาชาติ"), href: "/sport-tourism/international-representation" },
       { label: label("International Partnerships", "พันธมิตรและความร่วมมือระดับนานาชาติ"), href: "/sport-tourism/partnerships" },
-      { label: label("Play With Purpose", "เล่นอย่างมีเป้าหมาย"), href: "/our-mission" },
+      { label: label("Play With Purpose", "เล่นอย่างมีเป้าหมาย"), href: "/play-with-purpose" },
     ],
   },
   {

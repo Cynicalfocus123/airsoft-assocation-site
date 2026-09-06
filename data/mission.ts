@@ -3,8 +3,6 @@ import type { SiteLanguage } from "@/components/i18n/LanguageProvider";
 type MissionCopy = {
   eyebrow: string;
   title: string;
-  pageTitle: string;
-  pageLead: string;
   preview: string[];
   page: string[];
   closing: string[];
@@ -14,33 +12,28 @@ export const missionCopy: Record<SiteLanguage, MissionCopy> = {
   en: {
     eyebrow: "OUR MISSION",
     title: "Building the Future of Airsoft & Paintball in Thailand",
-    pageTitle: "PLAY WITH PURPOSE",
-    pageLead: "We are building a safe, fair, professional, and internationally connected Airsoft and Paintball community where every game delivers more than competition.",
     preview: [
-      "We are building a safe, fair, professional, and internationally connected Airsoft and Paintball community where every game delivers more than competition.",
-      "Our goal is to create meaningful experiences that combine teamwork, strategy, discipline, sportsmanship, adventure, and unforgettable moments.",
+      "Our mission is to elevate Airsoft and Paintball in Thailand to the highest professional and international standards through safety, fair play, responsible regulation, athlete development, and a strong national community.",
+      "We aim to unite players, teams, fields, organizers, and industry partners under one common standard and build Thailand into the Airsoft and Paintball Hub of Asia.",
     ],
     page: [
-      "Our goal is to create meaningful experiences that combine teamwork, strategy, discipline, sportsmanship, adventure, and unforgettable moments.",
-      "For international players who travel to participate in Airsoft and MilSim events, we want every visit to become more than just a game. We aim to deliver a complete experience—combining world-class events, immersive gameplay, strong community connections, and memorable adventures throughout their journey.",
-      "Every event should leave players with a story worth remembering and a reason to return.",
+      "Our mission is to elevate Airsoft and Paintball in Thailand to the highest professional and international standards through safety, fair play, responsible regulation, athlete development, and a strong national community.",
+      "We aim to unite players, teams, fields, organizers, and industry partners under one common standard and build Thailand into the Airsoft and Paintball Hub of Asia.",
+      "Our next mission is even bigger: to make Thailand a leading destination for major international competitions, training, exhibitions, and world-class events, while developing Thai players and teams capable of competing proudly on the global stage.",
+      "Our long-term vision is to help Airsoft and Paintball gain greater recognition as organized competitive sports worldwide and to support their continued development toward the highest levels of international sporting competition.",
     ],
-    closing: ["Play with Purpose. Compete with Passion. Create Memories That Last."],
+    closing: ["Thailand to Asia. Asia to the World.", "One Standard. One Community. One Global Future."],
   },
   th: {
     eyebrow: "พันธกิจ",
     title: "สร้างอนาคตของกีฬาแอร์ซอฟต์และเพ้นท์บอลในประเทศไทย",
-    pageTitle: "เล่นอย่างมีเป้าหมาย",
-    pageLead: "เรากำลังสร้างชุมชนแอร์ซอฟต์และเพ้นท์บอลที่ ปลอดภัย ยุติธรรม เป็นมืออาชีพ และเชื่อมโยงในระดับนานาชาติ โดยมุ่งให้ทุกเกมมีคุณค่ามากกว่าการแข่งขัน",
-    preview: [
-      "เรากำลังสร้างชุมชนแอร์ซอฟต์และเพ้นท์บอลที่ ปลอดภัย ยุติธรรม เป็นมืออาชีพ และเชื่อมโยงในระดับนานาชาติ โดยมุ่งให้ทุกเกมมีคุณค่ามากกว่าการแข่งขัน",
-      "เป้าหมายของเราคือการสร้างประสบการณ์ที่มีความหมาย ผ่าน การทำงานเป็นทีม กลยุทธ์ ระเบียบวินัย น้ำใจนักกีฬา การผจญภัย และความทรงจำที่ยากจะลืม",
-    ],
+    preview: ["พันธกิจของเราคือ ยกระดับกีฬาแอร์ซอฟต์และเพ้นท์บอลของประเทศไทยสู่มาตรฐานวิชาชีพและมาตรฐานสากล ผ่านความปลอดภัย การแข่งขันอย่างยุติธรรม การสร้างมาตรฐานที่รับผิดชอบ การพัฒนานักกีฬา และการสร้างชุมชนที่เข้มแข็งในระดับประเทศ"],
     page: [
-      "เป้าหมายของเราคือการสร้างประสบการณ์ที่มีความหมาย ผ่าน การทำงานเป็นทีม กลยุทธ์ ระเบียบวินัย น้ำใจนักกีฬา การผจญภัย และความทรงจำที่ยากจะลืม",
-      "สำหรับผู้เล่นจากต่างประเทศที่เดินทางมาเข้าร่วมอีเวนต์แอร์ซอฟต์และ MilSim เราต้องการให้ทุกการเดินทางเป็นมากกว่าการมาเล่นเกม แต่เป็นประสบการณ์ที่ครบถ้วน ทั้งการแข่งขันระดับโลก เกมที่สมจริง การเชื่อมโยงกับชุมชน และการผจญภัยตลอดช่วงเวลาที่เข้าร่วมกิจกรรม",
-      "เราต้องการให้ทุกอีเวนต์สร้างเรื่องราวที่ผู้เล่นจดจำ และเป็นเหตุผลให้พวกเขาอยากกลับมาอีกครั้ง",
+      "พันธกิจของเราคือ ยกระดับกีฬาแอร์ซอฟต์และเพ้นท์บอลของประเทศไทยสู่มาตรฐานวิชาชีพและมาตรฐานสากล ผ่านความปลอดภัย การแข่งขันอย่างยุติธรรม การสร้างมาตรฐานที่รับผิดชอบ การพัฒนานักกีฬา และการสร้างชุมชนที่เข้มแข็งในระดับประเทศ",
+      "เรามุ่งรวมผู้เล่น ทีม สนาม ผู้จัดการแข่งขัน และพันธมิตรในอุตสาหกรรมให้ก้าวไปภายใต้มาตรฐานเดียวกัน พร้อมผลักดันประเทศไทยให้เป็น ศูนย์กลางกีฬาแอร์ซอฟต์และเพ้นท์บอลแห่งเอเชีย",
+      "ก้าวต่อไปของเราคือการผลักดันประเทศไทยให้เป็นจุดหมายสำคัญสำหรับ การแข่งขันระดับนานาชาติ การฝึกอบรม งานแสดง และอีเวนต์ระดับโลก พร้อมพัฒนาผู้เล่นและทีมไทยให้มีศักยภาพในการแข่งขันและสร้างชื่อเสียงบนเวทีโลก",
+      "วิสัยทัศน์ระยะยาวของเราคือการผลักดันกีฬาแอร์ซอฟต์และเพ้นท์บอลให้ได้รับการยอมรับในฐานะกีฬาที่มีระบบการแข่งขันในระดับนานาชาติมากยิ่งขึ้น และสนับสนุนการพัฒนาไปสู่ ระดับสูงสุดของการแข่งขันกีฬาสากลในอนาคต",
     ],
-    closing: ["เล่นอย่างมีเป้าหมาย • แข่งขันด้วยพลัง • สร้างความทรงจำที่ไม่มีวันลืม"],
+    closing: ["จากประเทศไทย สู่เอเชีย จากเอเชีย สู่เวทีโลก", "หนึ่งมาตรฐาน • หนึ่งชุมชน • หนึ่งอนาคตระดับโลก"],
   },
 };

@@ -132,20 +132,30 @@ test("header and footer share the same language state and the Thai font boundary
 });
 
 test("new information routes are real page shells", () => {
-  for (const route of ["become-a-referee", "become-a-member", "complaint"]) {
+  for (const route of ["become-a-referee", "become-a-member", "complaint", "play-with-purpose"]) {
     assert.ok(existsSync(resolve(root, "app", route, "page.tsx")));
   }
 });
 
 test("mission copy switches through the global language layer", () => {
   assert.match(mission, /Building the Future of Airsoft & Paintball in Thailand/);
-  assert.match(mission, /We are building a safe, fair, professional, and internationally connected Airsoft and Paintball community/);
-  assert.match(mission, /Play with Purpose\. Compete with Passion\. Create Memories That Last\./);
+  assert.match(mission, /Airsoft and Paintball Hub of Asia/);
   assert.match(mission, /สร้างอนาคตของกีฬาแอร์ซอฟต์และเพ้นท์บอลในประเทศไทย/);
-  assert.match(mission, /เล่นอย่างมีเป้าหมาย • แข่งขันด้วยพลัง • สร้างความทรงจำที่ไม่มีวันลืม/);
+  assert.match(mission, /หนึ่งมาตรฐาน • หนึ่งชุมชน • หนึ่งอนาคตระดับโลก/);
   assert.match(read("components/sections/OurMissionSection.tsx"), /useLanguage/);
   assert.match(read("components/mission/MissionPageContent.tsx"), /useLanguage/);
-  assert.match(read("components/layout/SiteFooter.tsx"), /missionCopy\[language\]/);
+});
+
+test("play with purpose has its own bilingual page and explore link", () => {
+  const playWithPurpose = read("data/play-with-purpose.ts");
+  const footerSource = read("components/layout/SiteFooter.tsx");
+  assert.match(playWithPurpose, /PLAY WITH PURPOSE/);
+  assert.match(playWithPurpose, /We are building a safe, fair, professional, and internationally connected Airsoft and Paintball community/);
+  assert.match(playWithPurpose, /Play with Purpose\. Compete with Passion\. Create Memories That Last\./);
+  assert.match(playWithPurpose, /เล่นอย่างมีเป้าหมาย/);
+  assert.match(playWithPurpose, /เล่นอย่างมีเป้าหมาย • แข่งขันด้วยพลัง • สร้างความทรงจำที่ไม่มีวันลืม/);
+  assert.match(footerSource, /playWithPurposeCopy\[language\]/);
+  assert.match(footerSource, /href="\/play-with-purpose"/);
 });
 
 test("mission typography preserves the shared editorial hierarchy without divider rules", () => {
@@ -155,8 +165,8 @@ test("mission typography preserves the shared editorial hierarchy without divide
   const missionSection = read("components/sections/OurMissionSection.tsx");
   assert.match(globalStyles, /--editorial-title-size:clamp\(2\.5rem,5vw,4rem\)/);
   assert.match(globalStyles, /--editorial-lead-size:clamp\(1\.25rem,2\.2vw,1\.75rem\)/);
-  assert.match(missionPage, /<h1 id="mission-title">\{copy\.pageTitle\}<\/h1>/);
-  assert.match(missionPage, /className=\{styles\.lead\}>\{copy\.pageLead\}/);
+  assert.match(missionPage, /<h1 id="mission-title">\{copy\.eyebrow\}<\/h1>/);
+  assert.match(missionPage, /className=\{styles\.lead\}>\{copy\.title\}/);
   assert.doesNotMatch(missionStyles, /border-top/);
   assert.match(missionSection, /align="right"/);
 });

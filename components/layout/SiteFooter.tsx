@@ -6,26 +6,27 @@ import Image from "next/image";
 import Link from "next/link";
 import { getLabel, navigation } from "@/data/navigation";
 import { informationLinks } from "@/data/footer";
-import { missionCopy } from "@/data/mission";
+import { playWithPurposeCopy } from "@/data/play-with-purpose";
 import { useLanguage } from "@/components/i18n/LanguageProvider";
 import { imageSrc } from "@/data/assets";
 import styles from "./SiteFooter.module.css";
 
 export function SiteFooter() {
   const { language } = useLanguage();
-  const copy = missionCopy[language];
+  const copy = playWithPurposeCopy[language];
   const bannerRef = useRef<HTMLElement>(null);
   useCinematicScroll(bannerRef);
   const grouped = navigation.filter((item) => item.children);
   return <>
-    <section ref={bannerRef} className={styles.banner} aria-label="Play with purpose" style={{ position: "relative", isolation: "isolate" }}>
+    <section ref={bannerRef} className={styles.banner} aria-label={copy.title} style={{ position: "relative", isolation: "isolate" }}>
       <div aria-hidden="true" style={{ position: "absolute", inset: "-56px", zIndex: -2, transform: "translate3d(0,var(--cinematic-media-y,0px),0)" }}>
         <Image src={imageSrc("/images/michal-franczak-1ZElf0bUFWc-unsplash.jpg")} alt="" fill sizes="100vw" style={{ objectFit: "cover", objectPosition: "center" }} />
       </div>
       <div aria-hidden="true" style={{ position: "absolute", inset: 0, zIndex: -1, background: "linear-gradient(90deg,rgba(17,26,22,.8),rgba(17,26,22,.3))" }} />
       <div className={styles.identity}>
-        <h2>{copy.pageTitle}</h2>
-        <p>{copy.pageLead}</p>
+        <h2>{copy.title}</h2>
+        <p>{copy.lead}</p>
+        <Link className={styles.bannerCta} href="/play-with-purpose">{language === "th" ? "สำรวจ" : "EXPLORE"} <span>↗</span></Link>
       </div>
     </section>
     <footer className={styles.footer}>

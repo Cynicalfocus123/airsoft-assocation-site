@@ -3,7 +3,8 @@
 .footer{padding:0 clamp(1.25rem,6vw,7rem) 1.6rem}
 .identity{max-width:760px;transform:translate3d(0,var(--cinematic-text-y,0px),0);opacity:var(--cinematic-text-opacity,1);will-change:transform,opacity}
 .identity h2{font-size:clamp(2.3rem,4vw,4.2rem);line-height:.82;letter-spacing:-.08em;margin:0}
-.identity>p:last-child{color:#c5cdc5;max-width:360px;margin:1.6rem 0 0;font-size:1rem;line-height:1.65}
+.identity>p{color:#c5cdc5;max-width:360px;margin:1.6rem 0 0;font-size:1rem;line-height:1.65}
+.bannerCta{display:inline-block;margin-top:2rem;border-bottom:1px solid var(--lime);padding-bottom:.5rem;font-size:.75rem;font-weight:900;letter-spacing:.1em}.bannerCta span{padding-left:2rem;color:var(--lime)}
 .footerContent{display:grid;grid-template-columns:12rem minmax(0,1fr);gap:clamp(2rem,5vw,5rem);border-top:1px solid rgba(255,255,255,.2);padding:3rem 0}
 .footerBrand{display:inline-flex;align-self:start;justify-self:start;line-height:0}
 .footerBrand img{width:12rem;height:12rem;object-fit:contain}
@@ -18,3 +19,4 @@
 @media(max-width:480px){.footerBrand img{width:8.5rem;height:8.5rem}.links{grid-template-columns:1fr}.bottom{gap:1rem;flex-direction:column}}
 @media(prefers-reduced-motion:reduce){.identity{transform:none;opacity:1;will-change:auto}}
 :global(html[lang="th"]) .footer{font-family:var(--font-thai),Tahoma,sans-serif}:global(html[lang="th"]) .links h3,:global(html[lang="th"]) .links a{letter-spacing:0;overflow-wrap:anywhere}
+:global(html[lang="th"]) .bannerCta{letter-spacing:0}
