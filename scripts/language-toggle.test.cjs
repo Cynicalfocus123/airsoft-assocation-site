@@ -159,14 +159,16 @@ test("mission copy switches through the global language layer", () => {
 
 test("play with purpose has its own bilingual page and explore link", () => {
   const playWithPurpose = read("data/play-with-purpose.ts");
-  const footerSource = read("components/layout/SiteFooter.tsx");
+  const bannerSource = read("components/play-with-purpose/PlayWithPurposeBanner.tsx");
   assert.match(playWithPurpose, /PLAY WITH PURPOSE/);
   assert.match(playWithPurpose, /We are building a safe, fair, professional, and internationally connected Airsoft and Paintball community/);
   assert.match(playWithPurpose, /Play with Purpose\. Compete with Passion\. Create Memories That Last\./);
   assert.match(playWithPurpose, /เล่นอย่างมีเป้าหมาย/);
   assert.match(playWithPurpose, /เล่นอย่างมีเป้าหมาย • แข่งขันด้วยพลัง • สร้างความทรงจำที่ไม่มีวันลืม/);
-  assert.match(footerSource, /playWithPurposeCopy\[language\]/);
-  assert.match(footerSource, /href="\/play-with-purpose"/);
+  assert.match(bannerSource, /playWithPurposeCopy\[language\]/);
+  assert.match(bannerSource, /href="\/play-with-purpose"/);
+  assert.match(read("app/page.tsx"), /<PlayWithPurposeBanner \/>/);
+  assert.doesNotMatch(read("components/layout/SiteFooter.tsx"), /playWithPurposeCopy|styles\.banner/);
 });
 
 test("mission typography preserves the shared editorial hierarchy without divider rules", () => {
