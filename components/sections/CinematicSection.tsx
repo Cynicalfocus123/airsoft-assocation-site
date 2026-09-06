@@ -11,7 +11,7 @@ type CinematicSectionProps = {
   eyebrow?: string;
   title: ReactNode;
   lead?: string;
-  description?: string;
+  description?: ReactNode;
   desktopImage?: string;
   mobileImage?: string;
   imageAlt?: string;
@@ -73,7 +73,7 @@ export function CinematicSection({
       {eyebrow && <p className={styles.eyebrow}>{eyebrow}</p>}
       <h2>{title}</h2>
       {lead && <p className={styles.lead}>{lead}</p>}
-      {description && <p className={styles.description}>{description}</p>}
+      {description && <div className={styles.description}>{description}</div>}
       {ctaLabel && ctaHref && <Link className={styles.cta} href={ctaHref}>{ctaLabel} <span>↗</span></Link>}
     </div>
   </section>;
