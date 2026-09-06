@@ -24,6 +24,12 @@ test("featured event actions are clean inline text rather than bordered buttons"
   assert.doesNotMatch(css, /\.primaryAction|\.secondaryAction|\.comingSoon|\.heroControls/);
 });
 
+test("homepage hero uses the association identity without event badge or date", () => {
+  assert.match(hero, /THAILAND NATIONAL AIRSOFT AND PAINTBALL ASSOCIATION/);
+  assert.doesNotMatch(hero, /styles\.status/);
+  assert.doesNotMatch(hero, /styles\.metadata/);
+});
+
 test("event rail hides its scrollbar without disabling native scrolling", () => {
   assert.match(css, /\.eventRail\{[^}]*overflow-x:auto[^}]*scrollbar-width:none[^}]*touch-action:auto/);
   assert.match(css, /\.eventRail::-webkit-scrollbar\{display:none\}/);

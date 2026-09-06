@@ -17,9 +17,7 @@ export function FeaturedEventHero() {
         <Image className={styles.heroImage} src={imageSrc(event.desktopImage)} alt={`${event.title} event artwork`} fill priority={index === 0} sizes="100vw" style={{ objectPosition: event.focalPoint }} />
         <div className={styles.heroShade} />
         <div className={styles.heroContent}>
-          <p className={styles.status}>{event.status}</p>
-          <h1>{event.title}</h1>
-          <p className={styles.metadata}>{event.startDate} — {event.location}</p>
+          <h1>THAILAND NATIONAL AIRSOFT AND PAINTBALL ASSOCIATION</h1>
           <div className={styles.heroActions}>
             {event.registrationUrl ? <a className={styles.heroActionText} href={event.registrationUrl}>{event.registrationLabel ?? "REGISTER"}</a> : <span className={styles.heroActionText}>REGISTRATION COMING SOON</span>}
             <Link className={styles.heroActionText} href={`/events/${event.slug}`}>DETAILS <span>↗</span></Link>
