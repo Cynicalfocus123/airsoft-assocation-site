@@ -30,6 +30,38 @@ test("shared navigation exposes the supplied English and Thai labels without cha
   assert.equal(getLabel(navigation[3].children[1].label, "th"), "เหตุผลที่เราก่อตั้งสมาคม");
 });
 
+test("what we do dropdown contains the exact supplied English and Thai items in order", () => {
+  const whatWeDo = navigation.find((item) => getLabel(item.label, "en") === "WHAT WE DO");
+  const english = [...whatWeDo.children].map((item) => getLabel(item.label, "en"));
+  const thai = [...whatWeDo.children].map((item) => getLabel(item.label, "th"));
+  assert.deepEqual(english, [
+    "ESTABLISH NATIONAL STANDARDS",
+    "PROMOTE SAFETY & FAIR PLAY",
+    "EDUCATE PLAYERS, TEAMS & FIELDS",
+    "DEVELOP PLAYERS & TEAMS",
+    "SUPPORT & IMPROVE AIRSOFT AND PAINTBALL FIELDS",
+    "ORGANIZE PROFESSIONAL COMPETITIONS & EVENTS",
+    "BUILD A PATHWAY TO INTERNATIONAL COMPETITION",
+    "STRENGTHEN THE AIRSOFT & PAINTBALL COMMUNITY",
+    "PROMOTE TEAMWORK, LEADERSHIP & SPORTSMANSHIP",
+    "PROMOTE THAILAND AS THE AIRSOFT & PAINTBALL HUB OF ASIA",
+    "ADVANCE AIRSOFT & PAINTBALL AS RECOGNIZED SPORTS",
+  ]);
+  assert.deepEqual(thai, [
+    "กำหนดมาตรฐานระดับประเทศ",
+    "ส่งเสริมความปลอดภัยและการแข่งขันอย่างยุติธรรม",
+    "ให้ความรู้แก่ผู้เล่น ทีม และสนาม",
+    "พัฒนาผู้เล่นและทีม",
+    "สนับสนุนและยกระดับสนามแอร์ซอฟต์และเพ้นท์บอล",
+    "จัดการแข่งขันและอีเวนต์อย่างมืออาชีพ",
+    "สร้างเส้นทางสู่การแข่งขันระดับนานาชาติ",
+    "สร้างความเข้มแข็งให้กับชุมชนแอร์ซอฟต์และเพ้นท์บอล",
+    "ส่งเสริมการทำงานเป็นทีม ภาวะผู้นำ และน้ำใจนักกีฬา",
+    "ผลักดันประเทศไทยสู่การเป็นศูนย์กลางแอร์ซอฟต์และเพ้นท์บอลแห่งเอเชีย",
+    "ผลักดันแอร์ซอฟต์และเพ้นท์บอลสู่การเป็นกีฬาที่ได้รับการยอมรับ",
+  ]);
+});
+
 test("language provider defaults to English and persists only after hydration", () => {
   assert.match(provider, /useState<SiteLanguage>\("en"\)/);
   assert.match(provider, /localStorage\.getItem\("taa-language"\)/);
