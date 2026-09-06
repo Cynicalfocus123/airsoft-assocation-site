@@ -84,3 +84,16 @@ test("national standards copy is bilingual on the homepage and its real route", 
   assert.match(read("components/sections/NationalStandardsSection.tsx"), /useLanguage/);
   assert.ok(existsSync(resolve(root, "app", "what-we-do", "national-standards", "page.tsx")));
 });
+
+test("safety and education pages use bilingual programme copy without related-link dividers", () => {
+  const programmes = read("data/programmes.ts");
+  const globalStyles = read("app/globals.css");
+  assert.match(programmes, /PROMOTE SAFETY & FAIR PLAY/);
+  assert.match(programmes, /เล่นเต็มที่ • เล่นอย่างปลอดภัย • เล่นอย่างยุติธรรม/);
+  assert.match(programmes, /EDUCATE PLAYERS, TEAMS & FIELDS/);
+  assert.match(programmes, /ความรู้ที่ดีขึ้น • ผู้เล่นที่ดีขึ้น • กีฬาที่แข็งแกร่งขึ้น/);
+  assert.match(read("components/programmes/ProgrammePageContent.tsx"), /useLanguage/);
+  assert.ok(existsSync(resolve(root, "app", "what-we-do", "safety-fair-play", "page.tsx")));
+  assert.ok(existsSync(resolve(root, "app", "what-we-do", "education", "page.tsx")));
+  assert.match(globalStyles, /\.content-list\{border-top:0\}\.content-list a\{border-bottom:0\}/);
+});
