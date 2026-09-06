@@ -9,8 +9,8 @@ export function MissionPageContent() {
   const copy = missionCopy[language];
 
   return <section className={styles.page} aria-labelledby="mission-title">
-    <p className={styles.eyebrow}>{copy.eyebrow}</p>
-    <h1 id="mission-title">{copy.title}</h1>
+    <h1 id="mission-title">{copy.eyebrow}</h1>
+    <p className={styles.lead}>{copy.title}</p>
     <div className={styles.body}>
       {copy.page.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
     </div>

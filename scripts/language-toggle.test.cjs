@@ -61,3 +61,16 @@ test("mission copy switches through the global language layer", () => {
   assert.match(read("components/sections/OurMissionSection.tsx"), /useLanguage/);
   assert.match(read("components/mission/MissionPageContent.tsx"), /useLanguage/);
 });
+
+test("mission typography preserves the shared editorial hierarchy without divider rules", () => {
+  const missionPage = read("components/mission/MissionPageContent.tsx");
+  const missionStyles = read("components/mission/MissionPageContent.module.css");
+  const globalStyles = read("app/globals.css");
+  const missionSection = read("components/sections/OurMissionSection.tsx");
+  assert.match(globalStyles, /--editorial-title-size:clamp\(2\.5rem,5vw,4rem\)/);
+  assert.match(globalStyles, /--editorial-lead-size:clamp\(1\.25rem,2\.2vw,1\.75rem\)/);
+  assert.match(missionPage, /<h1 id="mission-title">\{copy\.eyebrow\}<\/h1>/);
+  assert.match(missionPage, /className=\{styles\.lead\}>\{copy\.title\}/);
+  assert.doesNotMatch(missionStyles, /border-top/);
+  assert.match(missionSection, /align="right"/);
+});

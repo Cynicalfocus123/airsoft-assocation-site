@@ -3,6 +3,7 @@
 import { useLanguage } from "@/components/i18n/LanguageProvider";
 import { missionCopy } from "@/data/mission";
 import { CinematicSection } from "./CinematicSection";
+import styles from "./CinematicSection.module.css";
 
 export function OurMissionSection() {
   const { language } = useLanguage();
@@ -15,7 +16,9 @@ export function OurMissionSection() {
     desktopImage="/images/our-mission-airsoft.avif"
     mobileImage="/images/our-mission-airsoft.avif"
     imageAlt="Airsoft players working together outdoors"
+    align="right"
     ctaLabel={copy.eyebrow}
     ctaHref="/our-mission"
+    className={styles.mission}
   />;
 }
