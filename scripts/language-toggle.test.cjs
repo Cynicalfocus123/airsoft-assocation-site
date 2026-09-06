@@ -30,11 +30,11 @@ test("shared navigation exposes the supplied English and Thai labels without cha
   assert.equal(getLabel(navigation[3].children[1].label, "th"), "เหตุผลที่ก่อตั้งสมาคม");
 });
 
-test("about association dropdown contains the exact 29-item bilingual directory", () => {
+test("about association dropdown contains the non-duplicated bilingual directory", () => {
   const association = navigation.find((item) => getLabel(item.label, "en") === "ABOUT THE ASSOCIATION");
   const english = [...association.children].map((item) => getLabel(item.label, "en"));
   const thai = [...association.children].map((item) => getLabel(item.label, "th"));
-  assert.equal(english.length, 29);
+  assert.equal(english.length, 17);
   assert.deepEqual(english, [
     "About the Association",
     "Why the Association Was Created",
@@ -52,18 +52,6 @@ test("about association dropdown contains the exact 29-item bilingual directory"
     "Regional Events",
     "International Representation",
     "International Partnerships",
-    "Official Playing Rules",
-    "Safety Requirements",
-    "Eye & Face Protection",
-    "FPS / Joule Standards",
-    "Minimum Engagement Distance",
-    "Player Conduct",
-    "Referee & Marshal Standards",
-    "Field Standards",
-    "Association-Approved Fields",
-    "Safety Inspection",
-    "Emergency & First Aid",
-    "International Standard",
     "Play With Purpose",
   ]);
   assert.deepEqual(thai, [
@@ -83,18 +71,6 @@ test("about association dropdown contains the exact 29-item bilingual directory"
     "อีเวนต์ระดับภูมิภาค",
     "การเป็นตัวแทนในระดับนานาชาติ",
     "พันธมิตรและความร่วมมือระดับนานาชาติ",
-    "กติกาการเล่น",
-    "ข้อกำหนดด้านความปลอดภัย",
-    "การป้องกันดวงตาและใบหน้า",
-    "มาตรฐาน FPS / Joule",
-    "ระยะการยิงขั้นต่ำ",
-    "การประพฤติปฏิบัติของผู้เล่น",
-    "มาตรฐานกรรมการและมาร์แชล",
-    "มาตรฐานสนาม",
-    "สนามที่ได้รับการรับรองจากสมาคม",
-    "การตรวจสอบความปลอดภัย",
-    "การรับมือเหตุฉุกเฉินและการปฐมพยาบาล",
-    "มาตรฐานระดับนานาชาติ",
     "เล่นอย่างมีเป้าหมาย",
   ]);
   assert.match(header, /styles\.longMega/);
@@ -108,17 +84,17 @@ test("what we do dropdown contains the exact supplied English and Thai items in 
   const english = [...whatWeDo.children].map((item) => getLabel(item.label, "en"));
   const thai = [...whatWeDo.children].map((item) => getLabel(item.label, "th"));
   assert.deepEqual(english, [
-    "ESTABLISH NATIONAL STANDARDS",
-    "PROMOTE SAFETY & FAIR PLAY",
-    "EDUCATE PLAYERS, TEAMS & FIELDS",
-    "DEVELOP PLAYERS & TEAMS",
-    "SUPPORT & IMPROVE AIRSOFT AND PAINTBALL FIELDS",
-    "ORGANIZE PROFESSIONAL COMPETITIONS & EVENTS",
-    "BUILD A PATHWAY TO INTERNATIONAL COMPETITION",
-    "STRENGTHEN THE AIRSOFT & PAINTBALL COMMUNITY",
-    "PROMOTE TEAMWORK, LEADERSHIP & SPORTSMANSHIP",
-    "PROMOTE THAILAND AS THE AIRSOFT & PAINTBALL HUB OF ASIA",
-    "ADVANCE AIRSOFT & PAINTBALL AS RECOGNIZED SPORTS",
+    "Establish National Standards",
+    "Promote Safety & Fair Play",
+    "Educate Players, Teams & Fields",
+    "Develop Players & Teams",
+    "Support & Improve Airsoft and Paintball Fields",
+    "Organize Professional Competitions & Events",
+    "Build a Pathway to International Competition",
+    "Strengthen the Airsoft & Paintball Community",
+    "Promote Teamwork, Leadership & Sportsmanship",
+    "Promote Thailand as the Airsoft & Paintball Hub of Asia",
+    "Advance Airsoft & Paintball as Recognized Sports",
   ]);
   assert.deepEqual(thai, [
     "กำหนดมาตรฐานระดับประเทศ",
