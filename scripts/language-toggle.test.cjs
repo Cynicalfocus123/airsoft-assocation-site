@@ -74,3 +74,13 @@ test("mission typography preserves the shared editorial hierarchy without divide
   assert.doesNotMatch(missionStyles, /border-top/);
   assert.match(missionSection, /align="right"/);
 });
+
+test("national standards copy is bilingual on the homepage and its real route", () => {
+  const standards = read("data/national-standards.ts");
+  assert.match(standards, /ESTABLISH NATIONAL STANDARDS/);
+  assert.match(standards, /One National Standard\. Greater Trust\. World-Class Competition\./);
+  assert.match(standards, /กำหนดมาตรฐานระดับประเทศ/);
+  assert.match(standards, /หนึ่งมาตรฐานระดับประเทศ • สร้างความเชื่อมั่น • ก้าวสู่การแข่งขันระดับโลก/);
+  assert.match(read("components/sections/NationalStandardsSection.tsx"), /useLanguage/);
+  assert.ok(existsSync(resolve(root, "app", "what-we-do", "national-standards", "page.tsx")));
+});
