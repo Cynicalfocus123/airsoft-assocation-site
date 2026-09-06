@@ -26,8 +26,79 @@ test("shared navigation exposes the supplied English and Thai labels without cha
   assert.equal(navigation[3].children[0].href, "/association/about");
   assert.equal(getLabel(navigation[3].label, "en"), "ABOUT THE ASSOCIATION");
   assert.equal(getLabel(navigation[3].label, "th"), "เกี่ยวกับสมาคม");
-  assert.equal(getLabel(navigation[3].children[1].label, "en"), "WHY WE WERE CREATED");
-  assert.equal(getLabel(navigation[3].children[1].label, "th"), "เหตุผลที่เราก่อตั้งสมาคม");
+  assert.equal(getLabel(navigation[3].children[1].label, "en"), "Why the Association Was Created");
+  assert.equal(getLabel(navigation[3].children[1].label, "th"), "เหตุผลที่ก่อตั้งสมาคม");
+});
+
+test("about association dropdown contains the exact 29-item bilingual directory", () => {
+  const association = navigation.find((item) => getLabel(item.label, "en") === "ABOUT THE ASSOCIATION");
+  const english = [...association.children].map((item) => getLabel(item.label, "en"));
+  const thai = [...association.children].map((item) => getLabel(item.label, "th"));
+  assert.equal(english.length, 29);
+  assert.deepEqual(english, [
+    "About the Association",
+    "Why the Association Was Created",
+    "Association Background",
+    "Leadership & Board of Directors",
+    "Establish National Playing Standards",
+    "Promote Safety & Fair Play",
+    "Education & Development",
+    "Field Development",
+    "Teamwork & Sportsmanship",
+    "International Competition",
+    "Tournaments & Major Events",
+    "Sport Tourism in Thailand",
+    "International Tournaments & Events",
+    "Regional Events",
+    "International Representation",
+    "International Partnerships",
+    "Official Playing Rules",
+    "Safety Requirements",
+    "Eye & Face Protection",
+    "FPS / Joule Standards",
+    "Minimum Engagement Distance",
+    "Player Conduct",
+    "Referee & Marshal Standards",
+    "Field Standards",
+    "Association-Approved Fields",
+    "Safety Inspection",
+    "Emergency & First Aid",
+    "International Standard",
+    "Play With Purpose",
+  ]);
+  assert.deepEqual(thai, [
+    "เกี่ยวกับสมาคม",
+    "เหตุผลที่ก่อตั้งสมาคม",
+    "ประวัติของสมาคม",
+    "คณะผู้นำและคณะกรรมการบริหาร",
+    "กำหนดมาตรฐานการเล่นระดับประเทศ",
+    "ส่งเสริมความปลอดภัยและการแข่งขันอย่างยุติธรรม",
+    "การศึกษาและการพัฒนา",
+    "การพัฒนาสนาม",
+    "การทำงานเป็นทีมและน้ำใจนักกีฬา",
+    "การแข่งขันระดับนานาชาติ",
+    "การแข่งขันและอีเวนต์ขนาดใหญ่",
+    "การท่องเที่ยวเชิงกีฬาในประเทศไทย",
+    "การแข่งขันและอีเวนต์ระดับนานาชาติ",
+    "อีเวนต์ระดับภูมิภาค",
+    "การเป็นตัวแทนในระดับนานาชาติ",
+    "พันธมิตรและความร่วมมือระดับนานาชาติ",
+    "กติกาการเล่น",
+    "ข้อกำหนดด้านความปลอดภัย",
+    "การป้องกันดวงตาและใบหน้า",
+    "มาตรฐาน FPS / Joule",
+    "ระยะการยิงขั้นต่ำ",
+    "การประพฤติปฏิบัติของผู้เล่น",
+    "มาตรฐานกรรมการและมาร์แชล",
+    "มาตรฐานสนาม",
+    "สนามที่ได้รับการรับรองจากสมาคม",
+    "การตรวจสอบความปลอดภัย",
+    "การรับมือเหตุฉุกเฉินและการปฐมพยาบาล",
+    "มาตรฐานระดับนานาชาติ",
+    "เล่นอย่างมีเป้าหมาย",
+  ]);
+  assert.match(header, /styles\.longMega/);
+  assert.match(header, /styles\.longMobileDetails/);
 });
 
 test("what we do dropdown contains the exact supplied English and Thai items in order", () => {
