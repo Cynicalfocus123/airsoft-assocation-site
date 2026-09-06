@@ -17,6 +17,7 @@ const footer = read("components/layout/SiteFooter.tsx");
 const provider = read("components/i18n/LanguageProvider.tsx");
 const layout = read("app/layout.tsx");
 const mission = read("data/mission.ts");
+const sportTourism = read("data/sport-tourism.ts");
 
 test("shared navigation exposes the supplied English and Thai labels without changing routes", () => {
   assert.equal(getLabel(navigation[0].label, "en"), "HOME");
@@ -132,9 +133,19 @@ test("header and footer share the same language state and the Thai font boundary
 });
 
 test("new information routes are real page shells", () => {
-  for (const route of ["become-a-referee", "become-a-member", "complaint", "play-with-purpose"]) {
+  for (const route of ["become-a-referee", "become-a-member", "complaint", "play-with-purpose", "sport-tourism"]) {
     assert.ok(existsSync(resolve(root, "app", route, "page.tsx")));
   }
+});
+
+test("sport tourism copy is bilingual on the homepage and dedicated page", () => {
+  assert.match(sportTourism, /The Airsoft and Paintball Association is committed to positioning Thailand as a premier destination/);
+  assert.match(sportTourism, /Come for the Game\. Stay for the Adventure\. Experience Thailand\./);
+  assert.match(sportTourism, /การท่องเที่ยวเชิงกีฬา/);
+  assert.match(sportTourism, /มาเพื่อแข่งขัน • อยู่ต่อเพื่อการผจญภัย • สัมผัสประเทศไทย/);
+  assert.match(read("components/sections/SportTourismSection.tsx"), /useLanguage/);
+  assert.match(read("components/sport-tourism/SportTourismPageContent.tsx"), /useLanguage/);
+  assert.match(read("app/page.tsx"), /SportTourismSection/);
 });
 
 test("mission copy switches through the global language layer", () => {
