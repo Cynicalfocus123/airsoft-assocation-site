@@ -99,6 +99,8 @@ test("about association dropdown contains the exact 29-item bilingual directory"
   ]);
   assert.match(header, /styles\.longMega/);
   assert.match(header, /styles\.longMobileDetails/);
+  assert.match(header, /styles\.whatWeDoMega/);
+  assert.match(read("components/layout/SiteHeader.module.css"), /\.longMega a,\.whatWeDoMega a\{font-size:\.9rem\}/);
 });
 
 test("what we do dropdown contains the exact supplied English and Thai items in order", () => {

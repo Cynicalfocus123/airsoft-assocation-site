@@ -7,6 +7,7 @@
 .desktopNav>div{height:100%;display:flex;align-items:center;position:relative}
 .mega{position:absolute;right:0;top:100%;min-width:310px;padding:1.35rem;background:#111a16;color:#f4f2ec;display:grid;gap:.15rem;box-shadow:0 15px 35px rgba(0,0,0,.18)}
 .longMega{max-height:min(76dvh,700px);overflow-y:auto;overscroll-behavior:contain}
+.longMega a,.whatWeDoMega a{font-size:.9rem}
 .mega a{font-size:.78rem;line-height:1.25;padding:.6rem .35rem;border-bottom:1px solid rgba(255,255,255,.15)}
 .mega a:last-child{border:0}.mega a:hover{color:var(--lime)}
 .utility{display:flex;align-items:center;gap:1rem;font-weight:900;font-size:.72rem;white-space:nowrap}
