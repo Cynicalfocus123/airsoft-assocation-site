@@ -24,7 +24,10 @@ test("shared navigation exposes the supplied English and Thai labels without cha
   assert.equal(getLabel(navigation[2].label, "th"), "กิจกรรมและอีเวนต์ที่กำลังจะมาถึง");
   assert.equal(getLabel(navigation[6].label, "th"), "กฎระเบียบและความปลอดภัย");
   assert.equal(navigation[3].children[0].href, "/association/about");
-  assert.equal(getLabel(navigation[3].children[0].label, "th"), "เกี่ยวกับสมาคม");
+  assert.equal(getLabel(navigation[3].label, "en"), "ABOUT THE ASSOCIATION");
+  assert.equal(getLabel(navigation[3].label, "th"), "เกี่ยวกับสมาคม");
+  assert.equal(getLabel(navigation[3].children[1].label, "en"), "WHY WE WERE CREATED");
+  assert.equal(getLabel(navigation[3].children[1].label, "th"), "เหตุผลที่เราก่อตั้งสมาคม");
 });
 
 test("language provider defaults to English and persists only after hydration", () => {

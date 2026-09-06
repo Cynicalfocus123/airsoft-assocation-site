@@ -14,12 +14,12 @@ export const navigation: NavItem[] = [
   { label: label("OUR MISSION", "พันธกิจ"), href: "/our-mission" },
   { label: label("UPCOMING EVENTS", "กิจกรรมและอีเวนต์ที่กำลังจะมาถึง"), href: "/events" },
   {
-    label: label("ASSOCIATION", "สมาคม"),
+    label: label("ABOUT THE ASSOCIATION", "เกี่ยวกับสมาคม"),
     children: [
-      { label: label("About the Association", "เกี่ยวกับสมาคม"), href: "/association/about" },
-      { label: label("Why the Association Was Created", "เหตุผลที่ก่อตั้งสมาคม"), href: "/association/why-created" },
-      { label: label("Association Background", "ประวัติของสมาคม"), href: "/association/background" },
-      { label: label("Leadership & Board of Directors", "คณะผู้นำและคณะกรรมการบริหาร"), href: "/association/leadership" },
+      { label: label("ABOUT THE ASSOCIATION", "เกี่ยวกับสมาคม"), href: "/association/about" },
+      { label: label("WHY WE WERE CREATED", "เหตุผลที่เราก่อตั้งสมาคม"), href: "/association/why-created" },
+      { label: label("ASSOCIATION BACKGROUND", "ประวัติของสมาคม"), href: "/association/background" },
+      { label: label("LEADERSHIP & BOARD", "คณะผู้นำและคณะกรรมการ"), href: "/association/leadership" },
     ],
   },
   {
