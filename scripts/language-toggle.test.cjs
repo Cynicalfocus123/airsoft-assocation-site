@@ -21,6 +21,7 @@ const sportTourism = read("data/sport-tourism.ts");
 const sportTourismPages = read("data/sport-tourism-pages.ts");
 const leadership = read("data/leadership.ts");
 const fieldDevelopment = read("data/field-development.ts");
+const rulesSafetyPages = read("data/rules-safety-pages.ts");
 
 test("shared navigation exposes the supplied English and Thai labels without changing routes", () => {
   assert.equal(getLabel(navigation[0].label, "en"), "HOME");
@@ -301,4 +302,39 @@ test("safety and education pages use bilingual programme copy without related-li
   assert.ok(existsSync(resolve(root, "app", "what-we-do", "safety-fair-play", "page.tsx")));
   assert.ok(existsSync(resolve(root, "app", "what-we-do", "education", "page.tsx")));
   assert.match(globalStyles, /\.content-list\{border-top:0\}\.content-list a\{border-bottom:0\}/);
+});
+
+test("rules and safety detail pages use the supplied bilingual copy and routes", () => {
+  assert.match(rulesSafetyPages, /PLAYING RULES/);
+  assert.match(rulesSafetyPages, /Clear Rules\. Fair Competition\. Safer Play\./);
+  assert.match(rulesSafetyPages, /กติกาการเล่น/);
+  assert.match(rulesSafetyPages, /กติกาชัดเจน • แข่งขันยุติธรรม • เล่นอย่างปลอดภัย/);
+  assert.match(rulesSafetyPages, /SAFETY REQUIREMENTS/);
+  assert.match(rulesSafetyPages, /Safety First\. Standards Always\. Confidence Everywhere\./);
+  assert.match(rulesSafetyPages, /ข้อกำหนดด้านความปลอดภัย/);
+  assert.match(rulesSafetyPages, /ความปลอดภัยต้องมาก่อน • มาตรฐานต้องชัดเจน • ความเชื่อมั่นต้องเกิดขึ้นทุกสนาม/);
+  assert.match(rulesSafetyPages, /EYE & FACE PROTECTION/);
+  assert.match(rulesSafetyPages, /Protect Your Vision\. Protect Your Face\. Play with Confidence\./);
+  assert.match(rulesSafetyPages, /การป้องกันดวงตาและใบหน้า/);
+  assert.match(rulesSafetyPages, /ปกป้องดวงตา • ปกป้องใบหน้า • เล่นอย่างมั่นใจ/);
+  assert.match(rulesSafetyPages, /FPS & JOULE STANDARDS/);
+  assert.match(rulesSafetyPages, /Measured Performance\. Clear Limits\. Safer Competition\./);
+  assert.match(rulesSafetyPages, /มาตรฐาน FPS และ Joule/);
+  assert.match(rulesSafetyPages, /วัดผลได้ชัดเจน • กำหนดขีดจำกัดอย่างเหมาะสม • แข่งขันอย่างปลอดภัย/);
+  assert.match(rulesSafetyPages, /ENGAGEMENT DISTANCES/);
+  assert.match(rulesSafetyPages, /Know the Distance\. Respect the Rules\. Protect Every Player\./);
+  assert.match(rulesSafetyPages, /ระยะการยิงและการเข้าปะทะ/);
+  assert.match(rulesSafetyPages, /รู้ระยะ • เคารพกติกา • ปกป้องผู้เล่นทุกคน/);
+  assert.match(rulesSafetyPages, /PLAYER CONDUCT/);
+  assert.match(rulesSafetyPages, /Compete with Discipline\. Play with Integrity\. Respect the Game\./);
+  assert.match(rulesSafetyPages, /การประพฤติปฏิบัติของผู้เล่น/);
+  assert.match(rulesSafetyPages, /แข่งขันด้วยวินัย • เล่นด้วยความซื่อสัตย์ • เคารพในเกม/);
+  assert.match(rulesSafetyPages, /REFEREE & MARSHAL STANDARDS/);
+  assert.match(rulesSafetyPages, /Qualified Officials\. Fair Decisions\. Safer Games\. Higher Standards\./);
+  assert.match(rulesSafetyPages, /มาตรฐานกรรมการและมาร์แชล/);
+  assert.match(rulesSafetyPages, /กรรมการมีคุณภาพ • การตัดสินยุติธรรม • เกมปลอดภัย • มาตรฐานสูงขึ้น/);
+  assert.match(read("components/rules-safety/RulesSafetyPageContent.tsx"), /useLanguage/);
+  for (const route of ["playing-rules", "safety-requirements", "eye-face-protection", "fps-joule-standards", "engagement-distances", "player-conduct", "referee-marshal-standards"]) {
+    assert.ok(existsSync(resolve(root, "app", "rules-safety", route, "page.tsx")));
+  }
 });
