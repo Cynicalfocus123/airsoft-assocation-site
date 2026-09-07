@@ -13,6 +13,7 @@ const navigationExports = {};
 vm.runInNewContext(navigationCode, { exports: navigationExports });
 const { getLabel, navigation } = navigationExports;
 const header = read("components/layout/SiteHeader.tsx");
+const headerStyles = read("components/layout/SiteHeader.module.css");
 const footer = read("components/layout/SiteFooter.tsx");
 const provider = read("components/i18n/LanguageProvider.tsx");
 const layout = read("app/layout.tsx");
@@ -126,6 +127,13 @@ test("header and footer share the same language state and the Thai font boundary
   assert.match(layout, /Noto_Sans_Thai/);
   assert.match(layout, /LanguageProvider/);
   assert.match(layout, /<LanguageProvider><SiteHeader \/><main>\{children\}<\/main><SiteFooter \/><\/LanguageProvider>/);
+});
+
+test("mobile drawer keeps the hamburger control accessible without a visible menu label", () => {
+  assert.doesNotMatch(header, /mobileTop}><span>/);
+  assert.match(header, /className=\{styles\.menuButton\}/);
+  assert.match(header, /aria-label=\{language === "th" \? "เปิดเมนู" : "Open menu"\}/);
+  assert.match(headerStyles, /\.mobileTop\{display:flex;justify-content:flex-end;/);
 });
 
 test("new information routes are real page shells", () => {
