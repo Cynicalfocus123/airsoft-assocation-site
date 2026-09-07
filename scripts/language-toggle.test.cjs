@@ -19,6 +19,7 @@ const layout = read("app/layout.tsx");
 const mission = read("data/mission.ts");
 const sportTourism = read("data/sport-tourism.ts");
 const leadership = read("data/leadership.ts");
+const fieldDevelopment = read("data/field-development.ts");
 
 test("shared navigation exposes the supplied English and Thai labels without changing routes", () => {
   assert.equal(getLabel(navigation[0].label, "en"), "HOME");
@@ -155,6 +156,15 @@ test("leadership and board page has the supplied bilingual copy", () => {
   assert.match(leadership, /ผู้นำมากประสบการณ์ • วิสัยทัศน์ชัดเจน • หนึ่งพันธกิจเพื่อประเทศไทย/);
   assert.match(read("components/leadership/LeadershipPageContent.tsx"), /useLanguage/);
   assert.ok(existsSync(resolve(root, "app", "association", "leadership", "page.tsx")));
+});
+
+test("field development page has the supplied bilingual copy", () => {
+  assert.match(fieldDevelopment, /FIELD DEVELOPMENT/);
+  assert.match(fieldDevelopment, /Better Fields\. Higher Standards\. World-Class Experiences/);
+  assert.match(fieldDevelopment, /การพัฒนาสนาม/);
+  assert.match(fieldDevelopment, /สนามที่ดีกว่า • มาตรฐานที่สูงกว่า • ประสบการณ์ระดับโลก/);
+  assert.match(read("components/field-development/FieldDevelopmentPageContent.tsx"), /useLanguage/);
+  assert.ok(existsSync(resolve(root, "app", "what-we-do", "field-development", "page.tsx")));
 });
 
 test("play with purpose has its own bilingual page and explore link", () => {
