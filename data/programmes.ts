@@ -186,3 +186,85 @@ export const organizeCompetitionsEventsCopy: Record<SiteLanguage, ProgrammeCopy>
     closing: "จากการแข่งขันระดับท้องถิ่น • สู่ความเป็นเลิศระดับประเทศ • สู่เวทีระดับโลก",
   },
 };
+
+export const buildPathwayCompetitionCopy: Record<SiteLanguage, ProgrammeCopy> = {
+  en: {
+    title: "BUILD A PATHWAY TO INTERNATIONAL COMPETITION",
+    lead: "Thai players should have a clear path from local games to the international arena.",
+    body: [
+      "The Association aims to create structured development opportunities, national-level competitions, rankings, training programs, and selection pathways for players and teams with the potential to represent Thailand.",
+      "Our goal is to help Thai athletes compete proudly and professionally in international competitions.",
+    ],
+    closing: "From Local Fields to the World Stage.",
+  },
+  th: {
+    title: "สร้างเส้นทางสู่การแข่งขันระดับนานาชาติ",
+    lead: "ผู้เล่นไทยควรมีเส้นทางที่ชัดเจนจากสนามในประเทศไปสู่เวทีโลก",
+    body: [
+      "สมาคมมีเป้าหมายในการสร้างระบบพัฒนาผู้เล่น การแข่งขันระดับประเทศ ระบบจัดอันดับ การฝึกอบรม และแนวทางการคัดเลือกสำหรับผู้เล่นและทีมที่มีศักยภาพในการเป็นตัวแทนประเทศไทย",
+      "เราต้องการช่วยให้นักกีฬาไทยสามารถแข่งขันในเวทีนานาชาติได้อย่างภาคภูมิและมีความเป็นมืออาชีพ",
+    ],
+    closing: "จากสนามในประเทศไทย สู่เวทีโลก",
+  },
+};
+
+export const strengthenCommunityCopy: Record<SiteLanguage, ProgrammeCopy> = {
+  en: {
+    title: "STRENGTHEN THE AIRSOFT & PAINTBALL COMMUNITY",
+    lead: "A strong sport begins with a strong community.",
+    body: [
+      "We bring together players, teams, fields, event organizers, retailers, manufacturers, sponsors, and industry partners to create greater cooperation across Thailand.",
+      "By connecting the community under shared values and standards, we can help the sport grow faster, create more opportunities, and build a stronger future together.",
+    ],
+    closing: "One Community. One Direction. One Future.",
+  },
+  th: {
+    title: "สร้างความเข้มแข็งให้กับชุมชนแอร์ซอฟต์และเพ้นท์บอล",
+    lead: "กีฬาที่แข็งแกร่งเริ่มต้นจากชุมชนที่แข็งแกร่ง",
+    body: [
+      "เรามุ่งเชื่อมโยงผู้เล่น ทีม สนาม ผู้จัดการแข่งขัน ร้านค้า ผู้ผลิต ผู้สนับสนุน และพันธมิตรในอุตสาหกรรมให้เกิดความร่วมมือที่แข็งแกร่งทั่วประเทศ",
+      "ด้วยการรวมชุมชนภายใต้ค่านิยมและมาตรฐานร่วมกัน เราสามารถช่วยให้กีฬานี้เติบโตเร็วขึ้น สร้างโอกาสใหม่ และสร้างอนาคตที่แข็งแกร่งไปด้วยกัน",
+    ],
+    closing: "หนึ่งชุมชน • หนึ่งทิศทาง • หนึ่งอนาคต",
+  },
+};
+
+export const promoteThailandHubCopy: Record<SiteLanguage, ProgrammeCopy> = {
+  en: {
+    title: "PROMOTE THAILAND AS THE AIRSOFT & PAINTBALL HUB OF ASIA",
+    lead: "Our vision extends beyond national growth.",
+    body: [
+      "We aim to position Thailand as a premier destination for Airsoft and Paintball in Asia—attracting international players, teams, tournaments, training programs, manufacturers, exhibitions, and major events.",
+      "With Thailand's strong tourism infrastructure, unique terrain, hospitality, and growing player community, we believe the country has the potential to become a world-class destination for the sport.",
+    ],
+    closing: "Play in Thailand. Compete in Asia. Connect with the World.",
+  },
+  th: {
+    title: "ผลักดันประเทศไทยสู่การเป็นศูนย์กลางแอร์ซอฟต์และเพ้นท์บอลแห่งเอเชีย",
+    lead: "วิสัยทัศน์ของเราไม่ได้หยุดอยู่เพียงการเติบโตในประเทศ",
+    body: [
+      "เรามุ่งผลักดันประเทศไทยให้เป็นจุดหมายปลายทางชั้นนำด้านแอร์ซอฟต์และเพ้นท์บอลของเอเชีย ดึงดูดผู้เล่น ทีม การแข่งขัน การฝึกอบรม ผู้ผลิต งานแสดงสินค้า และอีเวนต์ขนาดใหญ่จากทั่วโลก",
+      "ด้วยศักยภาพด้านการท่องเที่ยว ภูมิประเทศที่หลากหลาย การบริการ และชุมชนผู้เล่นที่เติบโตอย่างต่อเนื่อง เราเชื่อว่าประเทศไทยมีศักยภาพที่จะก้าวขึ้นเป็นจุดหมายระดับโลกของกีฬาประเภทนี้",
+    ],
+    closing: "เล่นที่ประเทศไทย • แข่งขันในเอเชีย • เชื่อมต่อสู่โลก",
+  },
+};
+
+export const recognizedSportsCopy: Record<SiteLanguage, ProgrammeCopy> = {
+  en: {
+    title: "ADVANCE AIRSOFT & PAINTBALL AS RECOGNIZED SPORTS",
+    lead: "Our long-term mission is to help Airsoft and Paintball develop into more structured, respected, and internationally recognized competitive sports.",
+    body: [
+      "By strengthening standards, athlete development, competition systems, governance, safety, and international cooperation, we aim to support the continued advancement of both sports toward the highest levels of international competition.",
+    ],
+    closing: "Building Today. Competing Tomorrow. Creating the Future.",
+  },
+  th: {
+    title: "ผลักดันแอร์ซอฟต์และเพ้นท์บอลสู่การเป็นกีฬาที่ได้รับการยอมรับ",
+    lead: "พันธกิจระยะยาวของเราคือการช่วยพัฒนาแอร์ซอฟต์และเพ้นท์บอลให้เป็นกีฬาที่มีระบบ มีมาตรฐาน และได้รับการยอมรับในระดับนานาชาติมากยิ่งขึ้น",
+    body: [
+      "ด้วยการยกระดับมาตรฐาน การพัฒนานักกีฬา ระบบการแข่งขัน การกำกับดูแล ความปลอดภัย และความร่วมมือระหว่างประเทศ เรามุ่งสนับสนุนให้กีฬาทั้งสองประเภทเติบโตไปสู่ ระดับสูงสุดของการแข่งขันกีฬาสากลในอนาคต",
+    ],
+    closing: "สร้างมาตรฐานวันนี้ • แข่งขันระดับโลกวันหน้า • สร้างอนาคตของกีฬาไปด้วยกัน",
+  },
+};

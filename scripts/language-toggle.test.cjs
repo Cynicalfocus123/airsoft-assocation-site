@@ -204,6 +204,31 @@ test("develop, support, and organize pages use matching bilingual routes and cop
   }
 });
 
+test("international pathway, community, Thailand Hub, and recognized sports links use matching pages and copy", () => {
+  const programmes = read("data/programmes.ts");
+  const navCode = read("data/navigation.ts");
+  assert.match(programmes, /BUILD A PATHWAY TO INTERNATIONAL COMPETITION/);
+  assert.match(programmes, /From Local Fields to the World Stage\./);
+  assert.match(programmes, /สร้างเส้นทางสู่การแข่งขันระดับนานาชาติ/);
+  assert.match(programmes, /STRENGTHEN THE AIRSOFT & PAINTBALL COMMUNITY/);
+  assert.match(programmes, /One Community\. One Direction\. One Future\./);
+  assert.match(programmes, /สร้างความเข้มแข็งให้กับชุมชนแอร์ซอฟต์และเพ้นท์บอล/);
+  assert.match(programmes, /PROMOTE THAILAND AS THE AIRSOFT & PAINTBALL HUB OF ASIA/);
+  assert.match(programmes, /Play in Thailand\. Compete in Asia\. Connect with the World\./);
+  assert.match(programmes, /ผลักดันประเทศไทยสู่การเป็นศูนย์กลางแอร์ซอฟต์และเพ้นท์บอลแห่งเอเชีย/);
+  assert.match(programmes, /ADVANCE AIRSOFT & PAINTBALL AS RECOGNIZED SPORTS/);
+  assert.match(programmes, /Building Today\. Competing Tomorrow\. Creating the Future\./);
+  assert.match(programmes, /ผลักดันแอร์ซอฟต์และเพ้นท์บอลสู่การเป็นกีฬาที่ได้รับการยอมรับ/);
+  assert.match(navCode, /href: "\/what-we-do\/build-pathway-competition"/);
+  assert.match(navCode, /href: "\/what-we-do\/strengthen-community"/);
+  assert.match(navCode, /href: "\/what-we-do\/promote-teamwork-leadership"/);
+  assert.match(navCode, /href: "\/what-we-do\/promote-thailand-hub"/);
+  assert.match(navCode, /href: "\/what-we-do\/recognized-sports"/);
+  for (const route of ["build-pathway-competition", "strengthen-community", "promote-teamwork-leadership", "promote-thailand-hub", "recognized-sports"]) {
+    assert.ok(existsSync(resolve(root, "app", "what-we-do", route, "page.tsx")));
+  }
+});
+
 test("play with purpose has its own bilingual page and explore link", () => {
   const playWithPurpose = read("data/play-with-purpose.ts");
   const bannerSource = read("components/play-with-purpose/PlayWithPurposeBanner.tsx");

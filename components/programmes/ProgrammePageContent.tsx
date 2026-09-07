@@ -1,10 +1,10 @@
 "use client";
 
 import { useLanguage } from "@/components/i18n/LanguageProvider";
-import { developPlayersTeamsCopy, educationCopy, internationalCompetitionCopy, organizeCompetitionsEventsCopy, safetyFairPlayCopy, supportImproveFieldsCopy, teamworkSportsmanshipCopy, tournamentsEventsCopy } from "@/data/programmes";
+import { buildPathwayCompetitionCopy, developPlayersTeamsCopy, educationCopy, internationalCompetitionCopy, organizeCompetitionsEventsCopy, promoteThailandHubCopy, recognizedSportsCopy, safetyFairPlayCopy, strengthenCommunityCopy, supportImproveFieldsCopy, teamworkSportsmanshipCopy, tournamentsEventsCopy } from "@/data/programmes";
 import styles from "@/components/mission/MissionPageContent.module.css";
 
-type Programme = "education" | "safety-fair-play" | "teamwork-sportsmanship" | "international-competition" | "tournaments-events" | "develop-players-teams" | "support-improve-fields" | "organize-competitions-events";
+type Programme = "education" | "safety-fair-play" | "teamwork-sportsmanship" | "international-competition" | "tournaments-events" | "develop-players-teams" | "support-improve-fields" | "organize-competitions-events" | "build-pathway-competition" | "strengthen-community" | "promote-thailand-hub" | "recognized-sports";
 
 export function ProgrammePageContent({ programme }: { programme: Programme }) {
   const { language } = useLanguage();
@@ -17,6 +17,10 @@ export function ProgrammePageContent({ programme }: { programme: Programme }) {
     "develop-players-teams": developPlayersTeamsCopy,
     "support-improve-fields": supportImproveFieldsCopy,
     "organize-competitions-events": organizeCompetitionsEventsCopy,
+    "build-pathway-competition": buildPathwayCompetitionCopy,
+    "strengthen-community": strengthenCommunityCopy,
+    "promote-thailand-hub": promoteThailandHubCopy,
+    "recognized-sports": recognizedSportsCopy,
   }[programme])[language];
 
   return <section className={styles.page} aria-labelledby="programme-title">
