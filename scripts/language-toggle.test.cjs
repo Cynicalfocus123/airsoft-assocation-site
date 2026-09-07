@@ -23,6 +23,7 @@ const leadership = read("data/leadership.ts");
 const fieldDevelopment = read("data/field-development.ts");
 const rulesSafetyPages = read("data/rules-safety-pages.ts");
 const legal = read("data/legal.ts");
+const eventsStyles = read("components/events/Events.module.css");
 
 test("shared navigation exposes the supplied English and Thai labels without changing routes", () => {
   assert.equal(getLabel(navigation[0].label, "en"), "HOME");
@@ -153,6 +154,14 @@ test("privacy policy and terms pages use the supplied bilingual documents", () =
   assert.match(read("components/legal/LegalPageContent.module.css"), /\.content ul/);
   assert.ok(existsSync(resolve(root, "app", "privacy-policy", "page.tsx")));
   assert.ok(existsSync(resolve(root, "app", "terms-of-use", "page.tsx")));
+});
+
+test("featured event title uses a wider balanced responsive text column", () => {
+  assert.match(eventsStyles, /\.heroContent\{[^}]*width:min\(1500px,88vw\);max-width:1500px/);
+  assert.match(eventsStyles, /\.hero h1\{[^}]*max-width:100%;text-wrap:balance/);
+  assert.match(eventsStyles, /\.heroContent\{[^}]*width:calc\(100vw - 2\.5rem\)/);
+  assert.match(eventsStyles, /\.hero h1\{font-size:clamp\(2rem,7vw,3\.45rem\)/);
+  assert.doesNotMatch(eventsStyles, /\.hero h1\{[^}]*max-width:800px/);
 });
 
 test("sport tourism copy is bilingual on the homepage and dedicated page", () => {
