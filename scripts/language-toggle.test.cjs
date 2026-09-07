@@ -25,6 +25,8 @@ const fieldDevelopment = read("data/field-development.ts");
 const rulesSafetyPages = read("data/rules-safety-pages.ts");
 const legal = read("data/legal.ts");
 const eventsStyles = read("components/events/Events.module.css");
+const eventsData = read("data/events.ts");
+const upcomingEvents = read("components/events/UpcomingEvents.tsx");
 
 test("shared navigation exposes the supplied English and Thai labels without changing routes", () => {
   assert.equal(getLabel(navigation[0].label, "en"), "HOME");
@@ -170,6 +172,12 @@ test("featured event title uses a wider balanced responsive text column", () => 
   assert.match(eventsStyles, /\.heroContent\{[^}]*width:calc\(100vw - 2\.5rem\)/);
   assert.match(eventsStyles, /\.hero h1\{font-size:clamp\(2rem,7vw,3\.45rem\)/);
   assert.doesNotMatch(eventsStyles, /\.hero h1\{[^}]*max-width:800px/);
+});
+
+test("Force of Conquest card links to the Mstar Airsoft event site", () => {
+  assert.match(eventsData, /externalUrl:"https:\/\/www\.mstarairsoft\.com\/"/);
+  assert.match(upcomingEvents, /href=\{event\.externalUrl \?\? `\/events\/\$\{event\.slug\}`\}/);
+  assert.match(upcomingEvents, /VIEW EVENT ↗/);
 });
 
 test("sport tourism copy is bilingual on the homepage and dedicated page", () => {
