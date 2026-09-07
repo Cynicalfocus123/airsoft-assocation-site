@@ -18,6 +18,7 @@ const provider = read("components/i18n/LanguageProvider.tsx");
 const layout = read("app/layout.tsx");
 const mission = read("data/mission.ts");
 const sportTourism = read("data/sport-tourism.ts");
+const leadership = read("data/leadership.ts");
 
 test("shared navigation exposes the supplied English and Thai labels without changing routes", () => {
   assert.equal(getLabel(navigation[0].label, "en"), "HOME");
@@ -35,7 +36,7 @@ test("about association dropdown contains the non-duplicated bilingual directory
   const association = navigation.find((item) => getLabel(item.label, "en") === "ABOUT THE ASSOCIATION");
   const english = [...association.children].map((item) => getLabel(item.label, "en"));
   const thai = [...association.children].map((item) => getLabel(item.label, "th"));
-  assert.equal(english.length, 17);
+  assert.equal(english.length, 12);
   assert.deepEqual(english, [
     "About the Association",
     "Why the Association Was Created",
@@ -48,11 +49,6 @@ test("about association dropdown contains the non-duplicated bilingual directory
     "Teamwork & Sportsmanship",
     "International Competition",
     "Tournaments & Major Events",
-    "Sport Tourism in Thailand",
-    "International Tournaments & Events",
-    "Regional Events",
-    "International Representation",
-    "International Partnerships",
     "Play With Purpose",
   ]);
   assert.deepEqual(thai, [
@@ -67,11 +63,6 @@ test("about association dropdown contains the non-duplicated bilingual directory
     "การทำงานเป็นทีมและน้ำใจนักกีฬา",
     "การแข่งขันระดับนานาชาติ",
     "การแข่งขันและอีเวนต์ขนาดใหญ่",
-    "การท่องเที่ยวเชิงกีฬาในประเทศไทย",
-    "การแข่งขันและอีเวนต์ระดับนานาชาติ",
-    "อีเวนต์ระดับภูมิภาค",
-    "การเป็นตัวแทนในระดับนานาชาติ",
-    "พันธมิตรและความร่วมมือระดับนานาชาติ",
     "เล่นอย่างมีเป้าหมาย",
   ]);
   assert.match(header, /styles\.longMega/);
@@ -155,6 +146,15 @@ test("mission copy switches through the global language layer", () => {
   assert.match(mission, /หนึ่งมาตรฐาน • หนึ่งชุมชน • หนึ่งอนาคตระดับโลก/);
   assert.match(read("components/sections/OurMissionSection.tsx"), /useLanguage/);
   assert.match(read("components/mission/MissionPageContent.tsx"), /useLanguage/);
+});
+
+test("leadership and board page has the supplied bilingual copy", () => {
+  assert.match(leadership, /LEADERSHIP & BOARD/);
+  assert.match(leadership, /Experienced Leadership\. Strong Vision\. One Mission for Thailand\./);
+  assert.match(leadership, /คณะผู้นำและคณะกรรมการ/);
+  assert.match(leadership, /ผู้นำมากประสบการณ์ • วิสัยทัศน์ชัดเจน • หนึ่งพันธกิจเพื่อประเทศไทย/);
+  assert.match(read("components/leadership/LeadershipPageContent.tsx"), /useLanguage/);
+  assert.ok(existsSync(resolve(root, "app", "association", "leadership", "page.tsx")));
 });
 
 test("play with purpose has its own bilingual page and explore link", () => {
