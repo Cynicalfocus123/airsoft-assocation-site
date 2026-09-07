@@ -18,6 +18,7 @@ const provider = read("components/i18n/LanguageProvider.tsx");
 const layout = read("app/layout.tsx");
 const mission = read("data/mission.ts");
 const sportTourism = read("data/sport-tourism.ts");
+const sportTourismPages = read("data/sport-tourism-pages.ts");
 const leadership = read("data/leadership.ts");
 const fieldDevelopment = read("data/field-development.ts");
 
@@ -138,6 +139,29 @@ test("sport tourism copy is bilingual on the homepage and dedicated page", () =>
   assert.match(read("components/sections/SportTourismSection.tsx"), /useLanguage/);
   assert.match(read("components/sport-tourism/SportTourismPageContent.tsx"), /useLanguage/);
   assert.match(read("app/page.tsx"), /SportTourismSection/);
+});
+
+test("sport tourism detail pages use the supplied bilingual copy and routes", () => {
+  assert.match(sportTourismPages, /INTERNATIONAL REPRESENTATION/);
+  assert.match(sportTourismPages, /Represent Thailand\. Connect the World\. Build the Future of the Sport\./);
+  assert.match(sportTourismPages, /การเป็นตัวแทนในระดับนานาชาติ/);
+  assert.match(sportTourismPages, /เป็นตัวแทนประเทศไทย • เชื่อมโยงสู่โลก • ร่วมสร้างอนาคตของกีฬา/);
+  assert.match(sportTourismPages, /INTERNATIONAL PARTNERSHIPS/);
+  assert.match(sportTourismPages, /Strong Partnerships\. Shared Vision\. Regional Leadership\./);
+  assert.match(sportTourismPages, /พันธมิตรระดับนานาชาติ/);
+  assert.match(sportTourismPages, /พันธมิตรที่แข็งแกร่ง • วิสัยทัศน์ร่วมกัน • ก้าวสู่ผู้นำระดับภูมิภาค/);
+  assert.match(sportTourismPages, /REGIONAL EVENTS/);
+  assert.match(sportTourismPages, /Regional Reach\. International Standards\. World-Class Experience\./);
+  assert.match(sportTourismPages, /อีเวนต์ระดับภูมิภาค/);
+  assert.match(sportTourismPages, /ครอบคลุมระดับภูมิภาค • มาตรฐานระดับนานาชาติ • ประสบการณ์ระดับโลก/);
+  assert.match(sportTourismPages, /INTERNATIONAL EVENTS/);
+  assert.match(sportTourismPages, /From Thailand to the World\. Compete Globally\. Produce Globally\. Build a Global Standard\./);
+  assert.match(sportTourismPages, /อีเวนต์ระดับนานาชาติ/);
+  assert.match(sportTourismPages, /จากประเทศไทยสู่เวทีโลก • แข่งขันระดับโลก • จัดงานระดับโลก • สร้างมาตรฐานระดับโลก/);
+  assert.match(read("components/sport-tourism/SportTourismDetailPageContent.tsx"), /useLanguage/);
+  for (const route of ["events", "regional-events", "international-representation", "partnerships"]) {
+    assert.ok(existsSync(resolve(root, "app", "sport-tourism", route, "page.tsx")));
+  }
 });
 
 test("mission copy switches through the global language layer", () => {
