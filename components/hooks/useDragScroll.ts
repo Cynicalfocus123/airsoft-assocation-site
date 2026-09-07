@@ -23,12 +23,15 @@ export function useDragScroll() {
       onPointerDown: (event: React.PointerEvent<HTMLDivElement>) => {
         if (event.pointerType !== "mouse" || !ref.current) return;
         state.current = { active: true, moved: false, startX: event.clientX, startScroll: ref.current.scrollLeft };
-        event.currentTarget.setPointerCapture(event.pointerId);
       },
       onPointerMove: (event: React.PointerEvent<HTMLDivElement>) => {
         if (event.pointerType !== "mouse" || !state.current.active || !ref.current) return;
         const deltaX = event.clientX - state.current.startX;
-        if (Math.abs(deltaX) >= threshold) { state.current.moved = true; setIsDragging(true); }
+        if (Math.abs(deltaX) >= threshold) {
+          state.current.moved = true;
+          setIsDragging(true);
+          if (!event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.setPointerCapture(event.pointerId);
+        }
         ref.current.scrollLeft = state.current.startScroll - deltaX;
       },
       onPointerUp: finish,

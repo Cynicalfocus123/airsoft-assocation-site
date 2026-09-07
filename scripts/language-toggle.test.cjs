@@ -27,6 +27,7 @@ const legal = read("data/legal.ts");
 const eventsStyles = read("components/events/Events.module.css");
 const eventsData = read("data/events.ts");
 const upcomingEvents = read("components/events/UpcomingEvents.tsx");
+const dragScroll = read("components/hooks/useDragScroll.ts");
 
 test("shared navigation exposes the supplied English and Thai labels without changing routes", () => {
   assert.equal(getLabel(navigation[0].label, "en"), "HOME");
@@ -178,6 +179,12 @@ test("Force of Conquest card links to the Mstar Airsoft event site", () => {
   assert.match(eventsData, /externalUrl:"https:\/\/www\.mstarairsoft\.com\/"/);
   assert.match(upcomingEvents, /href=\{event\.externalUrl \?\? `\/events\/\$\{event\.slug\}`\}/);
   assert.match(upcomingEvents, /VIEW EVENT ↗/);
+});
+
+test("event rail preserves clicks while still capturing real drags", () => {
+  const pointerDownBlock = dragScroll.match(/onPointerDown:[\s\S]*?(?=\n      onPointerMove:)/)?.[0] ?? "";
+  assert.doesNotMatch(pointerDownBlock, /setPointerCapture/);
+  assert.match(dragScroll, /if \(!event\.currentTarget\.hasPointerCapture\(event\.pointerId\)\) event\.currentTarget\.setPointerCapture\(event\.pointerId\);/);
 });
 
 test("sport tourism copy is bilingual on the homepage and dedicated page", () => {
