@@ -181,3 +181,128 @@ export const refereeMarshalStandardsCopy: Record<SiteLanguage, RulesSafetyCopy> 
     closing: "กรรมการมีคุณภาพ • การตัดสินยุติธรรม • เกมปลอดภัย • มาตรฐานสูงขึ้น",
   },
 };
+
+export const fieldStandardsCopy: Record<SiteLanguage, RulesSafetyCopy> = {
+  en: {
+    title: "FIELD STANDARDS",
+    lead: "Consistent field standards are essential to creating a safe, professional, and trusted Airsoft and Paintball environment.",
+    body: [
+      "The Airsoft and Paintball Association is developing a national field-standard framework designed to help participating fields across Thailand align with recognized international practices.",
+      "Our standards will address key areas including field layout, safety zones, staging areas, game boundaries, protective barriers, signage, emergency access, referee positioning, player facilities, equipment inspection, risk management, and overall operational procedures.",
+      "Our goal is to establish a clear benchmark that helps field owners and operators continuously improve quality, safety, and player experience while preparing their facilities to host both national and international events.",
+      "By raising field standards across the country, we aim to build greater confidence among Thai players, international visitors, event organizers, sponsors, and partners—and strengthen Thailand’s reputation as a leading destination for Airsoft and Paintball in Asia.",
+    ],
+    closing: "Stronger Fields. Consistent Standards. International Confidence.",
+  },
+  th: {
+    title: "มาตรฐานสนาม",
+    lead: "มาตรฐานสนามที่ชัดเจนและสอดคล้องกัน คือองค์ประกอบสำคัญในการสร้างสภาพแวดล้อมของกีฬาแอร์ซอฟต์และเพ้นท์บอลที่ ปลอดภัย เป็นมืออาชีพ และได้รับความเชื่อมั่น",
+    body: [
+      "สมาคมแอร์ซอฟต์และเพ้นท์บอล กำลังพัฒนากรอบมาตรฐานสนามระดับประเทศ เพื่อช่วยให้สนามที่เข้าร่วมกับสมาคมทั่วประเทศไทยสามารถยกระดับการดำเนินงานให้สอดคล้องกับแนวทางและมาตรฐานที่ได้รับการยอมรับในระดับนานาชาติ",
+      "มาตรฐานของเราจะครอบคลุมหัวข้อสำคัญ เช่น การออกแบบและจัดผังสนาม พื้นที่ปลอดภัย พื้นที่เตรียมตัว ขอบเขตการเล่น แนวกั้นป้องกัน ป้ายเตือนและป้ายสื่อสาร เส้นทางฉุกเฉิน ตำแหน่งของกรรมการ สิ่งอำนวยความสะดวกสำหรับผู้เล่น การตรวจสอบอุปกรณ์ การบริหารความเสี่ยง และขั้นตอนการปฏิบัติงานภายในสนาม",
+      "เป้าหมายของเราคือการสร้างเกณฑ์มาตรฐานที่ชัดเจน เพื่อช่วยให้เจ้าของและผู้ประกอบการสนามสามารถพัฒนาคุณภาพ ความปลอดภัย และประสบการณ์ของผู้เล่นได้อย่างต่อเนื่อง พร้อมยกระดับสนามให้มีความพร้อมสำหรับการจัดการแข่งขันและอีเวนต์ทั้งในระดับประเทศและระดับนานาชาติ",
+      "ด้วยการยกระดับมาตรฐานสนามทั่วประเทศ เรามุ่งสร้างความเชื่อมั่นให้กับ ผู้เล่นชาวไทย ผู้เล่นจากต่างประเทศ ผู้จัดการแข่งขัน ผู้สนับสนุน และพันธมิตร พร้อมเสริมสร้างภาพลักษณ์ของประเทศไทยให้เป็นหนึ่งในจุดหมายปลายทางชั้นนำด้านกีฬาแอร์ซอฟต์และเพ้นท์บอลของเอเชีย",
+    ],
+    closing: "สนามแข็งแกร่งขึ้น • มาตรฐานเป็นหนึ่งเดียว • สร้างความเชื่อมั่นระดับนานาชาติ",
+  },
+};
+
+export const approvedFieldsCopy: Record<SiteLanguage, RulesSafetyCopy> = {
+  en: {
+    title: "APPROVED FIELDS",
+    lead: "The Airsoft and Paintball Association is developing an official field approval framework to recognize facilities that meet high standards of safety, operations, player experience, professionalism, and event readiness.",
+    body: [
+      "Approved fields will be assessed against clear criteria designed to align with recognized international practices, including field layout, safety zones, protective barriers, emergency access, referee and marshal operations, equipment inspection, player facilities, risk management, and overall field management.",
+      "Our goal is to create a trusted approval system that gives players, teams, organizers, sponsors, and international visitors greater confidence when choosing where to play or host events in Thailand.",
+      "Fields that achieve Association approval will demonstrate a commitment to continuous improvement and to delivering an experience that meets the expectations of both Thai and international players.",
+      "In the long term, we aim for Association-approved fields to become recognized as some of the most respected, professional, and high-quality Airsoft and Paintball venues in Asia.",
+    ],
+    closing: "Approved for Quality. Built for Safety. Recognized for Excellence.",
+  },
+  th: {
+    title: "สนามที่ได้รับการรับรอง",
+    lead: "สมาคมแอร์ซอฟต์และเพ้นท์บอล กำลังพัฒนาระบบการรับรองสนามอย่างเป็นทางการ เพื่อยกระดับและรับรองสนามที่ผ่านมาตรฐานด้าน ความปลอดภัย การบริหารจัดการ ประสบการณ์ของผู้เล่น ความเป็นมืออาชีพ และความพร้อมในการจัดการแข่งขันหรืออีเวนต์",
+    body: [
+      "สนามที่ขอรับการรับรองจะได้รับการประเมินตามเกณฑ์ที่ชัดเจนและสอดคล้องกับแนวปฏิบัติที่ได้รับการยอมรับในระดับนานาชาติ โดยครอบคลุมหัวข้อสำคัญ เช่น การออกแบบสนาม พื้นที่ปลอดภัย แนวกั้นป้องกัน เส้นทางฉุกเฉิน การปฏิบัติงานของกรรมการและมาร์แชล การตรวจสอบอุปกรณ์ สิ่งอำนวยความสะดวกสำหรับผู้เล่น การบริหารความเสี่ยง และการจัดการสนามโดยรวม",
+      "เป้าหมายของเราคือการสร้างระบบรับรองที่ผู้เล่น ทีม ผู้จัดการแข่งขัน ผู้สนับสนุน และผู้เล่นจากต่างประเทศสามารถเชื่อมั่นได้ เมื่อเลือกสนามสำหรับการเล่น การแข่งขัน หรือการจัดอีเวนต์ในประเทศไทย",
+      "สนามที่ได้รับการรับรองจากสมาคมจะแสดงให้เห็นถึงความมุ่งมั่นในการพัฒนาคุณภาพอย่างต่อเนื่อง และความพร้อมในการมอบประสบการณ์ที่ตอบสนองความคาดหวังของทั้งผู้เล่นชาวไทยและผู้เล่นระดับนานาชาติ",
+      "ในระยะยาว เรามุ่งให้สนามที่ผ่านการรับรองของสมาคมได้รับการยอมรับว่าเป็นหนึ่งใน สนามแอร์ซอฟต์และเพ้นท์บอลที่มีคุณภาพสูง เป็นมืออาชีพ และได้รับความเคารพมากที่สุดในเอเชีย",
+    ],
+    closing: "รับรองด้วยคุณภาพ • สร้างด้วยความปลอดภัย • เป็นที่ยอมรับด้วยความเป็นเลิศ",
+  },
+};
+
+export const safetyInspectionCopy: Record<SiteLanguage, RulesSafetyCopy> = {
+  en: {
+    title: "SAFETY INSPECTION",
+    lead: "The Airsoft and Paintball Association is developing a structured safety inspection program to help ensure that participating fields and events meet high standards of safety, readiness, and professional operation.",
+    body: [
+      "Our inspection framework will evaluate key areas including field conditions, protective barriers, safe zones, emergency access, player facilities, equipment checks, referee and marshal readiness, first-aid provisions, risk controls, signage, and operating procedures.",
+      "The goal is to create a consistent inspection process that gives players, teams, families, event organizers, sponsors, and international visitors greater confidence that participating facilities are being operated responsibly and in line with recognized international practices.",
+      "Fields that meet Association safety requirements will demonstrate a clear commitment to protecting players and continuously improving their standards.",
+      "By strengthening safety inspection across Thailand, we aim to build greater trust in Thai Airsoft and Paintball and support Thailand’s reputation as a safe, professional, and internationally respected destination for the sport.",
+    ],
+    closing: "Inspect for Safety. Operate with Confidence. Earn International Trust.",
+  },
+  th: {
+    title: "การตรวจสอบความปลอดภัย",
+    lead: "สมาคมแอร์ซอฟต์และเพ้นท์บอล กำลังพัฒนาระบบการตรวจสอบความปลอดภัยอย่างเป็นระบบ เพื่อช่วยให้สนามและอีเวนต์ที่เข้าร่วมกับสมาคม มีมาตรฐานสูงในด้าน ความปลอดภัย ความพร้อม และการดำเนินงานอย่างมืออาชีพ",
+    body: [
+      "กรอบการตรวจสอบของเราจะครอบคลุมหัวข้อสำคัญ เช่น สภาพสนาม แนวกั้นป้องกัน พื้นที่ปลอดภัย เส้นทางฉุกเฉิน สิ่งอำนวยความสะดวกสำหรับผู้เล่น การตรวจสอบอุปกรณ์ ความพร้อมของกรรมการและมาร์แชล การเตรียมการปฐมพยาบาล การควบคุมความเสี่ยง ป้ายเตือน และขั้นตอนการปฏิบัติงาน",
+      "เป้าหมายของเราคือการสร้างกระบวนการตรวจสอบที่มีมาตรฐานเดียวกัน เพื่อให้ผู้เล่น ทีม ครอบครัว ผู้จัดการแข่งขัน ผู้สนับสนุน และผู้เล่นจากต่างประเทศ มีความมั่นใจมากยิ่งขึ้นว่าสนามและสถานที่จัดกิจกรรมได้รับการบริหารอย่างมีความรับผิดชอบ และสอดคล้องกับแนวปฏิบัติที่ได้รับการยอมรับในระดับนานาชาติ",
+      "สนามที่ผ่านข้อกำหนดด้านความปลอดภัยของสมาคม จะแสดงให้เห็นถึงความมุ่งมั่นในด้าน การคุ้มครองผู้เล่น การบริหารจัดการอย่างมืออาชีพ และการพัฒนามาตรฐานอย่างต่อเนื่อง",
+      "ด้วยการยกระดับระบบการตรวจสอบความปลอดภัย เรามุ่งสร้างความเชื่อมั่นให้กับกีฬาแอร์ซอฟต์และเพ้นท์บอล และช่วยให้สนามที่เข้าร่วมกับสมาคมได้รับการยอมรับในฐานะ สนามที่ปลอดภัย เป็นมืออาชีพ และได้รับความเชื่อถือในระดับนานาชาติ",
+    ],
+    closing: "ตรวจสอบเพื่อความปลอดภัย • บริหารด้วยความมั่นใจ • สร้างความเชื่อถือระดับนานาชาติ",
+  },
+};
+
+export const emergencyFirstAidCopy: Record<SiteLanguage, RulesSafetyCopy> = {
+  en: {
+    title: "EMERGENCY & FIRST AID",
+    lead: "Player safety requires more than prevention—it requires immediate and professional response when an incident occurs.",
+    body: [
+      "The Airsoft and Paintball Association is developing clear emergency-response and first-aid standards to help ensure that participating fields and events are prepared to respond quickly, effectively, and responsibly.",
+      "Every participating field should maintain appropriate on-site first-aid capability, trained personnel, emergency communication procedures, clearly identified access routes, incident protocols, and coordination plans with local medical services.",
+      "For major tournaments and large-scale events, the Association will promote a higher level of preparedness, including dedicated emergency-response personnel, first-aid stations, medical coordination, evacuation procedures, and rapid-response systems on site.",
+      "Our goal is to ensure that players, teams, families, organizers, and international visitors can participate with greater confidence, knowing that emergency planning and medical readiness are treated as essential parts of professional event management.",
+    ],
+    closing: "Prepared to Respond. Ready to Protect. Safety without Compromise.",
+  },
+  th: {
+    title: "การรับมือเหตุฉุกเฉินและการปฐมพยาบาล",
+    lead: "ความปลอดภัยของผู้เล่นไม่ได้หมายถึงเพียงการป้องกันอุบัติเหตุเท่านั้น แต่ยังรวมถึง ความพร้อมในการตอบสนองอย่างรวดเร็วและเป็นมืออาชีพเมื่อเกิดเหตุฉุกเฉิน",
+    body: [
+      "สมาคมแอร์ซอฟต์และเพ้นท์บอล กำลังพัฒนามาตรฐานด้านการรับมือเหตุฉุกเฉินและการปฐมพยาบาลที่ชัดเจน เพื่อให้สนามและอีเวนต์ที่เข้าร่วมกับสมาคมมีความพร้อมในการดูแลผู้เล่นอย่างมีประสิทธิภาพและมีความรับผิดชอบ",
+      "สนามที่เข้าร่วมควรมีความพร้อมด้าน อุปกรณ์ปฐมพยาบาลภายในสนาม บุคลากรที่ผ่านการฝึกอบรม ระบบสื่อสารในกรณีฉุกเฉิน เส้นทางเข้าออกสำหรับรถพยาบาล ขั้นตอนการจัดการเหตุการณ์ และแผนประสานงานกับหน่วยบริการทางการแพทย์ในพื้นที่",
+      "สำหรับการแข่งขันขนาดใหญ่และอีเวนต์ระดับสำคัญ สมาคมจะส่งเสริมมาตรฐานความพร้อมที่สูงขึ้น โดยควรมี ทีมตอบสนองเหตุฉุกเฉินประจำพื้นที่ จุดปฐมพยาบาล การประสานงานทางการแพทย์ แผนอพยพ และระบบตอบสนองอย่างรวดเร็วภายในสถานที่จัดงาน",
+      "เป้าหมายของเราคือสร้างความมั่นใจให้กับผู้เล่น ทีม ครอบครัว ผู้จัดงาน และผู้เข้าร่วมจากต่างประเทศว่า การเตรียมพร้อมด้านเหตุฉุกเฉินและการดูแลทางการแพทย์เป็นส่วนสำคัญของการบริหารสนามและอีเวนต์อย่างมืออาชีพ",
+    ],
+    closing: "พร้อมรับมือทุกสถานการณ์ • พร้อมปกป้องทุกชีวิต • ความปลอดภัยต้องมาก่อน",
+  },
+};
+
+export const internationalStandardsCopy: Record<SiteLanguage, RulesSafetyCopy> = {
+  en: {
+    title: "INTERNATIONAL STANDARDS",
+    lead: "The Airsoft and Paintball Association is committed to developing standards that align with recognized international practices and earn the confidence of players, teams, fields, organizers, associations, federations, and industry partners worldwide.",
+    body: [
+      "Our international standards framework will focus on key areas including player safety, rules of play, equipment requirements, field operations, referee and marshal procedures, event management, fair play, emergency readiness, and professional conduct.",
+      "Our goal is to create a clear and credible system that can be understood, respected, and applied consistently across participating fields and events.",
+      "By continuously benchmarking our standards against leading practices from around the world, we aim to strengthen quality, professionalism, and international confidence in every aspect of Airsoft and Paintball.",
+      "Our long-term vision is to help establish a standard of excellence that supports stronger international cooperation, greater recognition, and a more unified future for the sport.",
+    ],
+    closing: "Internationally Aligned. Professionally Governed. Built to Earn Global Respect.",
+  },
+  th: {
+    title: "มาตรฐานระดับนานาชาติ",
+    lead: "สมาคมแอร์ซอฟต์และเพ้นท์บอล มุ่งมั่นพัฒนามาตรฐานที่สอดคล้องกับแนวปฏิบัติระดับสากล และสามารถสร้างความเชื่อมั่นให้กับผู้เล่น ทีม สนาม ผู้จัดการแข่งขัน สมาคม สหพันธ์ และพันธมิตรในอุตสาหกรรมจากทั่วโลก",
+    body: [
+      "กรอบมาตรฐานระดับนานาชาติของเราจะให้ความสำคัญกับหัวข้อหลัก ได้แก่ ความปลอดภัยของผู้เล่น กติกาการแข่งขัน ข้อกำหนดด้านอุปกรณ์ การบริหารสนาม ขั้นตอนการปฏิบัติงานของกรรมการและมาร์แชล การจัดอีเวนต์ การแข่งขันอย่างยุติธรรม ความพร้อมด้านเหตุฉุกเฉิน และการประพฤติปฏิบัติอย่างมืออาชีพ",
+      "เป้าหมายของเราคือการสร้างระบบมาตรฐานที่ ชัดเจน น่าเชื่อถือ และสามารถนำไปใช้ได้อย่างสม่ำเสมอ ในสนามและอีเวนต์ที่เข้าร่วมกับสมาคม",
+      "เราจะพัฒนาและทบทวนมาตรฐานอย่างต่อเนื่อง โดยเปรียบเทียบกับแนวปฏิบัติชั้นนำจากนานาประเทศ เพื่อยกระดับคุณภาพ ความเป็นมืออาชีพ และสร้างความเชื่อมั่นในระดับสากลให้กับกีฬาแอร์ซอฟต์และเพ้นท์บอลในทุกมิติ",
+      "วิสัยทัศน์ระยะยาวของเราคือการสร้าง มาตรฐานแห่งความเป็นเลิศ ที่ช่วยส่งเสริมความร่วมมือระหว่างประเทศ เพิ่มการยอมรับในระดับโลก และสร้างอนาคตของกีฬานี้ให้มีความเป็นหนึ่งเดียวและแข็งแกร่งยิ่งขึ้น",
+    ],
+    closing: "สอดคล้องกับมาตรฐานสากล • บริหารอย่างมืออาชีพ • สร้างเพื่อการยอมรับจากทั่วโลก",
+  },
+};

@@ -4,10 +4,15 @@ import { useLanguage } from "@/components/i18n/LanguageProvider";
 import {
   engagementDistancesCopy,
   eyeFaceProtectionCopy,
+  emergencyFirstAidCopy,
+  fieldStandardsCopy,
   fpsJouleStandardsCopy,
+  internationalStandardsCopy,
   playerConductCopy,
   playingRulesCopy,
+  approvedFieldsCopy,
   refereeMarshalStandardsCopy,
+  safetyInspectionCopy,
   safetyRequirementsCopy,
   type RulesSafetyCopy,
 } from "@/data/rules-safety-pages";
@@ -20,7 +25,12 @@ type RulesSafetyPage =
   | "fps-joule-standards"
   | "engagement-distances"
   | "player-conduct"
-  | "referee-marshal-standards";
+  | "referee-marshal-standards"
+  | "field-standards"
+  | "approved-fields"
+  | "safety-inspection"
+  | "emergency-first-aid"
+  | "international-standards";
 
 const copies: Record<RulesSafetyPage, Record<"en" | "th", RulesSafetyCopy>> = {
   "playing-rules": playingRulesCopy,
@@ -30,6 +40,11 @@ const copies: Record<RulesSafetyPage, Record<"en" | "th", RulesSafetyCopy>> = {
   "engagement-distances": engagementDistancesCopy,
   "player-conduct": playerConductCopy,
   "referee-marshal-standards": refereeMarshalStandardsCopy,
+  "field-standards": fieldStandardsCopy,
+  "approved-fields": approvedFieldsCopy,
+  "safety-inspection": safetyInspectionCopy,
+  "emergency-first-aid": emergencyFirstAidCopy,
+  "international-standards": internationalStandardsCopy,
 };
 
 export function RulesSafetyPageContent({ page }: { page: RulesSafetyPage }) {

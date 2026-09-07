@@ -333,8 +333,28 @@ test("rules and safety detail pages use the supplied bilingual copy and routes",
   assert.match(rulesSafetyPages, /Qualified Officials\. Fair Decisions\. Safer Games\. Higher Standards\./);
   assert.match(rulesSafetyPages, /มาตรฐานกรรมการและมาร์แชล/);
   assert.match(rulesSafetyPages, /กรรมการมีคุณภาพ • การตัดสินยุติธรรม • เกมปลอดภัย • มาตรฐานสูงขึ้น/);
+  assert.match(rulesSafetyPages, /FIELD STANDARDS/);
+  assert.match(rulesSafetyPages, /Stronger Fields\. Consistent Standards\. International Confidence\./);
+  assert.match(rulesSafetyPages, /มาตรฐานสนาม/);
+  assert.match(rulesSafetyPages, /สนามแข็งแกร่งขึ้น • มาตรฐานเป็นหนึ่งเดียว • สร้างความเชื่อมั่นระดับนานาชาติ/);
+  assert.match(rulesSafetyPages, /APPROVED FIELDS/);
+  assert.match(rulesSafetyPages, /Approved for Quality\. Built for Safety\. Recognized for Excellence\./);
+  assert.match(rulesSafetyPages, /สนามที่ได้รับการรับรอง/);
+  assert.match(rulesSafetyPages, /รับรองด้วยคุณภาพ • สร้างด้วยความปลอดภัย • เป็นที่ยอมรับด้วยความเป็นเลิศ/);
+  assert.match(rulesSafetyPages, /SAFETY INSPECTION/);
+  assert.match(rulesSafetyPages, /Inspect for Safety\. Operate with Confidence\. Earn International Trust\./);
+  assert.match(rulesSafetyPages, /การตรวจสอบความปลอดภัย/);
+  assert.match(rulesSafetyPages, /ตรวจสอบเพื่อความปลอดภัย • บริหารด้วยความมั่นใจ • สร้างความเชื่อถือระดับนานาชาติ/);
+  assert.match(rulesSafetyPages, /EMERGENCY & FIRST AID/);
+  assert.match(rulesSafetyPages, /Prepared to Respond\. Ready to Protect\. Safety without Compromise\./);
+  assert.match(rulesSafetyPages, /การรับมือเหตุฉุกเฉินและการปฐมพยาบาล/);
+  assert.match(rulesSafetyPages, /พร้อมรับมือทุกสถานการณ์ • พร้อมปกป้องทุกชีวิต • ความปลอดภัยต้องมาก่อน/);
+  assert.match(rulesSafetyPages, /INTERNATIONAL STANDARDS/);
+  assert.match(rulesSafetyPages, /Internationally Aligned\. Professionally Governed\. Built to Earn Global Respect\./);
+  assert.match(rulesSafetyPages, /มาตรฐานระดับนานาชาติ/);
+  assert.match(rulesSafetyPages, /สอดคล้องกับมาตรฐานสากล • บริหารอย่างมืออาชีพ • สร้างเพื่อการยอมรับจากทั่วโลก/);
   assert.match(read("components/rules-safety/RulesSafetyPageContent.tsx"), /useLanguage/);
-  for (const route of ["playing-rules", "safety-requirements", "eye-face-protection", "fps-joule-standards", "engagement-distances", "player-conduct", "referee-marshal-standards"]) {
+  for (const route of ["playing-rules", "safety-requirements", "eye-face-protection", "fps-joule-standards", "engagement-distances", "player-conduct", "referee-marshal-standards", "field-standards", "approved-fields", "safety-inspection", "emergency-first-aid", "international-standards"]) {
     assert.ok(existsSync(resolve(root, "app", "rules-safety", route, "page.tsx")));
   }
 });
