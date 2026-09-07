@@ -123,3 +123,66 @@ export const tournamentsEventsCopy: Record<SiteLanguage, ProgrammeCopy> = {
     closing: "อีเวนต์ที่ยิ่งใหญ่กว่า • ความสมจริงที่เหนือกว่า • เทคโนโลยีที่ล้ำสมัย • การแข่งขันระดับโลก",
   },
 };
+
+export const developPlayersTeamsCopy: Record<SiteLanguage, ProgrammeCopy> = {
+  en: {
+    title: "DEVELOP PLAYERS & TEAMS",
+    lead: "We are committed to developing Thai players from the recreational level to professional and international competition.",
+    body: [
+      "Through training, structured competition, team development, leadership programs, and performance standards, we aim to help players improve their skills, discipline, teamwork, communication, and strategic thinking.",
+      "Our long-term goal is to build stronger Thai teams capable of competing confidently and successfully on the world stage.",
+    ],
+    closing: "Develop Talent. Build Champions. Represent Thailand.",
+  },
+  th: {
+    title: "พัฒนาผู้เล่นและทีม",
+    lead: "เรามุ่งมั่นพัฒนาผู้เล่นไทย ตั้งแต่ระดับสันทนาการไปจนถึงการแข่งขันระดับประเทศและระดับนานาชาติ",
+    body: [
+      "ผ่านการฝึกอบรม การแข่งขันที่มีระบบ การพัฒนาทีม การสร้างภาวะผู้นำ และมาตรฐานด้านสมรรถนะ เราต้องการช่วยให้ผู้เล่นพัฒนาทักษะ ระเบียบวินัย การทำงานเป็นทีม การสื่อสาร และการคิดเชิงกลยุทธ์",
+      "เป้าหมายระยะยาวคือการสร้างทีมไทยที่แข็งแกร่งและมีศักยภาพในการแข่งขันบนเวทีโลกอย่างมั่นใจ",
+    ],
+    closing: "พัฒนาศักยภาพ • สร้างแชมป์ • เป็นตัวแทนประเทศไทย",
+  },
+};
+
+export const supportImproveFieldsCopy: Record<SiteLanguage, ProgrammeCopy> = {
+  en: {
+    title: "SUPPORT & IMPROVE AIRSOFT AND PAINTBALL FIELDS",
+    lead: "Great players need great places to compete.",
+    body: [
+      "The Association will work with field operators to improve safety, game design, referee quality, emergency readiness, customer experience, and overall field management.",
+      "We want Thailand to become internationally recognized for having some of the most professional, realistic, advanced, and exciting Airsoft and Paintball fields in Asia.",
+    ],
+    closing: "Better Fields. Better Experiences. Stronger Industry.",
+  },
+  th: {
+    title: "สนับสนุนและยกระดับสนามแอร์ซอฟต์และเพ้นท์บอล",
+    lead: "ผู้เล่นที่ดีต้องมีสนามที่ดีสำหรับการแข่งขัน",
+    body: [
+      "สมาคมจะทำงานร่วมกับผู้ประกอบการสนาม เพื่อยกระดับด้านความปลอดภัย การออกแบบเกม คุณภาพของกรรมการ ความพร้อมด้านเหตุฉุกเฉิน ประสบการณ์ของผู้เล่น และการบริหารสนามโดยรวม",
+      "เราต้องการให้ประเทศไทยได้รับการยอมรับในระดับนานาชาติว่าเป็นประเทศที่มี สนามแอร์ซอฟต์และเพ้นท์บอลที่มีคุณภาพ สมจริง ทันสมัย และน่าตื่นเต้นที่สุดแห่งหนึ่งในเอเชีย",
+    ],
+    closing: "สนามที่ดีขึ้น • ประสบการณ์ที่ดีขึ้น • อุตสาหกรรมที่แข็งแกร่งขึ้น",
+  },
+};
+
+export const organizeCompetitionsEventsCopy: Record<SiteLanguage, ProgrammeCopy> = {
+  en: {
+    title: "ORGANIZE PROFESSIONAL COMPETITIONS & EVENTS",
+    lead: "We aim to raise the quality of Airsoft and Paintball competitions throughout Thailand by encouraging professional planning, consistent rules, qualified officials, strong safety management, and fair competition.",
+    body: [
+      "The Association will support local, regional, national, and international events that bring players together and create new opportunities for teams to test their skills.",
+      "Our vision is for Thailand to host major competitions that attract players from across Asia and around the world.",
+    ],
+    closing: "Local Competition. National Excellence. Global Events.",
+  },
+  th: {
+    title: "จัดการแข่งขันและอีเวนต์อย่างมืออาชีพ",
+    lead: "เรามุ่งยกระดับมาตรฐานการแข่งขันแอร์ซอฟต์และเพ้นท์บอลทั่วประเทศไทย ด้วยการส่งเสริมการวางแผนอย่างมืออาชีพ กติกาที่สอดคล้องกัน กรรมการที่มีคุณภาพ การบริหารความปลอดภัย และการแข่งขันที่ยุติธรรม",
+    body: [
+      "สมาคมจะสนับสนุนการแข่งขันในระดับท้องถิ่น ระดับภูมิภาค ระดับประเทศ และระดับนานาชาติ เพื่อสร้างโอกาสให้ผู้เล่นและทีมได้ทดสอบและพัฒนาศักยภาพของตนเอง",
+      "วิสัยทัศน์ของเราคือการผลักดันให้ประเทศไทยเป็นเจ้าภาพการแข่งขันขนาดใหญ่ที่สามารถดึงดูดผู้เล่นจากทั่วเอเชียและทั่วโลก",
+    ],
+    closing: "จากการแข่งขันระดับท้องถิ่น • สู่ความเป็นเลิศระดับประเทศ • สู่เวทีระดับโลก",
+  },
+};

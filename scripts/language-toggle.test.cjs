@@ -184,6 +184,26 @@ test("teamwork, international competition, and tournaments pages have bilingual 
   }
 });
 
+test("develop, support, and organize pages use matching bilingual routes and copy", () => {
+  const programmes = read("data/programmes.ts");
+  const navCode = read("data/navigation.ts");
+  assert.match(programmes, /DEVELOP PLAYERS & TEAMS/);
+  assert.match(programmes, /Develop Talent\. Build Champions\. Represent Thailand\./);
+  assert.match(programmes, /พัฒนาผู้เล่นและทีม/);
+  assert.match(programmes, /SUPPORT & IMPROVE AIRSOFT AND PAINTBALL FIELDS/);
+  assert.match(programmes, /Better Fields\. Better Experiences\. Stronger Industry\./);
+  assert.match(programmes, /สนับสนุนและยกระดับสนามแอร์ซอฟต์และเพ้นท์บอล/);
+  assert.match(programmes, /ORGANIZE PROFESSIONAL COMPETITIONS & EVENTS/);
+  assert.match(programmes, /Local Competition\. National Excellence\. Global Events\./);
+  assert.match(programmes, /จัดการแข่งขันและอีเวนต์อย่างมืออาชีพ/);
+  assert.match(navCode, /href: "\/what-we-do\/develop-players-teams"/);
+  assert.match(navCode, /href: "\/what-we-do\/support-improve-fields"/);
+  assert.match(navCode, /href: "\/what-we-do\/organize-competitions-events"/);
+  for (const route of ["develop-players-teams", "support-improve-fields", "organize-competitions-events"]) {
+    assert.ok(existsSync(resolve(root, "app", "what-we-do", route, "page.tsx")));
+  }
+});
+
 test("play with purpose has its own bilingual page and explore link", () => {
   const playWithPurpose = read("data/play-with-purpose.ts");
   const bannerSource = read("components/play-with-purpose/PlayWithPurposeBanner.tsx");

@@ -1,10 +1,10 @@
 "use client";
 
 import { useLanguage } from "@/components/i18n/LanguageProvider";
-import { educationCopy, internationalCompetitionCopy, safetyFairPlayCopy, teamworkSportsmanshipCopy, tournamentsEventsCopy } from "@/data/programmes";
+import { developPlayersTeamsCopy, educationCopy, internationalCompetitionCopy, organizeCompetitionsEventsCopy, safetyFairPlayCopy, supportImproveFieldsCopy, teamworkSportsmanshipCopy, tournamentsEventsCopy } from "@/data/programmes";
 import styles from "@/components/mission/MissionPageContent.module.css";
 
-type Programme = "education" | "safety-fair-play" | "teamwork-sportsmanship" | "international-competition" | "tournaments-events";
+type Programme = "education" | "safety-fair-play" | "teamwork-sportsmanship" | "international-competition" | "tournaments-events" | "develop-players-teams" | "support-improve-fields" | "organize-competitions-events";
 
 export function ProgrammePageContent({ programme }: { programme: Programme }) {
   const { language } = useLanguage();
@@ -14,6 +14,9 @@ export function ProgrammePageContent({ programme }: { programme: Programme }) {
     "teamwork-sportsmanship": teamworkSportsmanshipCopy,
     "international-competition": internationalCompetitionCopy,
     "tournaments-events": tournamentsEventsCopy,
+    "develop-players-teams": developPlayersTeamsCopy,
+    "support-improve-fields": supportImproveFieldsCopy,
+    "organize-competitions-events": organizeCompetitionsEventsCopy,
   }[programme])[language];
 
   return <section className={styles.page} aria-labelledby="programme-title">
