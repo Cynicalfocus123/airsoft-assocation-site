@@ -22,6 +22,7 @@ const sportTourismPages = read("data/sport-tourism-pages.ts");
 const leadership = read("data/leadership.ts");
 const fieldDevelopment = read("data/field-development.ts");
 const rulesSafetyPages = read("data/rules-safety-pages.ts");
+const legal = read("data/legal.ts");
 
 test("shared navigation exposes the supplied English and Thai labels without changing routes", () => {
   assert.equal(getLabel(navigation[0].label, "en"), "HOME");
@@ -130,6 +131,28 @@ test("new information routes are real page shells", () => {
   for (const route of ["become-a-referee", "become-a-member", "complaint", "play-with-purpose", "sport-tourism"]) {
     assert.ok(existsSync(resolve(root, "app", route, "page.tsx")));
   }
+});
+
+test("privacy policy and terms pages use the supplied bilingual documents", () => {
+  assert.match(legal, /PRIVACY POLICY/);
+  assert.match(legal, /Last Updated: September 2026/);
+  assert.match(legal, /1\. INFORMATION WE MAY COLLECT/);
+  assert.match(legal, /Your Information\. Your Privacy\. Our Responsibility\./);
+  assert.match(legal, /นโยบายความเป็นส่วนตัว/);
+  assert.match(legal, /1\. ข้อมูลที่เราอาจเก็บรวบรวม/);
+  assert.match(legal, /ข้อมูลของคุณ • ความเป็นส่วนตัวของคุณ • ความรับผิดชอบของเรา/);
+  assert.match(legal, /TERMS OF USE/);
+  assert.match(legal, /1\. ROLE OF THE ASSOCIATION/);
+  assert.match(legal, /The Association Sets the Standard\./);
+  assert.match(legal, /Organizers Operate the Event\./);
+  assert.match(legal, /ข้อกำหนดการใช้งาน/);
+  assert.match(legal, /1\. บทบาทของสมาคม/);
+  assert.match(legal, /สมาคมกำหนดมาตรฐาน/);
+  assert.match(legal, /ผู้จัดรับผิดชอบการดำเนินงาน/);
+  assert.match(read("components/legal/LegalPageContent.tsx"), /parseContent/);
+  assert.match(read("components/legal/LegalPageContent.module.css"), /\.content ul/);
+  assert.ok(existsSync(resolve(root, "app", "privacy-policy", "page.tsx")));
+  assert.ok(existsSync(resolve(root, "app", "terms-of-use", "page.tsx")));
 });
 
 test("sport tourism copy is bilingual on the homepage and dedicated page", () => {
