@@ -19,6 +19,11 @@
 
 # production
 /build
+/public_html/
+/public_html.zip
+/public/images/optimized/
+/data/image-manifest.json
+/reports/
 
 # misc
 .DS_Store

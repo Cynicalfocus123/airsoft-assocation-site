@@ -17,7 +17,7 @@ export function PlayWithPurposeBanner() {
 
   return <section ref={bannerRef} className={styles.banner} aria-label={copy.title} style={{ position: "relative", isolation: "isolate" }}>
     <div aria-hidden="true" style={{ position: "absolute", inset: "-56px", zIndex: -2, transform: "translate3d(0,var(--cinematic-media-y,0px),0)" }}>
-      <Image src={imageSrc("/images/michal-franczak-1ZElf0bUFWc-unsplash.jpg")} alt="" fill sizes="100vw" style={{ objectFit: "cover", objectPosition: "center" }} />
+      <Image src={imageSrc("/images/michal-franczak-1ZElf0bUFWc-unsplash")} alt="" fill sizes="100vw" style={{ objectFit: "cover", objectPosition: "center" }} />
     </div>
     <div aria-hidden="true" style={{ position: "absolute", inset: 0, zIndex: -1, background: "linear-gradient(90deg,rgba(17,26,22,.8),rgba(17,26,22,.3))" }} />
     <div className={styles.identity}>

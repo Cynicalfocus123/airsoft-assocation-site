@@ -1,0 +1,27 @@
+# Next.js static export: each real route has its own directory/index.html.
+Options -Indexes -MultiViews
+DirectoryIndex index.html
+AddDefaultCharset UTF-8
+AddCharset UTF-8 .html .css .js .json .txt
+AddType image/avif .avif
+AddType image/webp .webp
+AddType font/woff2 .woff2
+ErrorDocument 404 /404.html
+
+# Let mod_dir handle route directory slashes. Never send missing JS/images to HTML.
+# TLS is handled by Hostinger/Cloudflare; no forced-HTTPS redirect here.
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|txt|json)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+  <FilesMatch "\.(avif|webp|ico)$">
+    Header set Cache-Control "public, max-age=86400, must-revalidate"
+  </FilesMatch>
+  <FilesMatch "\.(css|js|woff2)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  Header set X-Content-Type-Options "nosniff"
+</IfModule>
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css application/javascript text/javascript application/json image/svg+xml
+</IfModule>

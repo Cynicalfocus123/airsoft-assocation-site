@@ -12,8 +12,8 @@ export function NationalStandardsSection() {
     eyebrow="WHAT WE DO"
     title={language === "en" ? <>ESTABLISH<br />NATIONAL STANDARDS</> : copy.title}
     description={copy.homepageDescription}
-    desktopImage="/images/national-standards-training.jpg"
-    mobileImage="/images/national-standards-training.jpg"
+    desktopImage="/images/national-standards-training"
+    mobileImage="/images/national-standards-training"
     imageAlt="Airsoft players training indoors"
     focalPointDesktop="68% 50%"
     focalPointMobile="62% 38%"

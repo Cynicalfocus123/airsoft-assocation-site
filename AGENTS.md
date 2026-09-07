@@ -63,3 +63,12 @@ Official local-first website for the Thailand Airsoft Association: standards, sa
 
 ## Latest task summary
 Added an English-default, persistent TH/EN switcher for the header, mobile menu and footer navigation only, with shared localized data and no locale routes.
+
+## Hostinger production releases
+- Use `pnpm build:hostinger` for the domain-root static export in `public_html/` and runtime-only `public_html.zip`; keep the separate GitHub Pages base path for `pnpm build`.
+- Follow `HOSTINGER-DEPLOY.md`, `AGENT.md` and `DESIGNER.md`. Preserve existing layout, functionality and all supplied English/Thai text, including the body translations added since the older summary above. English remains the clean-session default.
+- Source image references now use extensionless logical identifiers through `imageSrc`; generated WebP/AVIF assets and responsive variants live in `public/images/optimized`. Original images remain untouched for editing. This supersedes old implementation notes that name JPG/PNG as runtime files.
+- Keep production raster images genuinely encoded AVIF/WebP, correctly sized, metadata-stripped, visually clean and logically organized. Retain transparency and Thai-capable WOFF2 fonts.
+- All live runtime files must be inside `public_html`. Keep production minification/tree shaking, lazy loading, critical-image priority, safe caching/compression, and a small ZIP without source maps, unused assets or development files.
+- Audit Linux filename case, correct root URLs, UTF-8, EN/TH switching, static-route refresh/404 handling, blank pages, missing assets, local paths and exposed secrets. Never replace unknown routes or missing assets with homepage HTML.
+- ZIP entries extract directly into Hostinger's existing `public_html`, without another nested `public_html`. Verify the actual folder and ZIP; distinguish browser/static verification from live Hostinger TLS/Cloudflare checks.

@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "prebuild": "node scripts/optimize-images.mjs",
+    "predev": "node scripts/optimize-images.mjs",
+    "build:hostinger": "node scripts/build-hostinger.mjs",
+    "postbuild": "node scripts/normalize-export.mjs out"
   },
   "dependencies": {
     "next": "16.3.4",

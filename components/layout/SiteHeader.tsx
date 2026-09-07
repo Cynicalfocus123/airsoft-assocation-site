@@ -34,7 +34,7 @@ export function SiteHeader() {
   return <header className={styles.header}>
     <div className={styles.bar}>
       <Link className={styles.brand} href="/" aria-label="Thailand Airsoft Association home">
-        <Image src={imageSrc("/images/association-logo.png")} alt="Thailand Airsoft Association" width={192} height={192} priority />
+        <Image src={imageSrc("/images/association-logo")} alt="Thailand Airsoft Association" width={192} height={192} priority />
       </Link>
       <nav className={styles.desktopNav} aria-label={language === "th" ? "เมนูหลัก" : "Main navigation"}>
         {navigation.map((item) => item.href ? <Link key={item.href} href={item.href}>{getLabel(item.label, language)}</Link> : <div key={item.label.en} onMouseEnter={() => setOpen(item.label.en)} onMouseLeave={() => setOpen(null)}><button type="button" aria-expanded={open === item.label.en} onClick={() => setOpen(open === item.label.en ? null : item.label.en)}>{getLabel(item.label, language)} <i>↓</i></button>{open === item.label.en && <div className={`${styles.mega} ${item.label.en === "ABOUT THE ASSOCIATION" ? styles.longMega : ""} ${item.label.en === "WHAT WE DO" ? styles.whatWeDoMega : ""}`}>{item.children?.map((child) => <Link key={child.href} href={child.href} onClick={() => setOpen(null)}>{getLabel(child.label, language)}</Link>)}</div>}</div>)}

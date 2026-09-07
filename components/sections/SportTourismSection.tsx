@@ -12,8 +12,8 @@ export function SportTourismSection() {
     eyebrow={copy.eyebrow}
     title={language === "en" ? <>SPORT<br />TOURISM</> : copy.title}
     description={copy.preview}
-    desktopImage="/images/photo-1730233024781-27672ab1674e.avif"
-    mobileImage="/images/photo-1730233024781-27672ab1674e.avif"
+    desktopImage="/images/photo-1730233024781-27672ab1674e"
+    mobileImage="/images/photo-1730233024781-27672ab1674e"
     imageAlt=""
     align="right"
     focalPointDesktop="center"

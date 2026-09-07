@@ -13,8 +13,8 @@ export function OurMissionSection() {
     title={copy.eyebrow}
     lead={copy.title}
     description={<>{copy.preview.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</>}
-    desktopImage="/images/our-mission-airsoft.avif"
-    mobileImage="/images/our-mission-airsoft.avif"
+    desktopImage="/images/our-mission-airsoft"
+    mobileImage="/images/our-mission-airsoft"
     imageAlt="Airsoft players working together outdoors"
     align="right"
     ctaLabel={copy.eyebrow}

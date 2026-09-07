@@ -14,7 +14,7 @@ export function SiteFooter() {
   return <footer className={styles.footer}>
       <div className={styles.footerContent}>
         <Link className={styles.footerBrand} href="/" aria-label="Thailand Airsoft Association home">
-          <Image src={imageSrc("/images/association-logo.png")} alt="Thailand Airsoft Association" width={192} height={192} />
+          <Image src={imageSrc("/images/association-logo")} alt="Thailand Airsoft Association" width={192} height={192} />
         </Link>
         <div className={styles.links}>
           {grouped.map((group) => <section key={group.label.en}><h3>{getLabel(group.label, language)}</h3>{group.children?.map((link) => <Link key={link.href} href={link.href}>{getLabel(link.label, language)}</Link>)}</section>)}
