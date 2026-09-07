@@ -1,14 +1,20 @@
 "use client";
 
 import { useLanguage } from "@/components/i18n/LanguageProvider";
-import { educationCopy, safetyFairPlayCopy } from "@/data/programmes";
+import { educationCopy, internationalCompetitionCopy, safetyFairPlayCopy, teamworkSportsmanshipCopy, tournamentsEventsCopy } from "@/data/programmes";
 import styles from "@/components/mission/MissionPageContent.module.css";
 
-type Programme = "education" | "safety-fair-play";
+type Programme = "education" | "safety-fair-play" | "teamwork-sportsmanship" | "international-competition" | "tournaments-events";
 
 export function ProgrammePageContent({ programme }: { programme: Programme }) {
   const { language } = useLanguage();
-  const copy = (programme === "education" ? educationCopy : safetyFairPlayCopy)[language];
+  const copy = ({
+    education: educationCopy,
+    "safety-fair-play": safetyFairPlayCopy,
+    "teamwork-sportsmanship": teamworkSportsmanshipCopy,
+    "international-competition": internationalCompetitionCopy,
+    "tournaments-events": tournamentsEventsCopy,
+  }[programme])[language];
 
   return <section className={styles.page} aria-labelledby="programme-title">
     <h1 id="programme-title">{copy.title}</h1>

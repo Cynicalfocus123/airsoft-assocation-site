@@ -167,6 +167,23 @@ test("field development page has the supplied bilingual copy", () => {
   assert.ok(existsSync(resolve(root, "app", "what-we-do", "field-development", "page.tsx")));
 });
 
+test("teamwork, international competition, and tournaments pages have bilingual programme copy", () => {
+  const programmes = read("data/programmes.ts");
+  assert.match(programmes, /TEAMWORK & SPORTSMANSHIP/);
+  assert.match(programmes, /Play as One\. Compete with Honor\. Win with Respect\./);
+  assert.match(programmes, /การทำงานเป็นทีมและน้ำใจนักกีฬา/);
+  assert.match(programmes, /INTERNATIONAL COMPETITION/);
+  assert.match(programmes, /Develop Thailand\. Connect Asia\. Compete with the World\./);
+  assert.match(programmes, /การแข่งขันระดับนานาชาติ/);
+  assert.match(programmes, /TOURNAMENTS & EVENTS/);
+  assert.match(programmes, /Bigger Events\. Greater Realism\. Advanced Technology\. World-Class Competition\./);
+  assert.match(programmes, /การแข่งขันและอีเวนต์/);
+  assert.match(read("components/programmes/ProgrammePageContent.tsx"), /internationalCompetitionCopy/);
+  for (const route of ["teamwork-sportsmanship", "international-competition", "tournaments-events"]) {
+    assert.ok(existsSync(resolve(root, "app", "what-we-do", route, "page.tsx")));
+  }
+});
+
 test("play with purpose has its own bilingual page and explore link", () => {
   const playWithPurpose = read("data/play-with-purpose.ts");
   const bannerSource = read("components/play-with-purpose/PlayWithPurposeBanner.tsx");
