@@ -28,17 +28,44 @@ const eventsStyles = read("components/events/Events.module.css");
 const eventsData = read("data/events.ts");
 const upcomingEvents = read("components/events/UpcomingEvents.tsx");
 const dragScroll = read("components/hooks/useDragScroll.ts");
+const servicesData = read("data/services.ts");
+const servicesComponent = read("components/services/ServicePageContent.tsx");
+const servicesRoute = read("app/services/[slug]/page.tsx");
 
 test("shared navigation exposes the supplied English and Thai labels without changing routes", () => {
   assert.equal(getLabel(navigation[0].label, "en"), "HOME");
   assert.equal(getLabel(navigation[0].label, "th"), "หน้าหลัก");
-  assert.equal(getLabel(navigation[2].label, "th"), "กิจกรรมและอีเวนต์ที่กำลังจะมาถึง");
-  assert.equal(getLabel(navigation[6].label, "th"), "กฎระเบียบและความปลอดภัย");
-  assert.equal(navigation[3].children[0].href, "/association/about");
-  assert.equal(getLabel(navigation[3].label, "en"), "ABOUT THE ASSOCIATION");
-  assert.equal(getLabel(navigation[3].label, "th"), "เกี่ยวกับสมาคม");
-  assert.equal(getLabel(navigation[3].children[1].label, "en"), "Why the Association Was Created");
-  assert.equal(getLabel(navigation[3].children[1].label, "th"), "เหตุผลที่ก่อตั้งสมาคม");
+  assert.equal(getLabel(navigation[3].label, "th"), "กิจกรรมและอีเวนต์ที่กำลังจะมาถึง");
+  assert.equal(getLabel(navigation[7].label, "th"), "กฎระเบียบและความปลอดภัย");
+  const association = navigation.find((item) => getLabel(item.label, "en") === "ABOUT THE ASSOCIATION");
+  assert.equal(association.children[0].href, "/association/about");
+  assert.equal(getLabel(association.label, "en"), "ABOUT THE ASSOCIATION");
+  assert.equal(getLabel(association.label, "th"), "เกี่ยวกับสมาคม");
+  assert.equal(getLabel(association.children[1].label, "en"), "Why the Association Was Created");
+  assert.equal(getLabel(association.children[1].label, "th"), "เหตุผลที่ก่อตั้งสมาคม");
+});
+
+test("Services navigation and field design page use the approved bilingual structure", () => {
+  const services = navigation.find((item) => getLabel(item.label, "en") === "SERVICES");
+  assert.ok(services);
+  assert.equal(getLabel(services.label, "th"), "บริการ");
+  assert.deepEqual([...services.children].map((item) => getLabel(item.label, "en")), [
+    "FIELD DESIGN & ENGINEERING", "BUSINESS CONSULTANT", "MARKETING", "PERMIT APPROVAL", "TRAINING",
+  ]);
+  assert.deepEqual([...services.children].map((item) => getLabel(item.label, "th")), [
+    "บริการออกแบบและพัฒนาสนาม", "ที่ปรึกษาธุรกิจ", "การตลาด", "การขออนุญาตและการอนุมัติ", "การฝึกอบรม",
+  ]);
+  assert.deepEqual([...services.children].map((item) => item.href), [
+    "/services/field-design-engineering", "/services/business-consultant", "/services/marketing", "/services/permit-approval", "/services/training",
+  ]);
+  assert.match(header, /details[^>]*key=\{item\.label\.en\}/);
+  assert.match(footer, /navigation\.filter\(\(item\) => item\.children\)/);
+  assert.match(servicesData, /FIELD DESIGN & DEVELOPMENT SERVICES/);
+  assert.match(servicesData, /WHAT WE CAN DO FOR YOUR FIELD/);
+  assert.equal((servicesData.match(/heading: text\(/g) || []).length, 10);
+  assert.match(servicesComponent, /useLanguage/);
+  assert.match(servicesRoute, /generateStaticParams/);
+  assert.match(servicesRoute, /Field Design & Development Services \| Thailand Airsoft Association/);
 });
 
 test("about association dropdown contains the non-duplicated bilingual directory", () => {

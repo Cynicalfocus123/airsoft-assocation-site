@@ -9,3 +9,22 @@ Future Hostinger releases must use `pnpm build:hostinger`, with all runtime file
 Generate genuinely encoded WebP/AVIF raster assets before production, preserve transparency and visual quality, use sensible responsive dimensions without upscaling, and strip unnecessary metadata. Keep JS/CSS minified, use self-hosted WOFF2, preserve useful lazy loading and hero priority, exclude source maps and development junk, and keep the ZIP lightweight.
 
 Verify domain-root paths, Linux filename case, exported route refreshes, 404 handling, no white pages, no missing assets, no local absolute paths or exposed secrets. Keep the Hostinger static export independent from the GitHub Pages subfolder build. Verify the actual production output and ZIP, and distinguish local verification from live Hostinger TLS/server checks.
+
+## Navigation and services architecture
+
+The primary navigation is defined once in `data/navigation.ts` and drives the desktop dropdowns, mobile accordions and footer groups. Keep this order for the top-level navigation: `OUR MISSION`, `SERVICES`, then `UPCOMING EVENTS`.
+
+`SERVICES` is a bilingual child-navigation group with this stable order and routes:
+
+```
+SERVICES
+├── Field Design & Engineering -> /services/field-design-engineering
+├── Business Consultant       -> /services/business-consultant
+├── Marketing                 -> /services/marketing
+├── Permit Approval           -> /services/permit-approval
+└── Training                 -> /services/training
+```
+
+Navigation labels must provide both English and Thai values, with English as the fresh-session default. The shared navigation data must remain the source of truth so the Services group appears consistently in desktop navigation, mobile navigation and the footer.
+
+The Field Design & Engineering route is the approved full bilingual service page and must keep all ten supplied service sections and their English/Thai copy. The other Services routes use neutral bilingual “content in development” placeholders until approved copy is supplied; do not invent claims or use filler text.

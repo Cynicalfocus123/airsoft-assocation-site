@@ -12,6 +12,16 @@ const label = (en: string, th: string): LocalizedLabel => ({ en, th });
 export const navigation: NavItem[] = [
   { label: label("HOME", "หน้าหลัก"), href: "/" },
   { label: label("OUR MISSION", "พันธกิจ"), href: "/our-mission" },
+  {
+    label: label("SERVICES", "บริการ"),
+    children: [
+      { label: label("FIELD DESIGN & ENGINEERING", "บริการออกแบบและพัฒนาสนาม"), href: "/services/field-design-engineering" },
+      { label: label("BUSINESS CONSULTANT", "ที่ปรึกษาธุรกิจ"), href: "/services/business-consultant" },
+      { label: label("MARKETING", "การตลาด"), href: "/services/marketing" },
+      { label: label("PERMIT APPROVAL", "การขออนุญาตและการอนุมัติ"), href: "/services/permit-approval" },
+      { label: label("TRAINING", "การฝึกอบรม"), href: "/services/training" },
+    ],
+  },
   { label: label("UPCOMING EVENTS", "กิจกรรมและอีเวนต์ที่กำลังจะมาถึง"), href: "/events" },
   {
     label: label("ABOUT THE ASSOCIATION", "เกี่ยวกับสมาคม"),

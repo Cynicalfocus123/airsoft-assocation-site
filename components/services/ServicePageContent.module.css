@@ -1,0 +1,110 @@
+.page {
+  max-width: 1060px;
+  padding: clamp(7rem, 14vw, 12rem) clamp(1.25rem, 8vw, 8rem) clamp(5rem, 10vw, 9rem);
+}
+
+.page h1 {
+  max-width: 1050px;
+  margin: 0;
+  font-size: var(--editorial-title-size);
+  line-height: .98;
+  letter-spacing: -.055em;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.intro {
+  max-width: 780px;
+  margin-top: clamp(2rem, 4vw, 3.5rem);
+}
+
+.intro p {
+  margin: 0 0 1.45rem;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 1.6vw, 1.28rem);
+  line-height: 1.72;
+  text-wrap: pretty;
+}
+
+.services {
+  max-width: 940px;
+  margin-top: clamp(4rem, 9vw, 8rem);
+}
+
+.services h2 {
+  max-width: 760px;
+  margin: 0 0 1.5rem;
+  font-size: clamp(2rem, 4.2vw, 4.3rem);
+  line-height: 1;
+  letter-spacing: -.045em;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.serviceList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+  counter-reset: service;
+}
+
+.serviceItem {
+  display: grid;
+  grid-template-columns: minmax(13rem, .75fr) minmax(0, 1.4fr);
+  gap: clamp(1.25rem, 5vw, 5rem);
+  padding: clamp(1.4rem, 3vw, 2.35rem) 0;
+  border-bottom: 1px solid var(--line);
+  counter-increment: service;
+}
+
+.serviceItem h3 {
+  position: relative;
+  margin: 0;
+  padding-left: 2.1rem;
+  font-size: clamp(1.05rem, 1.8vw, 1.45rem);
+  line-height: 1.2;
+  letter-spacing: -.02em;
+  text-wrap: balance;
+}
+
+.serviceItem h3::before {
+  position: absolute;
+  top: .1em;
+  left: 0;
+  color: var(--accent);
+  content: counter(service, decimal-leading-zero);
+  font-size: .78em;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+
+.serviceItem p {
+  max-width: 44rem;
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.3vw, 1.14rem);
+  line-height: 1.7;
+  text-wrap: pretty;
+}
+
+.placeholder {
+  max-width: 42rem;
+  margin: clamp(2rem, 5vw, 4rem) 0 0;
+  color: var(--muted);
+  font-size: var(--editorial-lead-size);
+  line-height: 1.5;
+}
+
+:global(html[lang="th"]) .page h1,
+:global(html[lang="th"]) .services h2 {
+  letter-spacing: 0;
+  text-transform: none;
+  line-height: 1.08;
+}
+
+@media (max-width: 700px) {
+  .page { padding-top: 7rem; }
+  .page h1 { letter-spacing: -.055em; }
+  .serviceItem { grid-template-columns: 1fr; gap: .8rem; }
+}
