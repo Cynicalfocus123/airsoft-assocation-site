@@ -1,6 +1,6 @@
 # Final Hostinger production report
 
-Verified 2026-09-07. This report concerns the generated Hostinger folder and ZIP, not an upload to a Hostinger account.
+Verified 2026-09-08. This report concerns the generated Hostinger folder and ZIP, not an upload to a Hostinger account.
 
 ## Framework and deployment
 
@@ -10,14 +10,14 @@ Verified 2026-09-07. This report concerns the generated Hostinger folder and ZIP
 | Build system | Turbopack production static export |
 | Routing | App Router; 52 content routes with directory index HTML |
 | Production build completed | YES |
-| Deployment folder | public_html, beside this report |
-| Deployment ZIP | public_html.zip, beside this report |
+| Deployment folder | airsoft-assocation-site-live/public_html |
+| Deployment ZIP | airsoft-assocation-site-live/public_html.zip; packaged only from live public_html |
 | Folder size | 4.66 MB (4,657,996 bytes) |
-| ZIP size | 2.45 MB (2,454,048 bytes) |
+| ZIP size | 2.45 MB (2,453,956 bytes) |
 | Production files | 315 |
 | ZIP layout | Files directly at root; extract inside Hostinger public_html |
 | ZIP integrity | Independent ZIP reader: CRCs and byte equality passed |
-| SHA-256 | c54e96e52f67cdef8ebe89f35a6bc10124841fae4b767c5c523934c3cb4b7d65 |
+| SHA-256 | 3a7f4fbe54aea580ce5108c18e15ab0be5eccb826124c3d20b2aa62298bcc763 |
 
 ## Site and language verification
 
