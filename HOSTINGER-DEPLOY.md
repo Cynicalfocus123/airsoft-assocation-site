@@ -4,7 +4,11 @@ This is Next.js 16.3.4 / React 19 with App Router, TypeScript and Turbopack. It 
 
 ## Build and files
 
-With Node 24 and the project's pinned pnpm installed:
+The final deliverables belong to **airsoft-assocation-site-live/public_html** and **airsoft-assocation-site-live/public_html.zip**. Build and package from the live folder only. Git holds the synchronized source and build tooling, not files to add into the live deployment ZIP. Source synchronization excludes `out`, `public_html` and `public_html.zip`, so it never copies Git-side deployment output over the live artifacts.
+
+All latest source changes, original assets, data and configuration must be synchronized from Git into live first. `verify-live-sync.mjs` compares each tracked and non-ignored source file byte for byte. The Hostinger build and ZIP creation are blocked if any live source file is missing or outdated. The ZIP writer also refuses to run in the Git folder.
+
+With Node 24 and the project's pinned pnpm installed, run these commands from the **live folder**:
 
 ```sh
 pnpm install --frozen-lockfile
@@ -14,7 +18,7 @@ pnpm exec tsc --noEmit
 node --test scripts/language-toggle.test.cjs scripts/cinematic-scroll.test.cjs scripts/featured-slider.test.cjs
 ```
 
-The command optimizes original images, runs the Next production export with an empty root base path, assembles and audits `public_html/`, then creates `public_html.zip`. Both artifacts are in this repository beside this document. The original images and development files are retained outside deployment. `out/` is an intermediate, not the upload artifact. Generated images, manifest, reports and deployment files are excluded from Git; rebuild them from the committed source.
+The command optimizes the live folder's original images, runs the Next production export with an empty root base path, assembles and audits its `public_html/`, then creates its `public_html.zip` using only files inside that live `public_html`. The original images and development files are retained outside deployment. `out/` is an intermediate, not the upload artifact. Generated images, manifest, reports and deployment files are excluded from Git.
 
 `pnpm build` continues to create the GitHub Pages build at `/airsoft-assocation-site`. Do not upload that `out/` to Hostinger. `NEXT_PUBLIC_BASE_PATH` is the only build environment setting; the Hostinger command supplies an empty value. No runtime environment variables, database, API keys, credentials, PHP or Node service are required. Existing unconfirmed programme/registration content stays as supplied; no forms or backend services were invented.
 

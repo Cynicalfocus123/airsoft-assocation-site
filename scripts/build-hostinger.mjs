@@ -8,6 +8,7 @@ function run(args, env = process.env) {
   const result = spawnSync(process.execPath, args, { cwd: root, env, stdio: 'inherit' });
   if (result.status !== 0) throw Error(`Command failed: ${args[0]}`);
 }
+run(['scripts/verify-live-sync.mjs']);
 if (!process.argv.includes('--package-only')) {
   run(['scripts/optimize-images.mjs']);
   run([require.resolve('next/dist/bin/next'), 'build'], { ...process.env, NEXT_PUBLIC_BASE_PATH: '' });

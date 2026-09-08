@@ -19,8 +19,8 @@ Verified ${new Date().toISOString().slice(0, 10)}. This report concerns the gene
 | Build system | Turbopack production static export |
 | Routing | App Router; ${browser.pages.length} content routes with directory index HTML |
 | Production build completed | YES |
-| Deployment folder | public_html, beside this report |
-| Deployment ZIP | public_html.zip, beside this report |
+| Deployment folder | airsoft-assocation-site-live/public_html |
+| Deployment ZIP | airsoft-assocation-site-live/public_html.zip; packaged only from live public_html |
 | Folder size | ${mb(audit.bytes)} |
 | ZIP size | ${mb(zip.length)} |
 | Production files | ${audit.files} |

@@ -65,6 +65,8 @@ Official local-first website for the Thailand Airsoft Association: standards, sa
 Added an English-default, persistent TH/EN switcher for the header, mobile menu and footer navigation only, with shared localized data and no locale routes.
 
 ## Hostinger production releases
+- The authoritative delivery is built and zipped inside `airsoft-assocation-site-live` only. Keep live and Git source synchronized, but exclude `out`, `public_html` and `public_html.zip` from Git-to-live synchronization. Never add Git-side output, source, documentation or metadata to the live ZIP; package only the live folder's `public_html` runtime contents.
+- Synchronize every latest code change, original asset, data file and configuration into live before building. `verify-live-sync.mjs` must pass byte-for-byte source parity before build/ZIP creation; a stale or incomplete live source blocks packaging.
 - Use `pnpm build:hostinger` for the domain-root static export in `public_html/` and runtime-only `public_html.zip`; keep the separate GitHub Pages base path for `pnpm build`.
 - Follow `HOSTINGER-DEPLOY.md`, `AGENT.md` and `DESIGNER.md`. Preserve existing layout, functionality and all supplied English/Thai text, including the body translations added since the older summary above. English remains the clean-session default.
 - Source image references now use extensionless logical identifiers through `imageSrc`; generated WebP/AVIF assets and responsive variants live in `public/images/optimized`. Original images remain untouched for editing. This supersedes old implementation notes that name JPG/PNG as runtime files.

@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { deflateRawSync } from 'node:zlib';
+import './verify-live-sync.mjs';
 const root = path.resolve(import.meta.dirname, '..');
 const folder = path.join(root, 'public_html');
 // Standard ZIP32, UTF-8 filenames, maximum DEFLATE. Files extract directly into public_html.
