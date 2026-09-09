@@ -232,7 +232,7 @@ test("featured event title uses a wider balanced responsive text column", () => 
   assert.match(featuredEventHero, /heroAssociation[^>]*>AIRSOFT AND PAINTBALL ASSOCIATION/);
   assert.match(featuredEventHero, /mobileHeadline[\s\S]*AIRSOFT AND PAINTBALL/);
   assert.match(eventsStyles, /\.heroWelcome,\.heroAssociation\{display:block;white-space:nowrap/);
-  assert.match(eventsStyles, /@media\(min-width:701px\)\{\.heroContent\{top:26%;bottom:auto;left:0;right:0/);
+  assert.match(eventsStyles, /@media\(min-width:701px\)\{\.heroContent\{top:34%;bottom:auto;left:0;right:0/);
   assert.match(eventsStyles, /@media\(max-width:700px\)\{\.heroContent\{top:30%;bottom:auto/);
   assert.doesNotMatch(featuredEventHero, /REGISTRATION COMING SOON|DETAILS/);
   assert.match(eventsStyles, /\.heroWelcome\{[^}]*white-space:nowrap/);
