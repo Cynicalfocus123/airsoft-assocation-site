@@ -182,7 +182,7 @@ test("header and footer share the same language state and the Thai font boundary
   assert.match(layout, /Noto_Sans_Thai/);
   assert.match(layout, /LanguageProvider/);
   assert.match(layout, /<LanguageProvider><SiteHeader \/><main>\{children\}<\/main><SiteFooter \/><\/LanguageProvider>/);
-  assert.match(layout, /icons: \{ icon: \[\{ url: "\/images\/association-logo\.png", type: "image\/png" \}\] \}/);
+  assert.match(layout, /icons: \{ icon: \[\{ url: "\/images\/optimized\/association-logo-favicon-64\.png", type: "image\/png", sizes: "64x64" \}\] \}/);
 });
 
 test("mobile drawer keeps the hamburger control accessible and includes the language switch", () => {
@@ -232,7 +232,8 @@ test("featured event title uses a wider balanced responsive text column", () => 
   assert.match(featuredEventHero, /heroAssociation[^>]*>AIRSOFT AND PAINTBALL ASSOCIATION/);
   assert.match(featuredEventHero, /mobileHeadline[\s\S]*AIRSOFT AND PAINTBALL/);
   assert.match(eventsStyles, /\.heroWelcome,\.heroAssociation\{display:block;white-space:nowrap/);
-  assert.match(eventsStyles, /@media\(min-width:701px\)\{\.heroContent\{left:0;right:0/);
+  assert.match(eventsStyles, /@media\(min-width:701px\)\{\.heroContent\{top:26%;bottom:auto;left:0;right:0/);
+  assert.match(eventsStyles, /@media\(max-width:700px\)\{\.heroContent\{top:30%;bottom:auto/);
   assert.doesNotMatch(featuredEventHero, /REGISTRATION COMING SOON|DETAILS/);
   assert.match(eventsStyles, /\.heroWelcome\{[^}]*white-space:nowrap/);
 });

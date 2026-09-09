@@ -8,7 +8,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Thailand Airsoft Association",
   description: "Standards, safety, events and sport tourism for airsoft and paintball in Thailand.",
-  icons: { icon: [{ url: "/images/association-logo.png", type: "image/png" }] },
+  icons: { icon: [{ url: "/images/optimized/association-logo-favicon-64.png", type: "image/png", sizes: "64x64" }] },
 };
 const thaiFont = Noto_Sans_Thai({ subsets: ["thai"], weight: ["400", "500", "600", "700"], variable: "--font-thai", display: "swap" });
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) { return <html lang="en" className={thaiFont.variable}><body><LanguageProvider><SiteHeader /><main>{children}</main><SiteFooter /></LanguageProvider></body></html>; }

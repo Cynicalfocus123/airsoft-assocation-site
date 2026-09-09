@@ -37,6 +37,18 @@ for (const name of (await fs.readdir(path.join(root, 'public/images'))).sort()) 
   report.push({ original: name, before: (await fs.stat(input)).size, variants });
 }
 const used = new Set(Object.values(manifest).flat().map(v => path.basename(v.src)));
+// The browser tab only needs a tiny raster icon. Keep the full-resolution source
+// logo for the site image pipeline, but emit this dedicated 64px PNG for favicons.
+const faviconName = 'association-logo-favicon-64.png';
+const favicon = await sharp(path.join(root, 'public/images/association-logo.png'))
+  .rotate()
+  .resize(64, 64, { fit: 'contain', withoutEnlargement: true })
+  .png({ compressionLevel: 9, adaptiveFiltering: true })
+  .toBuffer();
+await fs.writeFile(path.join(output, faviconName), favicon);
+const faviconMeta = await sharp(favicon).metadata();
+if (faviconMeta.width !== 64 || faviconMeta.height !== 64 || faviconMeta.format !== 'png') throw Error(`Invalid favicon: ${faviconName}`);
+used.add(faviconName);
 for (const file of await fs.readdir(output)) if (!used.has(file)) await fs.unlink(path.join(output, file));
 await fs.writeFile(path.join(root, 'data/image-manifest.json'), JSON.stringify(manifest, null, 2) + '\n');
 await fs.mkdir(path.join(root, 'reports'), { recursive: true });

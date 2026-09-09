@@ -22,7 +22,7 @@ await fs.cp(path.join(root, 'out'), target, { recursive: true, filter: (src) => 
   const relative = path.relative(path.join(root, 'out'), src).replaceAll('\\', '/');
   if (relative.endsWith('.map')) return false;
   if (/^(file|globe|next|vercel|window)\.svg$/.test(relative)) return false;
-  if (relative.startsWith('images/') && relative !== 'images/association-logo.png' && relative !== 'images/optimized' && !relative.startsWith('images/optimized/')) return false;
+  if (relative.startsWith('images/') && relative !== 'images/optimized' && !relative.startsWith('images/optimized/')) return false;
   return true;
 } });
 await fs.copyFile(path.join(root, 'scripts/hostinger.htaccess'), path.join(target, '.htaccess'));
