@@ -530,8 +530,96 @@ export const servicesCopy: Record<ServiceSlug, ServicePageCopy> = {
   },
   training: {
     eyebrow: text("SERVICES", "บริการ"),
-    title: text("TRAINING", "การฝึกอบรม"),
-    placeholder: text("Content in development.", "เนื้อหากำลังอยู่ระหว่างการพัฒนา"),
+    title: text(
+      "STAFF TRAINING & PROFESSIONAL DEVELOPMENT",
+      "การฝึกอบรมบุคลากรและการพัฒนามาตรฐานวิชาชีพ",
+    ),
+    blocks: [
+      {
+        type: "paragraph",
+        text: text(
+          "Running a successful Airsoft or Paintball business requires more than a good field—it requires a well-trained, knowledgeable, and professional team.",
+          "การดำเนินธุรกิจแอร์ซอฟต์หรือเพ้นท์บอลให้ประสบความสำเร็จ ไม่ได้ขึ้นอยู่กับเพียงแค่การมีสนามที่ดี แต่ต้องมีทีมงานที่ผ่านการฝึกอบรม มีความรู้ และสามารถปฏิบัติงานได้อย่างมืออาชีพ",
+        ),
+      },
+      {
+        type: "paragraph",
+        text: text(
+          "The Airsoft and Paintball Association provides staff training and operational guidance to help field owners, event organizers, referees, marshals, and support personnel align with current rules, safety practices, and internationally recognized standards.",
+          "สมาคมแอร์ซอฟต์และเพ้นท์บอล ให้บริการฝึกอบรมบุคลากรและให้คำแนะนำด้านการปฏิบัติงาน เพื่อช่วยเจ้าของสนาม ผู้จัดอีเวนต์ กรรมการ มาร์แชล และเจ้าหน้าที่ที่เกี่ยวข้อง ให้สามารถดำเนินงานได้สอดคล้องกับกฎ กติกา แนวทางด้านความปลอดภัย และมาตรฐานที่ได้รับการยอมรับในระดับนานาชาติ",
+        ),
+      },
+      {
+        type: "heading",
+        text: text("TRAINING AREAS", "หัวข้อการฝึกอบรม"),
+      },
+      {
+        type: "paragraph",
+        text: text(
+          "Our training can cover key areas such as:",
+          "หลักสูตรและการฝึกอบรมของเราสามารถครอบคลุมหัวข้อสำคัญ เช่น:",
+        ),
+      },
+      {
+        type: "list",
+        items: [
+          text("Player safety", "ความปลอดภัยของผู้เล่น"),
+          text("Field operations", "การบริหารและควบคุมสนาม"),
+          text("Referee and marshal procedures", "ขั้นตอนการทำงานของกรรมการและมาร์แชล"),
+          text("FPS and Joule control", "การควบคุมค่า FPS และ Joule"),
+          text("Emergency response and first aid", "การรับมือเหตุฉุกเฉินและการปฐมพยาบาล"),
+          text("Customer service", "การบริการลูกค้า"),
+          text("Event management", "การบริหารอีเวนต์"),
+          text("Player conduct", "มาตรฐานพฤติกรรมของผู้เล่น"),
+          text("Risk management", "การบริหารความเสี่ยง"),
+          text("Professional operating procedures", "ขั้นตอนการปฏิบัติงานอย่างมืออาชีพ"),
+        ],
+      },
+      {
+        type: "heading",
+        text: text(
+          "APPLYING STANDARDS IN REAL OPERATIONS",
+          "การนำมาตรฐานไปใช้ในการปฏิบัติงานจริง",
+        ),
+      },
+      {
+        type: "paragraph",
+        text: text(
+          "We help your team understand not only what the standards are, but how to apply them effectively in day-to-day operations.",
+          "เราไม่ได้เพียงสอนว่า “มาตรฐานคืออะไร” แต่ช่วยให้ทีมงานของคุณเข้าใจว่าจะนำมาตรฐานเหล่านั้นไปใช้จริงในงานประจำวันได้อย่างไร",
+        ),
+      },
+      {
+        type: "heading",
+        text: text("BUILDING A STRONGER TEAM", "การพัฒนาทีมงานให้แข็งแกร่งขึ้น"),
+      },
+      {
+        type: "paragraph",
+        text: text(
+          "With the right knowledge, systems, and tools, your staff can operate with greater confidence, reduce avoidable mistakes, improve the player experience, and strengthen the reputation of your business.",
+          "เมื่อบุคลากรมีความรู้ ระบบ และเครื่องมือที่ถูกต้อง จะช่วยให้ทีมทำงานได้อย่างมั่นใจมากขึ้น ลดข้อผิดพลาดที่ไม่จำเป็น ยกระดับประสบการณ์ของผู้เล่น และสร้างความน่าเชื่อถือให้กับธุรกิจของคุณ",
+        ),
+      },
+      {
+        type: "heading",
+        text: text("OUR GOAL", "เป้าหมายของเรา"),
+      },
+      {
+        type: "paragraph",
+        text: text(
+          "Our goal is to help your organization stay up to date, professional, safe, efficient, and prepared for long-term growth.",
+          "เป้าหมายของเราคือช่วยให้องค์กรของคุณทันสมัย ปลอดภัย มีประสิทธิภาพ เป็นมืออาชีพ และพร้อมสำหรับการเติบโตในระยะยาว",
+        ),
+      },
+      {
+        type: "closing",
+        lines: [
+          text("Train Your Team.", "พัฒนาทีมงาน"),
+          text("Raise Your Standards.", "ยกระดับมาตรฐาน"),
+          text("Strengthen Your Business.", "เสริมความแข็งแกร่งให้ธุรกิจ"),
+        ],
+      },
+    ],
   },
 };
 

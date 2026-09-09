@@ -75,6 +75,13 @@ test("Services navigation and field design page use the approved bilingual struc
   assert.match(servicesData, /PERMITS, COMPLIANCE & EVENT APPROVAL SUPPORT/);
   assert.match(servicesData, /EQUIPMENT IMPORT GUIDANCE/);
   assert.match(servicesData, /While final permits and approvals remain subject to the relevant government authorities and applicable laws/);
+  assert.match(servicesData, /STAFF TRAINING & PROFESSIONAL DEVELOPMENT/);
+  assert.match(servicesData, /การฝึกอบรมบุคลากรและการพัฒนามาตรฐานวิชาชีพ/);
+  assert.match(servicesData, /TRAINING AREAS/);
+  assert.match(servicesData, /APPLYING STANDARDS IN REAL OPERATIONS/);
+  assert.match(servicesData, /Train Your Team\./);
+  assert.match(servicesData, /พัฒนาทีมงาน/);
+  assert.doesNotMatch(servicesData, /Content in development\./);
   assert.match(servicesComponent, /useLanguage/);
   assert.match(servicesComponent, /block\.type === "closing"/);
   assert.match(servicesRoute, /generateStaticParams/);
