@@ -17,8 +17,16 @@ export function FeaturedEventHero() {
         <div className={styles.heroShade} />
         <div className={styles.heroContent}>
           <h1>
-            <span className={styles.heroWelcome}>WELCOME TO THE THAILAND NATIONAL</span>
-            <span className={styles.heroAssociation}>AIRSOFT AND PAINTBALL ASSOCIATION</span>
+            <span className={styles.desktopHeadline}>
+              <span className={styles.heroWelcome}>WELCOME TO THE THAILAND NATIONAL</span>
+              <span className={styles.heroAssociation}>AIRSOFT AND PAINTBALL ASSOCIATION</span>
+            </span>
+            <span className={styles.mobileHeadline}>
+              <span>WELCOME TO THE</span>
+              <span>THAILAND NATIONAL</span>
+              <span>AIRSOFT AND PAINTBALL</span>
+              <span>ASSOCIATION</span>
+            </span>
           </h1>
         </div>
       </article>)}
