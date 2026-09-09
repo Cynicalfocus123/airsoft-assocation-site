@@ -62,7 +62,12 @@ test("Services navigation and field design page use the approved bilingual struc
   assert.match(footer, /navigation\.filter\(\(item\) => item\.children\)/);
   assert.match(servicesData, /FIELD DESIGN & DEVELOPMENT SERVICES/);
   assert.match(servicesData, /WHAT WE CAN DO FOR YOUR FIELD/);
-  assert.equal((servicesData.match(/heading: text\(/g) || []).length, 10);
+  assert.match(servicesData, /business-consultant/);
+  assert.match(servicesData, /START YOUR AIRSOFT & PAINTBALL BUSINESS WITH THE RIGHT PLAN/);
+  assert.match(servicesData, /Starting an Airsoft/);
+  assert.match(servicesData, /เริ่มต้นธุรกิจแอร์ซอฟต์และเพ้นท์บอลด้วยแผนที่ถูกต้อง/);
+  assert.match(servicesData, /WHY BUSINESS CONSULTING MATTERS/);
+  assert.match(servicesData, /WE HELP YOU BUILD A BUSINESS/);
   assert.match(servicesComponent, /useLanguage/);
   assert.match(servicesRoute, /generateStaticParams/);
   assert.match(servicesRoute, /Field Design & Development Services \| Thailand Airsoft Association/);

@@ -14,6 +14,13 @@ export function ServicePageContent({ slug }: { slug: ServiceSlug }) {
     <p className="eyebrow">{localized(copy.eyebrow)}</p>
     <h1 id="service-title">{localized(copy.title)}</h1>
     {copy.intro && <div className={styles.intro}>{copy.intro.map((paragraph) => <p key={paragraph.en}>{localized(paragraph)}</p>)}</div>}
+    {copy.blocks && <div className={styles.blocks}>
+      {copy.blocks.map((block, index) => {
+        if (block.type === "heading") return <h2 key={`${block.text.en}-${index}`}>{localized(block.text)}</h2>;
+        if (block.type === "list") return <ul key={`list-${index}`}>{block.items.map((item) => <li key={item.en}>{localized(item)}</li>)}</ul>;
+        return <p key={`${block.text.en}-${index}`}>{localized(block.text)}</p>;
+      })}
+    </div>}
     {copy.sections && copy.sectionHeading && <section className={styles.services} aria-labelledby="service-list-title">
       <h2 id="service-list-title">{localized(copy.sectionHeading)}</h2>
       <ol className={styles.serviceList}>

@@ -9,6 +9,10 @@ export type ServiceSlug =
 
 export type LocalizedText = { en: string; th: string };
 export type FieldServiceSection = { heading: LocalizedText; description: LocalizedText };
+export type ServiceBlock =
+  | { type: "heading"; text: LocalizedText }
+  | { type: "paragraph"; text: LocalizedText }
+  | { type: "list"; items: LocalizedText[] };
 
 export type ServicePageCopy = {
   title: LocalizedText;
@@ -16,6 +20,7 @@ export type ServicePageCopy = {
   intro?: LocalizedText[];
   sectionHeading?: LocalizedText;
   sections?: FieldServiceSection[];
+  blocks?: ServiceBlock[];
   placeholder?: LocalizedText;
 };
 
@@ -119,8 +124,231 @@ export const servicesCopy: Record<ServiceSlug, ServicePageCopy> = {
   },
   "business-consultant": {
     eyebrow: text("SERVICES", "บริการ"),
-    title: text("BUSINESS CONSULTANT", "ที่ปรึกษาธุรกิจ"),
-    placeholder: text("Content in development.", "เนื้อหากำลังอยู่ระหว่างการพัฒนา"),
+    title: text("START YOUR AIRSOFT & PAINTBALL BUSINESS WITH THE RIGHT PLAN", "เริ่มต้นธุรกิจแอร์ซอฟต์และเพ้นท์บอลด้วยแผนที่ถูกต้อง"),
+    blocks: [
+      {
+        type: "paragraph",
+        text: text(
+          "Starting an Airsoft or Paintball business takes more than finding a piece of land and building a field.",
+          "การเริ่มต้นธุรกิจแอร์ซอฟต์หรือเพ้นท์บอล ไม่ใช่เพียงแค่การหาพื้นที่แล้วสร้างสนามขึ้นมาเท่านั้น",
+        ),
+      },
+      {
+        type: "paragraph",
+        text: text(
+          "Success requires the right location, business model, field concept, customer experience, safety standards, marketing strategy, event plan, and long-term growth strategy.",
+          "ความสำเร็จต้องเกิดจากการวางแผนอย่างรอบด้าน ทั้งในเรื่อง ทำเล รูปแบบธุรกิจ แนวคิดของสนาม ประสบการณ์ลูกค้า มาตรฐานความปลอดภัย กลยุทธ์การตลาด แผนอีเวนต์ และแผนการเติบโตระยะยาว",
+        ),
+      },
+      {
+        type: "paragraph",
+        text: text(
+          "The Airsoft and Paintball Association provides professional business consulting to help new and existing field owners build a stronger foundation and avoid costly mistakes from the beginning.",
+          "สมาคมแอร์ซอฟต์และเพ้นท์บอล ให้คำปรึกษาด้านธุรกิจอย่างมืออาชีพ เพื่อช่วยผู้ประกอบการรายใหม่และเจ้าของสนามเดิมวางรากฐานธุรกิจให้แข็งแรง และหลีกเลี่ยงความผิดพลาดที่อาจทำให้เสียเงินลงทุนโดยไม่จำเป็นตั้งแต่เริ่มต้น",
+        ),
+      },
+      { type: "heading", text: text("WHY BUSINESS CONSULTING MATTERS", "ทำไมการให้คำปรึกษาด้านธุรกิจจึงมีความสำคัญ") },
+      {
+        type: "paragraph",
+        text: text(
+          "Many businesses fail not because there is no demand—but because the business was not planned around what players actually want.",
+          "หลายธุรกิจไม่ได้ล้มเหลวเพราะไม่มีความต้องการจากตลาด แต่ล้มเหลวเพราะไม่ได้วางแผนธุรกิจให้สอดคล้องกับสิ่งที่ผู้เล่นต้องการจริง ๆ",
+        ),
+      },
+      {
+        type: "paragraph",
+        text: text("Before investing, you need to know:", "ก่อนลงทุน คุณควรตอบคำถามสำคัญเหล่านี้ให้ได้:"),
+      },
+      {
+        type: "list",
+        items: [
+          text("Is the location right for the target market?", "ทำเลเหมาะสมกับกลุ่มลูกค้าเป้าหมายหรือไม่?"),
+          text("Is the land suitable for Airsoft, Paintball, or MilSim?", "พื้นที่เหมาะสำหรับแอร์ซอฟต์ เพ้นท์บอล หรือ MilSim หรือไม่?"),
+          text("What type of players are you trying to attract?", "คุณต้องการดึงดูดผู้เล่นประเภทใด?"),
+          text("What field concept will make players choose you over competitors?", "แนวคิดของสนามแบบใดที่จะทำให้ผู้เล่นเลือกสนามของคุณแทนคู่แข่ง?"),
+          text("What theme will make your field memorable?", "ธีมแบบใดที่จะทำให้สนามของคุณน่าจดจำ?"),
+          text("How should the field be designed for safety and game flow?", "ควรออกแบบสนามอย่างไรให้มีความปลอดภัยและมี Game Flow ที่ดี?"),
+          text("What facilities and services do players expect?", "ผู้เล่นคาดหวังสิ่งอำนวยความสะดวกและบริการแบบใด?"),
+          text("How much should you invest before opening?", "ควรลงทุนเท่าใดก่อนเปิดดำเนินการ?"),
+          text("How will the business generate revenue beyond admission fees?", "ธุรกิจจะสร้างรายได้นอกเหนือจากค่าเข้าสนามได้อย่างไร?"),
+          text("How will you build repeat customers?", "จะทำอย่างไรให้ลูกค้ากลับมาใช้บริการและเล่นซ้ำ?"),
+          text("How will you attract teams, tournaments, sponsors, and international players?", "จะดึงดูดทีม การแข่งขัน ผู้สนับสนุน และผู้เล่นต่างชาติได้อย่างไร?"),
+          text("How will you market the field locally and internationally?", "จะทำการตลาดสนามทั้งในประเทศและต่างประเทศอย่างไร?"),
+        ],
+      },
+      {
+        type: "paragraph",
+        text: text(
+          "These decisions can determine whether a field simply opens—or becomes a successful destination.",
+          "การตัดสินใจเหล่านี้อาจเป็นตัวกำหนดว่าสนามของคุณจะเพียงแค่ “เปิดให้บริการได้” หรือสามารถพัฒนาเป็น จุดหมายปลายทางที่ประสบความสำเร็จ",
+        ),
+      },
+      { type: "heading", text: text("HOW WE HELP YOU", "เราช่วยคุณได้อย่างไร") },
+      { type: "heading", text: text("BUSINESS FEASIBILITY & LOCATION REVIEW", "การวิเคราะห์ความเป็นไปได้ของธุรกิจและทำเล") },
+      {
+        type: "paragraph",
+        text: text(
+          "We help evaluate whether your proposed location fits the business concept, target customers, accessibility, surrounding market, field size, expansion potential, and event opportunities.",
+          "เราช่วยประเมินว่าทำเลที่คุณเลือกเหมาะสมกับแนวคิดของธุรกิจ กลุ่มลูกค้าเป้าหมาย การเดินทาง ตลาดในพื้นที่ ขนาดสนาม ศักยภาพในการขยาย และโอกาสในการจัดอีเวนต์หรือไม่",
+        ),
+      },
+      { type: "heading", text: text("BUSINESS MODEL DEVELOPMENT", "การพัฒนาโมเดลธุรกิจ") },
+      {
+        type: "paragraph",
+        text: text(
+          "We help build a practical revenue model around admissions, memberships, rentals, equipment, food and beverage, retail, private events, tournaments, training, sponsorships, and other income opportunities.",
+          "เราช่วยวางโมเดลรายได้ที่เหมาะสมจากหลายช่องทาง เช่น ค่าเข้าสนาม สมาชิก ค่าเช่าอุปกรณ์ การจำหน่ายอุปกรณ์ อาหารและเครื่องดื่ม ร้านค้า งานส่วนตัว การแข่งขัน การฝึกอบรม ผู้สนับสนุน และโอกาสในการสร้างรายได้อื่น ๆ",
+        ),
+      },
+      { type: "heading", text: text("FIELD CONCEPT & THEME DEVELOPMENT", "การพัฒนาแนวคิดและธีมของสนาม") },
+      { type: "paragraph", text: text("A field must give players a reason to visit.", "สนามต้องมีเหตุผลที่ทำให้ผู้เล่นอยากเดินทางมาใช้บริการ") },
+      {
+        type: "paragraph",
+        text: text(
+          "We help develop memorable concepts and themes that create excitement and differentiate your business from ordinary fields.",
+          "เราช่วยพัฒนาแนวคิดและธีมที่น่าจดจำ สร้างความตื่นเต้น และทำให้ธุรกิจของคุณแตกต่างจากสนามทั่วไป",
+        ),
+      },
+      {
+        type: "paragraph",
+        text: text(
+          "The objective is to create a field that players see online and immediately want to experience.",
+          "เป้าหมายคือการสร้างสนามที่เมื่อผู้เล่น เห็นทางออนไลน์แล้วรู้สึกอยากเดินทางมาสัมผัสประสบการณ์ทันที",
+        ),
+      },
+      { type: "heading", text: text("CUSTOMER & MARKET STRATEGY", "กลยุทธ์ด้านลูกค้าและตลาด") },
+      { type: "paragraph", text: text("We help identify the customers you should target, including:", "เราช่วยวิเคราะห์และกำหนดกลุ่มลูกค้าเป้าหมายที่เหมาะสม ได้แก่:") },
+      {
+        type: "list",
+        items: [
+          text("Beginners", "ผู้เล่นใหม่"),
+          text("Regular Players", "ผู้เล่นประจำ"),
+          text("Teams", "ทีม"),
+          text("MilSim Players", "ผู้เล่นสาย MilSim"),
+          text("Corporate Groups", "กลุ่มบริษัท"),
+          text("Tourists", "นักท่องเที่ยว"),
+          text("International Players", "ผู้เล่นต่างชาติ"),
+          text("Tournament Participants", "ผู้เข้าร่วมการแข่งขัน"),
+        ],
+      },
+      {
+        type: "paragraph",
+        text: text(
+          "Each customer group has different expectations. Understanding those expectations is essential to building the right business.",
+          "ลูกค้าแต่ละกลุ่มมีความต้องการและความคาดหวังที่แตกต่างกัน การเข้าใจความต้องการเหล่านั้นเป็นสิ่งสำคัญในการสร้างธุรกิจที่เหมาะสม",
+        ),
+      },
+      { type: "heading", text: text("FIELD DESIGN & PLAYER EXPERIENCE", "การออกแบบสนามและประสบการณ์ของผู้เล่น") },
+      {
+        type: "paragraph",
+        text: text(
+          "We help plan the overall player journey—from arrival and registration to staging, gameplay, rest areas, food, retail, photography, and departure.",
+          "เราช่วยวางแผนประสบการณ์ของผู้เล่นตั้งแต่เดินทางมาถึง การลงทะเบียน การเตรียมตัว การเล่นเกม พื้นที่พักผ่อน อาหาร ร้านค้า การถ่ายภาพ ไปจนถึงการเดินทางกลับ",
+        ),
+      },
+      { type: "paragraph", text: text("A successful field should create an experience that makes customers say: “I want to come back.”", "สนามที่ประสบความสำเร็จควรสร้างประสบการณ์ที่ทำให้ลูกค้ารู้สึกว่า “ฉันอยากกลับมาอีก”") },
+      { type: "heading", text: text("SAFETY & INTERNATIONAL STANDARDS", "มาตรฐานความปลอดภัยและมาตรฐานสากล") },
+      {
+        type: "list",
+        items: [
+          text("Field safety", "ความปลอดภัยของสนาม"),
+          text("Protective equipment", "อุปกรณ์ป้องกัน"),
+          text("FPS and Joule controls", "การควบคุมค่า FPS และ Joule"),
+          text("Engagement distances", "ระยะการยิงและระยะปะทะ"),
+          text("Safe zones", "พื้นที่ปลอดภัย"),
+          text("Referee and marshal procedures", "ขั้นตอนการปฏิบัติงานของกรรมการและมาร์แชล"),
+          text("Emergency response", "การรับมือเหตุฉุกเฉิน"),
+          text("First aid", "การปฐมพยาบาล"),
+          text("Player conduct", "พฤติกรรมและข้อปฏิบัติของผู้เล่น"),
+          text("Event operations", "การบริหารและดำเนินงานอีเวนต์"),
+        ],
+      },
+      { type: "paragraph", text: text("Strong safety standards protect players while building trust in the business.", "มาตรฐานความปลอดภัยที่แข็งแรงช่วยปกป้องผู้เล่น พร้อมทั้งสร้างความเชื่อมั่นให้กับธุรกิจของคุณ") },
+      { type: "heading", text: text("SALES & MARKETING STRATEGY", "กลยุทธ์การขายและการตลาด") },
+      { type: "paragraph", text: text("Building a great field is only the beginning. Players must know that it exists.", "การสร้างสนามที่ดีเป็นเพียงจุดเริ่มต้น ผู้เล่นต้องรู้ว่าสนามของคุณมีอยู่") },
+      {
+        type: "list",
+        items: [
+          text("Social media", "โซเชียลมีเดีย"),
+          text("Video marketing", "การตลาดผ่านวิดีโอ"),
+          text("Team outreach", "การเข้าถึงทีมและกลุ่มผู้เล่น"),
+          text("International promotion", "การประชาสัมพันธ์ในต่างประเทศ"),
+          text("Influencer partnerships", "ความร่วมมือกับ Influencer"),
+          text("Community development", "การพัฒนาชุมชนผู้เล่น"),
+          text("Tournament marketing", "การตลาดสำหรับการแข่งขัน"),
+          text("Tourism partnerships", "ความร่วมมือด้านการท่องเที่ยว"),
+          text("Hotel and travel partnerships", "ความร่วมมือกับโรงแรมและบริษัทท่องเที่ยว"),
+          text("Sponsorship", "ผู้สนับสนุน"),
+          text("Corporate events", "อีเวนต์สำหรับองค์กร"),
+          text("Promotional campaigns", "แคมเปญส่งเสริมการตลาด"),
+        ],
+      },
+      { type: "paragraph", text: text("Our goal is to help your field become a brand, not simply another place to play.", "เป้าหมายของเราคือช่วยให้สนามของคุณกลายเป็น แบรนด์ ไม่ใช่เพียงสถานที่เล่นอีกแห่งหนึ่ง") },
+      { type: "heading", text: text("INTERNATIONAL CUSTOMER DEVELOPMENT", "การพัฒนาลูกค้าต่างประเทศ") },
+      {
+        type: "paragraph",
+        text: text(
+          "For fields with the right potential, we help develop strategies to reach players outside the local market.",
+          "สำหรับสนามที่มีศักยภาพ เราช่วยพัฒนากลยุทธ์เพื่อเข้าถึงผู้เล่นจากตลาดต่างประเทศ",
+        ),
+      },
+      {
+        type: "paragraph",
+        text: text(
+          "This may include international tournaments, MilSim events, travel packages, overseas team outreach, sports tourism, and partnerships with international Airsoft and Paintball communities.",
+          "ซึ่งอาจรวมถึงการแข่งขันระดับนานาชาติ อีเวนต์ MilSim แพ็กเกจการเดินทาง การเข้าถึงทีมจากต่างประเทศ การท่องเที่ยวเชิงกีฬา และความร่วมมือกับชุมชนแอร์ซอฟต์และเพ้นท์บอลระดับนานาชาติ",
+        ),
+      },
+      { type: "paragraph", text: text("We want international players to see your field and think: “That is a field I need to experience.”", "เราต้องการให้ผู้เล่นต่างประเทศเห็นสนามของคุณแล้วคิดว่า “นี่คือสนามที่ฉันต้องเดินทางมาเล่นสักครั้ง”") },
+      { type: "heading", text: text("EVENT & TOURNAMENT DEVELOPMENT", "การพัฒนาอีเวนต์และการแข่งขัน") },
+      { type: "paragraph", text: text("Special events create excitement, publicity, and additional revenue.", "อีเวนต์พิเศษช่วยสร้างความตื่นเต้น การประชาสัมพันธ์ และรายได้เพิ่มเติม") },
+      {
+        type: "list",
+        items: [
+          text("Regional competitions", "การแข่งขันระดับภูมิภาค"),
+          text("National tournaments", "การแข่งขันระดับประเทศ"),
+          text("International events", "อีเวนต์ระดับนานาชาติ"),
+          text("MilSim experiences", "กิจกรรมและประสบการณ์ MilSim"),
+          text("Scenario games", "เกม Scenario"),
+          text("Team competitions", "การแข่งขันแบบทีม"),
+          text("Corporate events", "อีเวนต์สำหรับองค์กร"),
+          text("Signature annual events", "อีเวนต์ประจำปีที่เป็นเอกลักษณ์"),
+        ],
+      },
+      {
+        type: "paragraph",
+        text: text(
+          "A strong signature event can become one of the most valuable marketing tools for the entire business.",
+          "อีเวนต์หลักที่มีเอกลักษณ์และแข็งแรงสามารถกลายเป็นหนึ่งในเครื่องมือทางการตลาดที่ทรงคุณค่าที่สุดของธุรกิจ",
+        ),
+      },
+      { type: "heading", text: text("WE HELP YOU BUILD A BUSINESS — NOT JUST A FIELD", "เราช่วยคุณสร้าง “ธุรกิจ” ไม่ใช่เพียงแค่ “สนาม”") },
+      { type: "paragraph", text: text("A field can be built with structures and obstacles.", "สนามสามารถสร้างขึ้นได้ด้วยสิ่งปลูกสร้างและสิ่งกีดขวาง") },
+      {
+        type: "paragraph",
+        text: text(
+          "A successful business must be built around strategy, customers, experience, operations, marketing, safety, and profitability.",
+          "แต่ธุรกิจที่ประสบความสำเร็จต้องสร้างขึ้นจาก กลยุทธ์ ลูกค้า ประสบการณ์ การบริหาร การตลาด ความปลอดภัย และความสามารถในการทำกำไร",
+        ),
+      },
+      {
+        type: "paragraph",
+        text: text(
+          "Our role is to help you understand the business before you invest heavily, plan every important stage, and build a concept with the potential to grow for years.",
+          "หน้าที่ของเราคือช่วยให้คุณเข้าใจธุรกิจก่อนลงทุนจำนวนมาก วางแผนทุกขั้นตอนสำคัญ และสร้างแนวคิดที่มีศักยภาพในการเติบโตในระยะยาว",
+        ),
+      },
+      {
+        type: "list",
+        items: [
+          text("The Right Location.", "ทำเลที่ใช่"),
+          text("The Right Concept.", "แนวคิดที่ใช่"),
+          text("The Right Experience.", "ประสบการณ์ที่ใช่"),
+          text("The Right Business Strategy.", "กลยุทธ์ธุรกิจที่ใช่"),
+        ],
+      },
+      { type: "paragraph", text: text("Plan It Right. Build It Right. Market It Right. Grow It Successfully.", "วางแผนให้ถูก • สร้างให้ถูก • ทำตลาดให้ถูก • เติบโตอย่างประสบความสำเร็จ") },
+    ],
   },
   marketing: {
     eyebrow: text("SERVICES", "บริการ"),

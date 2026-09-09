@@ -26,6 +26,52 @@
   text-wrap: pretty;
 }
 
+.blocks {
+  max-width: 780px;
+  margin-top: clamp(2rem, 4vw, 3.5rem);
+}
+
+.blocks h2 {
+  margin: clamp(3rem, 6vw, 5.5rem) 0 1.25rem;
+  font-size: clamp(1.55rem, 3vw, 2.8rem);
+  line-height: 1.05;
+  letter-spacing: -.04em;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.blocks h2:first-child { margin-top: 0; }
+
+.blocks p,
+.blocks li {
+  color: var(--muted);
+  font-size: clamp(1.05rem, 1.5vw, 1.22rem);
+  line-height: 1.72;
+  text-wrap: pretty;
+}
+
+.blocks p { margin: 0 0 1.35rem; }
+
+.blocks ul {
+  margin: .35rem 0 1.65rem;
+  padding: 0;
+  list-style: none;
+}
+
+.blocks li {
+  position: relative;
+  margin: 0;
+  padding-left: 1.35rem;
+}
+
+.blocks li::before {
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  content: "—";
+  font-weight: 800;
+}
+
 .services {
   max-width: 940px;
   margin-top: clamp(4rem, 9vw, 8rem);
@@ -97,7 +143,8 @@
 }
 
 :global(html[lang="th"]) .page h1,
-:global(html[lang="th"]) .services h2 {
+:global(html[lang="th"]) .services h2,
+:global(html[lang="th"]) .blocks h2 {
   letter-spacing: 0;
   text-transform: none;
   line-height: 1.08;

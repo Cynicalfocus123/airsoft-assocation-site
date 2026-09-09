@@ -27,4 +27,4 @@ SERVICES
 
 Navigation labels must provide both English and Thai values, with English as the fresh-session default. The shared navigation data must remain the source of truth so the Services group appears consistently in desktop navigation, mobile navigation and the footer.
 
-The Field Design & Engineering route is the approved full bilingual service page and must keep all ten supplied service sections and their English/Thai copy. The other Services routes use neutral bilingual “content in development” placeholders until approved copy is supplied; do not invent claims or use filler text.
+The Field Design & Engineering route is the approved full bilingual service page and must keep all ten supplied service sections and their English/Thai copy. The Business Consultant route is also a full bilingual page and must keep its supplied consulting copy, checklists and service areas. Marketing, Permit Approval and Training remain neutral bilingual “content in development” placeholders until approved copy is supplied; do not invent claims or use filler text.
