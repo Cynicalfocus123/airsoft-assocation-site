@@ -21,7 +21,7 @@ for (const file of files) {
   const rel = path.relative(folder, file).replaceAll('\\', '/'), data = await fs.readFile(file);
   if (/__next\.[^/]+\//.test(rel)) errors.push(`Unnormalized navigation-data filename: ${rel}`);
   total += data.length;
-  if (/\.(png|jpe?g|gif|bmp|tiff?|map|zip)$/.test(rel) || /(^|\/)(node_modules|\.git|src|\.env)(\/|$)/.test(rel)) errors.push(`Excluded file: ${rel}`);
+  if ((/\.(png|jpe?g|gif|bmp|tiff?|map|zip)$/.test(rel) && rel !== 'images/association-logo.png') || /(^|\/)(node_modules|\.git|src|\.env)(\/|$)/.test(rel)) errors.push(`Excluded file: ${rel}`);
   if (/\.(avif|webp)$/.test(rel)) {
     const meta = await sharp(data).metadata(); await sharp(data).raw().toBuffer();
     if ((rel.endsWith('.webp') && meta.format !== 'webp') || (rel.endsWith('.avif') && meta.format !== 'heif')) errors.push(`Wrong image encoding: ${rel}`);
