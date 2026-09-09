@@ -227,6 +227,12 @@ test("external-link arrow marks are hidden on tablet and mobile", () => {
   assert.match(read("app/events/EventsPage.module.css"), /@media\(max-width:1024px\)\{\.rowArrow\{display:none\}\}/);
 });
 
+test("mobile event cards keep drag scrolling without visible swipe buttons", () => {
+  assert.match(eventsStyles, /@media\(max-width:700px\)[\s\S]*\.railControls\{display:none\}/);
+  assert.match(upcomingEvents, /useDragScroll/);
+  assert.match(upcomingEvents, /pointerHandlers/);
+});
+
 test("privacy policy and terms pages use the supplied bilingual documents", () => {
   assert.match(legal, /PRIVACY POLICY/);
   assert.match(legal, /Last Updated: September 2026/);
