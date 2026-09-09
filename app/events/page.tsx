@@ -9,8 +9,8 @@ export default function EventsPage() {
       {calendarEvents.map((event) => event.isTba
         ? <p className={styles.row} key={event.id}>TBA</p>
         : event.externalUrl
-          ? <a className={styles.row} href={event.externalUrl} key={event.id}>{event.startDate} — {event.title} ↗</a>
-          : <Link className={styles.row} href={`/events/${event.slug}`} key={event.id}>{event.startDate} — {event.title} ↗</Link>)}
+          ? <a className={styles.row} href={event.externalUrl} key={event.id}>{event.startDate} — {event.title} <span className={styles.rowArrow} aria-hidden="true">↗</span></a>
+          : <Link className={styles.row} href={`/events/${event.slug}`} key={event.id}>{event.startDate} — {event.title} <span className={styles.rowArrow} aria-hidden="true">↗</span></Link>)}
     </section>
   </>;
 }

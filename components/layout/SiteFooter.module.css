@@ -20,3 +20,4 @@
 @media(prefers-reduced-motion:reduce){.identity{transform:none;opacity:1;will-change:auto}}
 :global(html[lang="th"]) .footer{font-family:var(--font-thai),Tahoma,sans-serif}:global(html[lang="th"]) .links h3,:global(html[lang="th"]) .links a{letter-spacing:0;overflow-wrap:anywhere}
 :global(html[lang="th"]) .bannerCta{letter-spacing:0}
+@media(max-width:1024px){.bannerArrow{display:none}}

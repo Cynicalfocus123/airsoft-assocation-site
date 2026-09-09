@@ -23,7 +23,7 @@ export function PlayWithPurposeBanner() {
     <div className={styles.identity}>
       <h2>{copy.title}</h2>
       <p>{copy.lead}</p>
-      <Link className={styles.bannerCta} href="/play-with-purpose">{language === "th" ? "สำรวจ" : "EXPLORE"} <span>↗</span></Link>
+      <Link className={styles.bannerCta} href="/play-with-purpose">{language === "th" ? "สำรวจ" : "EXPLORE"} <span className={styles.bannerArrow} aria-hidden="true">↗</span></Link>
     </div>
   </section>;
 }

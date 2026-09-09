@@ -74,7 +74,7 @@ export function CinematicSection({
       <h2>{title}</h2>
       {lead && <p className={styles.lead}>{lead}</p>}
       {description && <div className={styles.description}>{description}</div>}
-      {ctaLabel && ctaHref && <Link className={styles.cta} href={ctaHref}>{ctaLabel} <span>↗</span></Link>}
+      {ctaLabel && ctaHref && <Link className={styles.cta} href={ctaHref}>{ctaLabel} <span className={styles.ctaArrow} aria-hidden="true">↗</span></Link>}
     </div>
   </section>;
 }

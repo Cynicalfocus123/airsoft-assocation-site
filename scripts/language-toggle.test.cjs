@@ -36,6 +36,8 @@ const dragScroll = read("components/hooks/useDragScroll.ts");
 const servicesData = read("data/services.ts");
 const servicesComponent = read("components/services/ServicePageContent.tsx");
 const servicesRoute = read("app/services/[slug]/page.tsx");
+const associationPages = read("data/association-pages.ts");
+const associationPageComponent = read("components/association/AssociationPageContent.tsx");
 
 test("shared navigation exposes the supplied English and Thai labels without changing routes", () => {
   assert.equal(getLabel(navigation[0].label, "en"), "HOME");
@@ -200,6 +202,31 @@ test("new information routes are real page shells", () => {
   }
 });
 
+test("association pages use the supplied bilingual copy without a related-link list", () => {
+  assert.match(associationPages, /Airsoft and Paintball Association of Thailand/);
+  assert.match(associationPages, /United by Standards\. Driven by Fair Play\. Built for the Future\./);
+  assert.match(associationPages, /สมาคมแอร์ซอฟต์และเพ้นท์บอลแห่งประเทศไทย/);
+  assert.match(associationPages, /รวมพลังด้วยมาตรฐาน • ขับเคลื่อนด้วยความยุติธรรม • สร้างเพื่ออนาคต/);
+  assert.match(associationPages, /WHY WE WERE CREATED/);
+  assert.match(associationPages, /ASSOCIATION BACKGROUND/);
+  assert.match(associationPages, /16 years of hands-on experience/);
+  assert.match(associationPages, /ประสบการณ์ตรงในวงการแอร์ซอฟต์และเพ้นท์บอลในประเทศสหรัฐอเมริกามากกว่า 16 ปี/);
+  assert.match(associationPageComponent, /useLanguage/);
+  assert.match(associationPageComponent, /richText/);
+  assert.doesNotMatch(read("app/[...slug]/page.tsx"), /content-list|Related pages|navigation\.flatMap/);
+});
+
+test("external-link arrow marks are hidden on tablet and mobile", () => {
+  assert.match(read("components/sections/CinematicSection.tsx"), /className=\{styles\.ctaArrow\}/);
+  assert.match(read("components/sections/CinematicSection.module.css"), /@media\(max-width:1024px\)\{\.ctaArrow\{display:none\}\}/);
+  assert.match(read("components/play-with-purpose/PlayWithPurposeBanner.tsx"), /className=\{styles\.bannerArrow\}/);
+  assert.match(read("components/layout/SiteFooter.module.css"), /@media\(max-width:1024px\)\{\.bannerArrow\{display:none\}\}/);
+  assert.match(read("components/events/UpcomingEvents.tsx"), /className=\{styles\.viewArrow\}/);
+  assert.match(read("components/events/Events.module.css"), /@media\(max-width:1024px\)\{\.viewArrow\{display:none\}\}/);
+  assert.match(read("app/events/page.tsx"), /className=\{styles\.rowArrow\}/);
+  assert.match(read("app/events/EventsPage.module.css"), /@media\(max-width:1024px\)\{\.rowArrow\{display:none\}\}/);
+});
+
 test("privacy policy and terms pages use the supplied bilingual documents", () => {
   assert.match(legal, /PRIVACY POLICY/);
   assert.match(legal, /Last Updated: September 2026/);
@@ -241,7 +268,7 @@ test("featured event title uses a wider balanced responsive text column", () => 
 test("Force of Conquest card links to the Mstar Airsoft event site", () => {
   assert.match(eventsData, /externalUrl:"https:\/\/www\.mstarairsoft\.com\/"/);
   assert.match(upcomingEvents, /href=\{event\.externalUrl \?\? `\/events\/\$\{event\.slug\}`\}/);
-  assert.match(upcomingEvents, /VIEW EVENT ↗/);
+  assert.match(upcomingEvents, /VIEW EVENT[\s\S]*viewArrow/);
 });
 
 test("upcoming calendar keeps Force of Conquest and shows two non-clickable TBA entries", () => {
