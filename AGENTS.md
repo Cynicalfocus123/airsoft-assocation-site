@@ -40,6 +40,8 @@ Official local-first website for the Thailand Airsoft Association: standards, sa
 ## Current implementation
 - Responsive sticky header, desktop mega menus and mobile off-canvas accordion navigation.
 - Featured event hero, responsive event carousel, real event detail routes and editorial content routes.
+- The Upcoming Events calendar uses `calendarEvents`: Force of Conquest is the first listed event, followed by two non-clickable TBA entries. Thailand National Airsoft 2026 remains exclusive to the homepage featured hero and is excluded from the calendar.
+- `/contact` is the canonical Contact Us route. It directs general inquiries, complaints, partnerships, sponsorships, and other requests to `info@thaiairsoft.org`; header, footer Contact, and footer Complaint links resolve to `/contact`.
 - Footer with functioning internal links, accessible controls and reduced-motion behavior.
 - Supplied association logo appears in header and actual footer. Header logo is 40% smaller than footer: 7.2rem above 480px, 5.1rem at or below 480px. Footer stays 12rem / 8.5rem. No visible association-name text.
 - “PLAY WITH PURPOSE” is a separate banner above the footer and must contain no logo. The logo belongs below the divider in the actual footer with navigation links; it is static and must not share the banner animation.
@@ -74,3 +76,13 @@ Added an English-default, persistent TH/EN switcher for the header, mobile menu 
 - All live runtime files must be inside `public_html`. Keep production minification/tree shaking, lazy loading, critical-image priority, safe caching/compression, and a small ZIP without source maps, unused assets or development files.
 - Audit Linux filename case, correct root URLs, UTF-8, EN/TH switching, static-route refresh/404 handling, blank pages, missing assets, local paths and exposed secrets. Never replace unknown routes or missing assets with homepage HTML.
 - ZIP entries extract directly into Hostinger's existing `public_html`, without another nested `public_html`. Verify the actual folder and ZIP; distinguish browser/static verification from live Hostinger TLS/Cloudflare checks.
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+# This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->

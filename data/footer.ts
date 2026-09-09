@@ -9,5 +9,5 @@ export const informationLinks: FooterLink[] = [
   { label: { en: "Terms of Use", th: "ข้อกำหนดการใช้งาน" }, href: "/terms-of-use" },
   { label: { en: "Become Our Referee", th: "สมัครเป็นกรรมการของเรา" }, href: "/become-a-referee" },
   { label: { en: "Become Our Member", th: "สมัครเป็นสมาชิกของเรา" }, href: "/become-a-member" },
-  { label: { en: "Complaint", th: "ร้องเรียน / แจ้งข้อร้องเรียน" }, href: "/complaint" },
+  { label: { en: "Complaint", th: "ร้องเรียน / แจ้งข้อร้องเรียน" }, href: "/contact" },
 ];

@@ -1,0 +1,10 @@
+.page{padding:clamp(7rem,13vw,12rem) clamp(1.25rem,6vw,7rem) clamp(5rem,10vw,9rem)}
+.intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(18rem,.7fr);gap:clamp(2.5rem,9vw,10rem);align-items:end;max-width:1400px}
+.intro h1{margin:0;font-size:clamp(4rem,10vw,10rem);line-height:.78;letter-spacing:-.1em}
+.copy{max-width:31rem;padding-bottom:.35rem}
+.copy p{margin:0;color:var(--muted);font-size:clamp(1rem,1.5vw,1.2rem);line-height:1.65}
+.copy a{display:inline-block;margin-top:1.7rem;font-size:clamp(1.15rem,2vw,1.7rem);font-weight:900;letter-spacing:-.04em;border-bottom:2px solid var(--ink);padding-bottom:.25rem;overflow-wrap:anywhere}
+.copy a:hover{color:#526315;border-color:#526315}.copy a:focus-visible{outline:3px solid var(--lime);outline-offset:5px}
+.purposes{max-width:1400px;margin-top:clamp(4.5rem,9vw,8rem);border-top:1px solid var(--line)}
+.purposes p{margin:0;padding:1.25rem 0;border-bottom:1px solid var(--line);font-size:clamp(1rem,1.6vw,1.35rem);font-weight:900;letter-spacing:.02em}
+@media(max-width:760px){.page{padding-top:6.5rem}.intro{grid-template-columns:1fr;gap:3.5rem}.intro h1{font-size:clamp(4rem,19vw,7rem)}.copy{padding:0}.purposes{margin-top:4rem}.purposes p{padding:1.05rem 0}}

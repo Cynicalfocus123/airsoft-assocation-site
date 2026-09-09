@@ -27,6 +27,10 @@ const legal = read("data/legal.ts");
 const eventsStyles = read("components/events/Events.module.css");
 const eventsData = read("data/events.ts");
 const upcomingEvents = read("components/events/UpcomingEvents.tsx");
+const eventsPage = read("app/events/page.tsx");
+const contactPage = read("app/contact/page.tsx");
+const contactStyles = read("app/contact/ContactPage.module.css");
+const footerData = read("data/footer.ts");
 const dragScroll = read("components/hooks/useDragScroll.ts");
 const servicesData = read("data/services.ts");
 const servicesComponent = read("components/services/ServicePageContent.tsx");
@@ -226,6 +230,31 @@ test("Force of Conquest card links to the Mstar Airsoft event site", () => {
   assert.match(eventsData, /externalUrl:"https:\/\/www\.mstarairsoft\.com\/"/);
   assert.match(upcomingEvents, /href=\{event\.externalUrl \?\? `\/events\/\$\{event\.slug\}`\}/);
   assert.match(upcomingEvents, /VIEW EVENT ↗/);
+});
+
+test("upcoming calendar keeps Force of Conquest and shows two non-clickable TBA entries", () => {
+  assert.match(eventsData, /calendarVisible:false/);
+  assert.match(eventsData, /id:"force-of-conquest-2027"/);
+  assert.match(eventsData, /id:"upcoming-tba-1"[\s\S]*isTba:true/);
+  assert.match(eventsData, /id:"upcoming-tba-2"[\s\S]*isTba:true/);
+  assert.doesNotMatch(eventsData, /FIELD SAFETY FORUM 2026|THAILAND OPEN AIRSOFT CUP 2027/);
+  assert.match(eventsPage, /calendarEvents/);
+  assert.match(eventsPage, /event\.isTba[\s\S]*<p className=\{styles\.row\}[^>]*>TBA<\/p>/);
+  assert.doesNotMatch(eventsPage, /THAILAND NATIONAL AIRSOFT 2026/);
+  assert.match(upcomingEvents, /calendarEvents\.filter\(\(event\)=>!event\.featured&&!event\.isTba\)/);
+});
+
+test("contact page is a real editorial route with a working mail link", () => {
+  assert.ok(existsSync(resolve(root, "app", "contact", "page.tsx")));
+  assert.match(contactPage, /Contact Us \| Thailand Airsoft Association/);
+  assert.match(contactPage, /GET IN[\s\S]*TOUCH/);
+  assert.match(contactPage, /mailto:info@thaiairsoft\.org/);
+  assert.match(contactPage, /GENERAL INQUIRY[\s\S]*COMPLAINT[\s\S]*PARTNERSHIP[\s\S]*SPONSORSHIP[\s\S]*OTHER REQUESTS/);
+  assert.match(contactStyles, /border-top:1px solid var\(--line\)/);
+  assert.doesNotMatch(contactPage, /<form|href="#"/);
+  assert.match(footerData, /en: "Contact", th: "ติดต่อเรา" \}, href: "\/contact"/);
+  assert.match(footerData, /en: "Complaint"[\s\S]*href: "\/contact"/);
+  assert.match(read("data/navigation.ts"), /label\("CONTACT", "ติดต่อเรา"\), href: "\/contact"/);
 });
 
 test("event rail preserves clicks while still capturing real drags", () => {
