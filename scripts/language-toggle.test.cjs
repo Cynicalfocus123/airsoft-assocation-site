@@ -182,6 +182,7 @@ test("header and footer share the same language state and the Thai font boundary
   assert.match(layout, /Noto_Sans_Thai/);
   assert.match(layout, /LanguageProvider/);
   assert.match(layout, /<LanguageProvider><SiteHeader \/><main>\{children\}<\/main><SiteFooter \/><\/LanguageProvider>/);
+  assert.match(layout, /icons: \{ icon: \[\{ url: "\/images\/association-logo\.png", type: "image\/png" \}\] \}/);
 });
 
 test("mobile drawer keeps the hamburger control accessible and includes the language switch", () => {
