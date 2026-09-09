@@ -25,6 +25,7 @@ const fieldDevelopment = read("data/field-development.ts");
 const rulesSafetyPages = read("data/rules-safety-pages.ts");
 const legal = read("data/legal.ts");
 const eventsStyles = read("components/events/Events.module.css");
+const featuredEventHero = read("components/events/FeaturedEventHero.tsx");
 const eventsData = read("data/events.ts");
 const upcomingEvents = read("components/events/UpcomingEvents.tsx");
 const eventsPage = read("app/events/page.tsx");
@@ -226,6 +227,9 @@ test("featured event title uses a wider balanced responsive text column", () => 
   assert.match(eventsStyles, /\.heroContent\{[^}]*width:calc\(100vw - 2\.5rem\)/);
   assert.match(eventsStyles, /\.hero h1\{font-size:clamp\(2rem,7vw,3\.45rem\)/);
   assert.doesNotMatch(eventsStyles, /\.hero h1\{[^}]*max-width:800px/);
+  assert.match(featuredEventHero, /WELCOME TO THE THAILAND NATIONAL ASSOCIATION/);
+  assert.doesNotMatch(featuredEventHero, /REGISTRATION COMING SOON|DETAILS/);
+  assert.match(eventsStyles, /\.heroWelcome\{[^}]*white-space:nowrap/);
 });
 
 test("Force of Conquest card links to the Mstar Airsoft event site", () => {

@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
 import { useDragScroll } from "@/components/hooks/useDragScroll";
 import { publishedEvents } from "@/data/events";
 import { imageSrc } from "@/data/assets";
@@ -17,11 +16,8 @@ export function FeaturedEventHero() {
         <Image className={styles.heroImage} src={imageSrc(event.desktopImage)} alt={`${event.title} event artwork`} fill priority={index === 0} sizes="100vw" style={{ objectPosition: event.focalPoint }} />
         <div className={styles.heroShade} />
         <div className={styles.heroContent}>
+          <p className={styles.heroWelcome}>WELCOME TO THE THAILAND NATIONAL ASSOCIATION</p>
           <h1>THAILAND NATIONAL AIRSOFT AND PAINTBALL ASSOCIATION</h1>
-          <div className={styles.heroActions}>
-            {event.registrationUrl ? <a className={styles.heroActionText} href={event.registrationUrl}>{event.registrationLabel ?? "REGISTER"}</a> : <span className={styles.heroActionText}>REGISTRATION COMING SOON</span>}
-            <Link className={styles.heroActionText} href={`/events/${event.slug}`}>DETAILS <span>↗</span></Link>
-          </div>
         </div>
       </article>)}
     </div>
