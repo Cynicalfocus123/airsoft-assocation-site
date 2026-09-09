@@ -43,7 +43,14 @@ export function SiteHeader() {
     </div>
     <button className={`${styles.mobileBackdrop} ${mobile ? styles.backdropOpen : ""}`} type="button" aria-label={language === "th" ? "ปิดเมนู" : "Close menu"} tabIndex={mobile ? 0 : -1} onClick={closeMobile} />
     <aside id="mobile-navigation" className={`${styles.mobilePanel} ${mobile ? styles.mobileOpen : ""}`} aria-hidden={!mobile}>
-      <div className={styles.mobileTop}><button type="button" onClick={closeMobile} aria-label={language === "th" ? "ปิดเมนู" : "Close menu"}>{language === "th" ? "ปิด" : "CLOSE"} ×</button></div>
+      <div className={styles.mobileTop}>
+        <div className={styles.mobileLanguageSelector} aria-label={language === "th" ? "ภาษา" : "Language"}>
+          <button type="button" onClick={() => setLanguage("th")} aria-pressed={language === "th"}>TH</button>
+          <span aria-hidden="true">/</span>
+          <button type="button" onClick={() => setLanguage("en")} aria-pressed={language === "en"}>EN</button>
+        </div>
+        <button type="button" onClick={closeMobile} aria-label={language === "th" ? "ปิดเมนู" : "Close menu"}>{language === "th" ? "ปิด" : "CLOSE"} ×</button>
+      </div>
       <nav aria-label={language === "th" ? "เมนูสำหรับมือถือ" : "Mobile navigation"}>{navigation.map((item) => item.href ? <Link key={item.href} href={item.href} onClick={closeMobile}>{getLabel(item.label, language)}</Link> : <details className={item.label.en === "ABOUT THE ASSOCIATION" ? styles.longMobileDetails : ""} key={item.label.en}><summary>{getLabel(item.label, language)}</summary>{item.children?.map((child) => <Link key={child.href} href={child.href} onClick={closeMobile}>{getLabel(child.label, language)}</Link>)}</details>)}</nav>
     </aside>
   </header>;

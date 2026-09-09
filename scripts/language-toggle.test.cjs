@@ -183,11 +183,13 @@ test("header and footer share the same language state and the Thai font boundary
   assert.match(layout, /<LanguageProvider><SiteHeader \/><main>\{children\}<\/main><SiteFooter \/><\/LanguageProvider>/);
 });
 
-test("mobile drawer keeps the hamburger control accessible without a visible menu label", () => {
+test("mobile drawer keeps the hamburger control accessible and includes the language switch", () => {
   assert.doesNotMatch(header, /mobileTop}><span>/);
   assert.match(header, /className=\{styles\.menuButton\}/);
   assert.match(header, /aria-label=\{language === "th" \? "เปิดเมนู" : "Open menu"\}/);
-  assert.match(headerStyles, /\.mobileTop\{display:flex;justify-content:flex-end;/);
+  assert.match(header, /className=\{styles\.mobileLanguageSelector\}/);
+  assert.match(headerStyles, /\.mobileTop\{display:flex;justify-content:space-between;/);
+  assert.match(headerStyles, /\.mobileLanguageSelector button\{[^}]*min-width:2\.75rem;min-height:2\.75rem/);
 });
 
 test("new information routes are real page shells", () => {
@@ -250,7 +252,8 @@ test("contact page is a real editorial route with a working mail link", () => {
   assert.match(contactPage, /GET IN[\s\S]*TOUCH/);
   assert.match(contactPage, /mailto:info@thaiairsoft\.org/);
   assert.match(contactPage, /GENERAL INQUIRY[\s\S]*COMPLAINT[\s\S]*PARTNERSHIP[\s\S]*SPONSORSHIP[\s\S]*OTHER REQUESTS/);
-  assert.match(contactStyles, /border-top:1px solid var\(--line\)/);
+  assert.match(contactPage, /<h1 id="contact-title">CONTACT US<\/h1>/);
+  assert.doesNotMatch(contactStyles, /border-top:1px solid var\(--line\)/);
   assert.doesNotMatch(contactPage, /<form|href="#"/);
   assert.match(footerData, /en: "Contact", th: "ติดต่อเรา" \}, href: "\/contact"/);
   assert.match(footerData, /en: "Complaint"[\s\S]*href: "\/contact"/);
