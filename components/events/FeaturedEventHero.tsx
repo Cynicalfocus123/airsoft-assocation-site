@@ -16,8 +16,13 @@ export function FeaturedEventHero() {
         <Image className={styles.heroImage} src={imageSrc(event.desktopImage)} alt={`${event.title} event artwork`} fill priority={index === 0} sizes="100vw" style={{ objectPosition: event.focalPoint }} />
         <div className={styles.heroShade} />
         <div className={styles.heroContent}>
-          <p className={styles.heroWelcome}>WELCOME TO THE THAILAND NATIONAL ASSOCIATION</p>
-          <h1>THAILAND NATIONAL AIRSOFT AND PAINTBALL ASSOCIATION</h1>
+          <h1>
+            <span className={styles.heroWelcome}>WELCOME TO THE</span>
+            <span className={styles.heroAssociation}>
+              <span className={styles.desktopTitle}>THAILAND NATIONAL AIRSOFT<br />AND PAINTBALL ASSOCIATION</span>
+              <span className={styles.mobileTitle}>THAILAND NATIONAL<br />AIRSOFT AND PAINTBALL<br />ASSOCIATION</span>
+            </span>
+          </h1>
         </div>
       </article>)}
     </div>

@@ -227,7 +227,9 @@ test("featured event title uses a wider balanced responsive text column", () => 
   assert.match(eventsStyles, /\.heroContent\{[^}]*width:calc\(100vw - 2\.5rem\)/);
   assert.match(eventsStyles, /\.hero h1\{font-size:clamp\(2rem,7vw,3\.45rem\)/);
   assert.doesNotMatch(eventsStyles, /\.hero h1\{[^}]*max-width:800px/);
-  assert.match(featuredEventHero, /WELCOME TO THE THAILAND NATIONAL ASSOCIATION/);
+  assert.match(featuredEventHero, /WELCOME TO THE/);
+  assert.match(featuredEventHero, /THAILAND NATIONAL AIRSOFT[\s\S]*AND PAINTBALL ASSOCIATION/);
+  assert.match(featuredEventHero, /AIRSOFT AND PAINTBALL/);
   assert.doesNotMatch(featuredEventHero, /REGISTRATION COMING SOON|DETAILS/);
   assert.match(eventsStyles, /\.heroWelcome\{[^}]*white-space:nowrap/);
 });
