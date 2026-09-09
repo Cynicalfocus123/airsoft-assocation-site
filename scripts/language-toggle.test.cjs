@@ -68,7 +68,15 @@ test("Services navigation and field design page use the approved bilingual struc
   assert.match(servicesData, /เริ่มต้นธุรกิจแอร์ซอฟต์และเพ้นท์บอลด้วยแผนที่ถูกต้อง/);
   assert.match(servicesData, /WHY BUSINESS CONSULTING MATTERS/);
   assert.match(servicesData, /WE HELP YOU BUILD A BUSINESS/);
+  assert.match(servicesData, /PROFESSIONAL DIGITAL MARKETING & INTERNATIONAL PLAYER ACQUISITION/);
+  assert.match(servicesData, /การตลาดดิจิทัลระดับมืออาชีพ และการดึงดูดผู้เล่นจากต่างประเทศ/);
+  assert.match(servicesData, /WHO WE HELP YOU REACH/);
+  assert.match(servicesData, /INTERNATIONAL EVENT REACH/);
+  assert.match(servicesData, /PERMITS, COMPLIANCE & EVENT APPROVAL SUPPORT/);
+  assert.match(servicesData, /EQUIPMENT IMPORT GUIDANCE/);
+  assert.match(servicesData, /While final permits and approvals remain subject to the relevant government authorities and applicable laws/);
   assert.match(servicesComponent, /useLanguage/);
+  assert.match(servicesComponent, /block\.type === "closing"/);
   assert.match(servicesRoute, /generateStaticParams/);
   assert.match(servicesRoute, /Field Design & Development Services \| Thailand Airsoft Association/);
 });

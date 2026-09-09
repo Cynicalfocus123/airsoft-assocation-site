@@ -72,6 +72,20 @@
   font-weight: 800;
 }
 
+.closing {
+  margin: clamp(2.5rem, 5vw, 4rem) 0;
+  padding-top: clamp(1.25rem, 3vw, 2rem);
+  border-top: 1px solid var(--line);
+}
+
+.blocks .closing p {
+  margin: .2rem 0;
+  color: var(--ink);
+  font-size: clamp(1.2rem, 2.2vw, 1.85rem);
+  font-weight: 800;
+  line-height: 1.28;
+}
+
 .services {
   max-width: 940px;
   margin-top: clamp(4rem, 9vw, 8rem);

@@ -18,6 +18,7 @@ export function ServicePageContent({ slug }: { slug: ServiceSlug }) {
       {copy.blocks.map((block, index) => {
         if (block.type === "heading") return <h2 key={`${block.text.en}-${index}`}>{localized(block.text)}</h2>;
         if (block.type === "list") return <ul key={`list-${index}`}>{block.items.map((item) => <li key={item.en}>{localized(item)}</li>)}</ul>;
+        if (block.type === "closing") return <div className={styles.closing} key={`closing-${index}`}>{block.lines.map((line) => <p key={line.en}>{localized(line)}</p>)}</div>;
         return <p key={`${block.text.en}-${index}`}>{localized(block.text)}</p>;
       })}
     </div>}

@@ -12,7 +12,8 @@ export type FieldServiceSection = { heading: LocalizedText; description: Localiz
 export type ServiceBlock =
   | { type: "heading"; text: LocalizedText }
   | { type: "paragraph"; text: LocalizedText }
-  | { type: "list"; items: LocalizedText[] };
+  | { type: "list"; items: LocalizedText[] }
+  | { type: "closing"; lines: LocalizedText[] };
 
 export type ServicePageCopy = {
   title: LocalizedText;
@@ -352,13 +353,180 @@ export const servicesCopy: Record<ServiceSlug, ServicePageCopy> = {
   },
   marketing: {
     eyebrow: text("SERVICES", "บริการ"),
-    title: text("MARKETING", "การตลาด"),
-    placeholder: text("Content in development.", "เนื้อหากำลังอยู่ระหว่างการพัฒนา"),
+    title: text("PROFESSIONAL DIGITAL MARKETING & INTERNATIONAL PLAYER ACQUISITION", "การตลาดดิจิทัลระดับมืออาชีพ และการดึงดูดผู้เล่นจากต่างประเทศ"),
+    blocks: [
+      {
+        type: "paragraph",
+        text: text(
+          "Running an Airsoft or Paintball business is highly specialized. Reaching the right audience requires more than general advertising—it requires a marketing team that understands the sport, the player culture, the international community, and how to reach the people most likely to travel, register, and participate.",
+          "การดำเนินธุรกิจแอร์ซอฟต์หรือเพ้นท์บอลเป็นธุรกิจเฉพาะทาง การเข้าถึงกลุ่มเป้าหมายที่ถูกต้องจึงต้องอาศัยมากกว่าการลงโฆษณาทั่วไป แต่ต้องมีทีมการตลาดที่เข้าใจกีฬา วัฒนธรรมของผู้เล่น ชุมชนระดับนานาชาติ และวิธีเข้าถึงผู้ที่มีแนวโน้มจะเดินทาง ลงทะเบียน และเข้าร่วมกิจกรรมจริง",
+        ),
+      },
+      {
+        type: "paragraph",
+        text: text(
+          "The Airsoft and Paintball Association works with experienced digital marketing teams and international networks that understand local markets, player behavior, cultural differences, and the platforms used by Airsoft and Paintball communities around the world.",
+          "สมาคมแอร์ซอฟต์และเพ้นท์บอล ทำงานร่วมกับทีมการตลาดดิจิทัลที่มีประสบการณ์และเครือข่ายระดับนานาชาติ ซึ่งเข้าใจตลาดในแต่ละประเทศ พฤติกรรมของผู้เล่น ความแตกต่างทางวัฒนธรรม และแพลตฟอร์มที่ชุมชนแอร์ซอฟต์และเพ้นท์บอลทั่วโลกใช้งาน",
+        ),
+      },
+      { type: "heading", text: text("WHO WE HELP YOU REACH", "กลุ่มเป้าหมายที่เราช่วยคุณเข้าถึง") },
+      { type: "paragraph", text: text("We help connect your field or event directly with:", "เราช่วยเชื่อมต่อสนามหรืออีเวนต์ของคุณกับกลุ่มเป้าหมายสำคัญ เช่น:") },
+      {
+        type: "list",
+        items: [
+          text("Airsoft and Paintball teams", "ทีมแอร์ซอฟต์และเพ้นท์บอล"),
+          text("MilSim communities", "ชุมชน MilSim"),
+          text("International associations and federations", "สมาคมและสหพันธ์ระดับนานาชาติ"),
+          text("Event organizers", "ผู้จัดอีเวนต์"),
+          text("Influencers and content creators", "Influencer และ Content Creator"),
+          text("Clubs and player groups", "ชมรมและกลุ่มผู้เล่น"),
+          text("Tourism partners", "พันธมิตรด้านการท่องเที่ยว"),
+          text("Sponsors and industry brands", "ผู้สนับสนุนและแบรนด์ในอุตสาหกรรม"),
+        ],
+      },
+      { type: "heading", text: text("PROFESSIONAL PLAYER ACQUISITION", "การเข้าถึงและดึงดูดผู้เล่นอย่างมืออาชีพ") },
+      {
+        type: "paragraph",
+        text: text(
+          "Promoting an event by yourself may reach your existing followers, but professional marketing is designed to reach new players beyond your current network.",
+          "การโปรโมตอีเวนต์ด้วยตัวเองอาจเข้าถึงผู้ติดตามเดิมของคุณ แต่การตลาดระดับมืออาชีพถูกออกแบบมาเพื่อเข้าถึงผู้เล่นใหม่ที่อยู่นอกเครือข่ายเดิมของคุณ",
+        ),
+      },
+      {
+        type: "paragraph",
+        text: text(
+          "Our team helps develop the right message, content, advertising strategy, market targeting, social media campaigns, international outreach, and partnership network to attract players from different countries.",
+          "ทีมของเราช่วยพัฒนาข้อความทางการตลาด คอนเทนต์ กลยุทธ์โฆษณา การกำหนดกลุ่มเป้าหมาย แคมเปญโซเชียลมีเดีย การประชาสัมพันธ์ในต่างประเทศ และเครือข่ายพันธมิตร เพื่อดึงดูดผู้เล่นจากประเทศต่าง ๆ",
+        ),
+      },
+      { type: "heading", text: text("WHAT MAKES PLAYERS WANT TO PARTICIPATE", "สิ่งที่ทำให้ผู้เล่นอยากเข้าร่วม") },
+      {
+        type: "paragraph",
+        text: text(
+          "We understand what makes players interested in an event—the field, theme, realism, missions, technology, competition, experience, location, and overall value of the trip.",
+          "เราเข้าใจว่าสิ่งที่ทำให้ผู้เล่นสนใจอีเวนต์ประกอบด้วย สนาม ธีม ความสมจริง ภารกิจ เทคโนโลยี รูปแบบการแข่งขัน ประสบการณ์ สถานที่ และความคุ้มค่าโดยรวมของการเดินทาง",
+        ),
+      },
+      { type: "paragraph", text: text("We use those strengths to create campaigns that make people want to participate.", "เรานำจุดแข็งเหล่านี้มาใช้ในการสร้างแคมเปญที่ทำให้ผู้เล่นอยากเข้าร่วมกิจกรรม") },
+      { type: "heading", text: text("OUR OBJECTIVE", "เป้าหมายของเรา") },
+      { type: "paragraph", text: text("Our objective is not simply to generate views or likes.", "เป้าหมายของเราไม่ใช่เพียงการสร้างยอดวิวหรือยอดไลก์") },
+      { type: "paragraph", text: text("Our objective is to generate registrations, team bookings, event attendance, international visitors, and long-term customers.", "เป้าหมายของเราคือการสร้างยอดลงทะเบียน การจองแบบทีม จำนวนผู้เข้าร่วม ผู้เล่นจากต่างประเทศ และลูกค้าในระยะยาว") },
+      { type: "heading", text: text("INTERNATIONAL EVENT REACH", "การเข้าถึงผู้เล่นระดับนานาชาติ") },
+      {
+        type: "paragraph",
+        text: text(
+          "For major events with the right concept, venue, budget, and marketing plan, our international network and targeted campaigns can help reach thousands of potential players worldwide and build the event into a recognized destination.",
+          "สำหรับอีเวนต์ขนาดใหญ่ที่มีแนวคิด สถานที่ งบประมาณ และแผนการตลาดที่เหมาะสม เครือข่ายระดับนานาชาติและแคมเปญแบบเจาะกลุ่มของเราสามารถช่วยเข้าถึงผู้เล่นเป้าหมายหลายพันคนทั่วโลก และช่วยพัฒนาให้อีเวนต์ของคุณกลายเป็นจุดหมายที่เป็นที่รู้จักและผู้เล่นต้องการเดินทางมาร่วม",
+        ),
+      },
+      {
+        type: "closing",
+        lines: [
+          text("You Build the Experience.", "คุณสร้างประสบการณ์"),
+          text("We Bring the Players.", "เราช่วยนำผู้เล่นมา"),
+          text("Together, We Build the Brand.", "และเราสร้างแบรนด์ไปด้วยกัน"),
+        ],
+      },
+      {
+        type: "closing",
+        lines: [
+          text("Target the Right Audience.", "เข้าถึงกลุ่มเป้าหมายที่ใช่"),
+          text("Reach the World.", "เชื่อมต่อสู่ทั่วโลก"),
+          text("Fill the Event.", "เติมเต็มทุกอีเวนต์"),
+        ],
+      },
+    ],
   },
   "permit-approval": {
     eyebrow: text("SERVICES", "บริการ"),
-    title: text("PERMIT APPROVAL", "การขออนุญาตและการอนุมัติ"),
-    placeholder: text("Content in development.", "เนื้อหากำลังอยู่ระหว่างการพัฒนา"),
+    title: text("PERMITS, COMPLIANCE & EVENT APPROVAL SUPPORT", "การสนับสนุนด้านใบอนุญาต การปฏิบัติตามข้อกำหนด และการอนุมัติอีเวนต์"),
+    blocks: [
+      { type: "paragraph", text: text("Organizing an Airsoft or Paintball event requires more than a great field and strong attendance.", "การจัดอีเวนต์แอร์ซอฟต์หรือเพ้นท์บอลให้ประสบความสำเร็จ ไม่ได้ขึ้นอยู่เพียงแค่สนามที่ดีและจำนวนผู้เข้าร่วมเท่านั้น") },
+      {
+        type: "paragraph",
+        text: text(
+          "Permits, documentation, equipment approvals, local coordination, and regulatory compliance must all be handled correctly before the event can operate smoothly.",
+          "ต้องมีการจัดการด้านใบอนุญาต เอกสาร การอนุมัติอุปกรณ์ การประสานงานกับหน่วยงานในพื้นที่ และการปฏิบัติตามกฎหมายหรือข้อกำหนดที่เกี่ยวข้องอย่างถูกต้อง เพื่อให้อีเวนต์สามารถดำเนินงานได้อย่างราบรื่น",
+        ),
+      },
+      {
+        type: "paragraph",
+        text: text(
+          "The Airsoft and Paintball Association helps organizers navigate these requirements by providing professional guidance and coordination support throughout the approval process.",
+          "สมาคมแอร์ซอฟต์และเพ้นท์บอล ช่วยผู้จัดงานดำเนินการตามข้อกำหนดเหล่านี้ ด้วยการให้คำแนะนำอย่างมืออาชีพและสนับสนุนด้านการประสานงานตลอดกระบวนการขออนุมัติ",
+        ),
+      },
+      { type: "heading", text: text("EQUIPMENT IMPORT GUIDANCE", "คำแนะนำด้านการนำเข้าอุปกรณ์") },
+      {
+        type: "paragraph",
+        text: text(
+          "Support the preparation of documents and coordination needed when participants or organizers bring Airsoft or Paintball equipment into Thailand, subject to applicable customs, import, transport, and legal requirements.",
+          "สนับสนุนการเตรียมเอกสารและการประสานงานที่จำเป็น เมื่อผู้เข้าร่วมหรือผู้จัดงานนำอุปกรณ์แอร์ซอฟต์หรือเพ้นท์บอลเข้ามาในประเทศไทย โดยขึ้นอยู่กับข้อกำหนดด้านศุลกากร การนำเข้า การขนส่ง และกฎหมายที่เกี่ยวข้อง",
+        ),
+      },
+      { type: "heading", text: text("GOVERNMENT & LOCAL AUTHORITY COORDINATION", "การประสานงานกับภาครัฐและหน่วยงานท้องถิ่น") },
+      {
+        type: "paragraph",
+        text: text(
+          "Assist organizers in identifying and coordinating with the appropriate government agencies, provincial authorities, local administrations, venue operators, and other relevant parties required for outdoor events.",
+          "ช่วยผู้จัดงานระบุและประสานงานกับหน่วยงานราชการ หน่วยงานระดับจังหวัด องค์กรปกครองส่วนท้องถิ่น ผู้ดูแลสถานที่ และหน่วยงานหรือบุคคลอื่นที่เกี่ยวข้องกับการจัดอีเวนต์กลางแจ้ง",
+        ),
+      },
+      { type: "heading", text: text("PERMIT & DOCUMENTATION SUPPORT", "การสนับสนุนด้านใบอนุญาตและเอกสาร") },
+      {
+        type: "paragraph",
+        text: text(
+          "Help prepare and organize the documentation commonly required for event applications, venue use, safety planning, participant management, temporary activities, and related approvals.",
+          "ช่วยจัดเตรียมและรวบรวมเอกสารที่โดยทั่วไปจำเป็นสำหรับการยื่นขอจัดงาน การใช้สถานที่ การวางแผนด้านความปลอดภัย การบริหารผู้เข้าร่วม กิจกรรมชั่วคราว และการอนุมัติที่เกี่ยวข้อง",
+        ),
+      },
+      { type: "heading", text: text("EVENT COMPLIANCE PLANNING", "การวางแผนให้สอดคล้องกับมาตรฐานและข้อกำหนดของอีเวนต์") },
+      {
+        type: "paragraph",
+        text: text(
+          "Review event plans against Association standards and help organizers prepare for requirements involving safety, field operations, emergency response, first aid, referees, marshals, and player management.",
+          "ช่วยตรวจสอบแผนการจัดงานให้สอดคล้องกับมาตรฐานของสมาคม และช่วยผู้จัดเตรียมความพร้อมด้านความปลอดภัย การบริหารสนาม การรับมือเหตุฉุกเฉิน การปฐมพยาบาล กรรมการ มาร์แชล และการบริหารผู้เล่น",
+        ),
+      },
+      { type: "heading", text: text("INTERNATIONAL PARTICIPANT SUPPORT", "การสนับสนุนผู้เข้าร่วมจากต่างประเทศ") },
+      {
+        type: "paragraph",
+        text: text(
+          "Help overseas teams and organizers understand local procedures, event requirements, equipment documentation, and the steps needed to participate more smoothly.",
+          "ช่วยให้ทีมและผู้จัดงานจากต่างประเทศเข้าใจขั้นตอนภายในประเทศ ข้อกำหนดของอีเวนต์ เอกสารเกี่ยวกับอุปกรณ์ และขั้นตอนที่ต้องดำเนินการเพื่อให้สามารถเข้าร่วมกิจกรรมได้อย่างราบรื่นมากขึ้น",
+        ),
+      },
+      { type: "heading", text: text("OUR ROLE", "บทบาทของเรา") },
+      {
+        type: "paragraph",
+        text: text(
+          "Our role is to help reduce uncertainty, avoid unnecessary delays, and make the approval process more organized and professional.",
+          "หน้าที่ของเราคือช่วยลดความไม่แน่นอน หลีกเลี่ยงความล่าช้าที่ไม่จำเป็น และทำให้กระบวนการขออนุมัติมีความเป็นระบบและเป็นมืออาชีพมากขึ้น",
+        ),
+      },
+      {
+        type: "paragraph",
+        text: text(
+          "While final permits and approvals remain subject to the relevant government authorities and applicable laws, our experience and coordination can help you prepare the right documentation and approach the process correctly from the beginning.",
+          "อย่างไรก็ตาม การออกใบอนุญาตและการอนุมัติขั้นสุดท้ายยังคงขึ้นอยู่กับหน่วยงานภาครัฐที่มีอำนาจและกฎหมายที่ใช้บังคับ แต่ประสบการณ์และการประสานงานของเราสามารถช่วยให้คุณเตรียมเอกสารที่เหมาะสมและดำเนินกระบวนการได้อย่างถูกต้องตั้งแต่ต้น",
+        ),
+      },
+      {
+        type: "closing",
+        lines: [
+          text("You Focus on Building the Event.", "คุณโฟกัสกับการสร้างอีเวนต์"),
+          text("We Help Navigate the Process.", "เราช่วยคุณจัดการเส้นทางสู่การอนุมัติ"),
+        ],
+      },
+      {
+        type: "closing",
+        lines: [
+          text("Prepare Correctly.", "เตรียมให้ถูกต้อง"),
+          text("Coordinate Professionally.", "ประสานงานอย่างมืออาชีพ"),
+          text("Operate with Confidence.", "ดำเนินงานด้วยความมั่นใจ"),
+        ],
+      },
+    ],
   },
   training: {
     eyebrow: text("SERVICES", "บริการ"),
