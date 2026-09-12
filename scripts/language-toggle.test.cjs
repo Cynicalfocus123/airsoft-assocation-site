@@ -38,6 +38,8 @@ const servicesComponent = read("components/services/ServicePageContent.tsx");
 const servicesRoute = read("app/services/[slug]/page.tsx");
 const associationPages = read("data/association-pages.ts");
 const associationPageComponent = read("components/association/AssociationPageContent.tsx");
+const informationPages = read("data/information-pages.ts");
+const informationPageComponent = read("components/information/InformationPageContent.tsx");
 
 test("shared navigation exposes the supplied English and Thai labels without changing routes", () => {
   assert.equal(getLabel(navigation[0].label, "en"), "HOME");
@@ -200,6 +202,19 @@ test("new information routes are real page shells", () => {
   for (const route of ["become-a-referee", "become-a-member", "complaint", "play-with-purpose", "sport-tourism"]) {
     assert.ok(existsSync(resolve(root, "app", route, "page.tsx")));
   }
+});
+
+test("referee and member pages use the supplied bilingual content", () => {
+  assert.match(informationPages, /BECOME A REFEREE OR GAME MASTER/);
+  assert.match(informationPages, /Lead the Game\. Protect the Players\. Create the Experience\./);
+  assert.match(informationPages, /ร่วมเป็นกรรมการสนามและผู้ควบคุมเกมกับเรา/);
+  assert.match(informationPages, /BECOME OUR MEMBER/);
+  assert.match(informationPages, /Join the Community\. Gain More Benefits\./);
+  assert.match(informationPages, /สมัครเป็นสมาชิก/);
+  assert.match(informationPages, /MEMBERSHIP COMPARISON/);
+  assert.match(informationPages, /ตารางเปรียบเทียบสิทธิประโยชน์สมาชิก/);
+  assert.match(informationPageComponent, /useLanguage/);
+  assert.match(informationPageComponent, /section\.table/);
 });
 
 test("association pages use the supplied bilingual copy without a related-link list", () => {
