@@ -1,5 +1,7 @@
 # Product priorities
 
+Reviewed 2026-09-12 after the bilingual information-page release.
+
 1. Mobile and desktop usability
 2. Performance
 3. Design-reference fidelity
@@ -14,6 +16,6 @@
 ## Current focus
 High: header, mega navigation, hero event slider, event rail, real routes, footer, editorial motion, responsive layout and performance.
 
-Medium: complete mission, association, tourism, rules and safety content from approved sources.
+Medium: extend approved mission, association, tourism, rules, safety, referee and membership content without changing the shared editorial hierarchy.
 
-Low: backend, authentication, admin, public deployment and decorative effects.
+Low: backend, authentication, admin, speculative forms and decorative effects. Public deployment is already automated and should remain a release step, not a new feature goal.

@@ -1,6 +1,6 @@
 # Hostinger deployment
 
-This is Next.js 16.3.4 / React 19 with App Router, TypeScript and Turbopack. It uses **static export**, not a Node server or a single-page fallback. All 52 content routes have real `index.html` files. Existing English/Thai content, layout, links and motion remain intact.
+This is Next.js 16.3.4 / React 19 with App Router, TypeScript and Turbopack. It uses **static export**, not a Node server or a single-page fallback. All 55 content routes have real `index.html` files. Existing English/Thai content, layout, links and motion remain intact, including the long-form referee and member information pages.
 
 ## Build and files
 
@@ -18,7 +18,7 @@ pnpm exec tsc --noEmit
 node --test scripts/language-toggle.test.cjs scripts/cinematic-scroll.test.cjs scripts/featured-slider.test.cjs
 ```
 
-The command optimizes the live folder's original images, runs the Next production export with an empty root base path, assembles and audits its `public_html/`, then creates its `public_html.zip` using only files inside that live `public_html`. The original images and development files are retained outside deployment. `out/` is an intermediate, not the upload artifact. Generated images, manifest, reports and deployment files are excluded from Git.
+The command optimizes the live folder's original images, runs the Next production export with an empty root base path, assembles and audits its `public_html/`, then creates its `public_html.zip` using only files inside that live `public_html`. The current release contains 337 runtime files, 4,966,659 bytes in `public_html`, and a 2,530,123-byte ZIP. The original images and development files are retained outside deployment. `out/` is an intermediate, not the upload artifact. Generated images, manifest, reports and deployment files are excluded from Git.
 
 `pnpm build` continues to create the GitHub Pages build at `/airsoft-assocation-site`. Do not upload that `out/` to Hostinger. `NEXT_PUBLIC_BASE_PATH` is the only build environment setting; the Hostinger command supplies an empty value. No runtime environment variables, database, API keys, credentials, PHP or Node service are required. Existing unconfirmed programme/registration content stays as supplied; no forms or backend services were invented.
 
@@ -51,7 +51,7 @@ Next minifies and splits production JS/CSS and applies tree shaking. There are n
 
 ## Verification and limits
 
-`reports/production-audit.json` records route/file/format/UTF-8/reference/size checks. `scripts/verify-browser.mjs` tests the actual deployment in Chromium via a temporary static test server, including all content routes, refreshes, image decoding, English/Thai and desktop/mobile navigation. Set `PLAYWRIGHT_MODULE` and `BROWSER_EXECUTABLE` if using externally installed Playwright/Chromium. Test tooling and screenshots are excluded from the ZIP. An independent ZIP reader verified CRCs, entry paths and byte-for-byte equality with the production folder.
+`reports/production-audit.json` records route/file/format/UTF-8/reference/size checks. `scripts/verify-browser.mjs` tests the actual deployment in Chromium via a temporary static test server, including all content routes, refreshes, image decoding, English/Thai and desktop/mobile navigation. Set `PLAYWRIGHT_MODULE` and `BROWSER_EXECUTABLE` if using externally installed Playwright/Chromium. The current source regression suite is `node --test scripts/language-toggle.test.cjs scripts/cinematic-scroll.test.cjs scripts/featured-slider.test.cjs`; the language/content suite contains 31 passing checks. Test tooling and screenshots are excluded from the ZIP. An independent ZIP reader verified CRCs, entry paths and byte-for-byte equality with the production folder.
 
 The browser checks emulate Apache directory routing. The actual Hostinger account, TLS certificate, enabled modules and Cloudflare settings are not accessible in this task, so the final live-origin checks in step 6 remain deployment checks, not claims of testing an unuploaded site.
 
